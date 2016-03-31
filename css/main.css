@@ -1,0 +1,207 @@
+/* ------------------- css reset styles ------------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td 
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+#contents .content .media .object .self 
+{
+    /*overflow: hidden;*/
+    position: relative;
+    max-width: 610px;
+	float: right;
+}
+
+
+@font-face 
+{
+    font-family: 'defaultf';
+    src: url(../img/vani.ttf)
+}
+
+body 
+{
+	font-family:"Lucida Sans Unicode", "Lucida Grande", "Trebuchet MS", Verdana, Geneva, sans-serif;
+	font-size:15px;
+	line-height:21px;
+	/*background-image: url(../img/bg.jpg);*/
+}
+
+strong 
+{
+	font-weight:bold;	
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover 
+{
+	text-decoration:none;	
+}
+
+/* ------------------- header, link and paragraph global styles ------------------- */
+h1, h2, h3, h4, h5, h6 
+{
+	font-weight:normal;
+}
+
+.acpage-title h1 
+{
+	font-size:36px;	
+	line-height:38px;
+	padding: 0 0 52px 0;	
+}
+
+h1, h2, h3, h4, h6 
+{
+	font-family:Arial, Helvetica, sans-serif;	
+	font-weight:bold;		
+}
+
+h1 
+{
+	font-size:32px;	
+	line-height:35px;	
+	padding-bottom:6px;		
+}
+
+h2 
+{
+	font-size:27px;
+	line-height:32px;
+	padding-bottom:6px;
+}
+
+h3 
+{
+	font-size:22px;
+	line-height:28px;
+	padding-bottom:10px;
+	
+}
+
+h4 
+{
+	font-size:18px;
+	line-height:24px;
+	padding-bottom:8px;
+	letter-spacing:-1px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+
+h5 
+{
+	font-size:17px;
+	line-height:24px;
+	padding-bottom:8px;
+	letter-spacing:-0.6px;
+}
+
+h6 
+{
+	font-size:15px;
+	margin:6px 0 0 0;
+	padding-bottom:6px;
+	letter-spacing:-0.1px;
+}
+
+a 
+{
+	text-decoration:none;	
+}
+
+a:hover 
+{
+	text-decoration:underline;	
+}
+
+h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover 
+{
+	text-decoration:none;
+}
+
+p 
+{
+	padding-bottom:13px;	
+}
+
+/* start homepage slider styles */
+.slider-wrapper 
+{
+	/*float:left;*/
+	display: inline-block;
+	/*width:100%;*/
+	position:relative;
+}
+
+.hcontent-wrapper .inner-content, .hcontent-wrapper .content-full, .hcontent-wrapper .fwidth-content 
+{
+	margin-top:32px !important;
+} 
+
+#cycle-slider, #cycle-slider li 
+{
+	list-style:none;
+	margin:0;
+	padding: 5px 0px 0px 0px;
+	font-family: 'defaultf';/*'Open Sans';;*/
+	color: #DDD;
+	text-shadow: 0 2px 2px #111;
+	font-size: 18px;
+	line-height: 24px;
+	letter-spacing: 0.5px;
+	width:100%;	
+}
+
+hr
+{
+  display:block;
+  border:none;
+  height:16px;
+  width:1140px;
+  margin: 20px auto;
+  background-image:url('../img/hr.png');
+} 
+
+#hr2
+{
+  display:block;
+  border:none;
+  height:3px;
+  width:850px;
+  margin: 20px auto;
+  background-image:url('../img/hr2.png');
+} 
+
+#preloader {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#000;
+	z-index:99;
+}
+
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; 
+	top:50%;
+	margin-left: auto;
+	margin-right: auto;
+}

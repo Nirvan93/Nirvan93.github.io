@@ -1,0 +1,66 @@
+.projects_container
+{
+  margin:0px auto;
+  width:800px;
+  margin-top:32px !important;
+}
+
+.project
+{
+  display: block;
+  float: left;
+  padding: 3px 7px;
+  margin: 30px 20px;
+  background: #111111;
+  line-height: 6px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #2D2D2D;
+  color: #DDDDDD;
+  transition:all 0.3s ease;
+  cursor: pointer;
+  opacity:0.75;
+}
+
+.project:hover
+{
+	background: #131313;
+	border-color: #2F2F2F;
+	color: #FF8C48;
+	transform:scale(1.05);
+	opacity:1;
+	box-shadow:5px 3px 5px rgba(0, 0, 0, 0.3);
+	z-index:2;
+}
+
+.project:target
+{
+	background: #131313;
+	border-color: #2F2F2F;
+  
+	transform:scale(2.05);
+	opacity:1;
+	box-shadow:5px 3px 5px rgba(0, 0, 0, 0.3);
+	z-index:2;
+}
+
+.project img
+{
+  padding: 0px 2px 6px 2px;
+  width: 335px;
+  height: 200px;
+}
+
+.project t
+{
+  /*color: #DDDDDD;*/
+  float: center;
+  display: block;
+  text-align: center;
+  font-family: 'defaultf';
+  padding-top: 7px;
+  font-size: 16px;
+  line-height: 22px;
+  text-decoration: none;
+}
+

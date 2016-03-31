@@ -1,0 +1,15 @@
+Fade Out
+
+Title background - Simple, subtle contour from Dark Time
+
+Front - Beautyshot Slideshow
+
+Click on project - smooth slide
+
+Project title image wider with border
+
+Audio Category in Project View
+Music player in project
+Sounds player in canvas in project
+
+

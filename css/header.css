@@ -1,0 +1,91 @@
+/* ------------------- header styles ------------------- */
+.ac-hbody, .ac-body 
+{
+	float:left;
+	width:100%;
+	position:relative;
+}
+
+.header-wrapper 
+{
+	margin:0 auto;
+	padding: 14px 0px 0px 0px;
+	
+	width:1120px;
+	min-height:155px;
+	height:auto !important;
+	height:178px;
+}
+
+.ac-content, .ac-hcontent 
+{
+	float:left;
+	width:100%;
+	margin-top:20px;
+}
+
+.ac-slider-bg 
+{
+	float:left;
+	width:100%;
+	position:absolute;
+	top:-80px;
+	left:50;
+	height:325px;
+}
+
+.ac-hcontent 
+{
+	margin-top:2px;
+	position:relative;
+}
+
+.content-wrapper 
+{
+	margin:0 auto;
+	width:1050px;
+}
+
+.hcontent-wrapper
+{
+	margin:0 auto;
+	width:1120px;
+}
+
+.ac-topline 
+{
+	font-size:0;
+	line-height:0;
+	width:100%;
+	float:left;
+	margin: 0;
+	height:8px;
+}
+f
+.acpage-title 
+{
+	float:left;
+	width:630px;
+	text-align:left;
+	padding:16px 0 10px 73px;
+	margin-bottom:10px;
+	margin-top:40px;	
+}
+
+#logo 
+{
+	/*float:left;*/
+	width:900px;
+	margin: 0 auto;
+	margin-top:10px;
+}
+
+.acpage-title p 
+{
+	font-size:20px;
+	line-height:26px;
+	padding-bottom:6px;
+	font-family: 'defaultf';
+	color: #D16727;
+	letter-spacing:0.5px;		
+}
