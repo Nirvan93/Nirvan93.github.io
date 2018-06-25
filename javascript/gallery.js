@@ -14,7 +14,7 @@ var galleryAutoplayTimeout;
 
 $("#front").click(function(e)
 {
-	if( galleryIndex < 14 ) galleryIndex++; else galleryIndex = 0;
+	if( galleryIndex < 15 ) galleryIndex++; else galleryIndex = 0;
 	GalleryTransition();
 });
 

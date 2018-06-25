@@ -42,6 +42,19 @@ body
 	/*background-image: url(../img/bg.jpg);*/
 }
 
+#pinner 
+{
+  display: table;
+  margin: 0 auto;
+}
+
+#iframeoff
+{
+	margin: 20px;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
 strong 
 {
 	font-weight:bold;	
