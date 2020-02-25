@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://codepen.io/Sonick/pen/yxzqL -->
+<html lang="en" class="cookie_used_false pc js"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta charset="UTF-8">
+
+    <script async="" src="./Canvas Hover Effect_files/analytics.js"></script><script src="./Canvas Hover Effect_files/cookie_used_reload-81ec504e4e90af045a89fa3f46728a6c.js" type="text/javascript"></script>
+
+
+  
+
+  <title>Canvas Hover Effect</title>
+
+  <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@CodePen">
+<meta name="twitter:title" content="Canvas Hover Effect">
+<meta name="twitter:description" content="...">
+<meta name="twitter:image" content="http://s3-us-west-2.amazonaws.com/i.cdpn.io/55781.yxzqL.022c0d62-a768-4ab1-b2a5-5a7762161d99.png">
+
+<meta property="og:image" content="http://s3-us-west-2.amazonaws.com/i.cdpn.io/55781.yxzqL.022c0d62-a768-4ab1-b2a5-5a7762161d99.png" itemprop="thumbnailUrl">
+<meta property="og:title" content="Canvas Hover Effect">
+<meta property="og:url" content="http://codepen.io/Sonick/details/yxzqL">
+<meta property="og:site_name" content="CodePen">
+
+  <link rel="alternate" type="application/json+oembed" href="http://codepen.io/api/oembed?url=http%3A%2F%2Fcodepen.io%2FSonick%2Fpen%2FyxzqL&format=json" title="Canvas Hover Effect">
+
+  <link href="./Canvas Hover Effect_files/global-NoMQ-afe2168c6ac48812528970d1d14aa63e.css" media="all" rel="stylesheet" type="text/css">
+  <link href="./Canvas Hover Effect_files/editor-70f635b4c5bed612b832357d407b5cb4.css" media="all" rel="stylesheet" type="text/css">
+
+  
+  <meta name="description" content="...">
+  <link href="./Canvas Hover Effect_files/twilight-77007a85436aab56f2a84d076ed9859b.css" id="cm-theme" media="screen" rel="stylesheet" type="text/css">
+
+    <link href="./Canvas Hover Effect_files/top-c885203e825ca0941a0b70ea5e849ab1.css" media="screen" rel="stylesheet" type="text/css">
+
+<style id="cm-font-family">
+  
+  .CodeMirror {
+    font-family: Monaco, MonoSpace;
+  }
+</style>
+
+<style id="cm-font-size">
+  .CodeMirror {
+    font-size: 14px;
+  }
+</style>
+
+
+
+
+
+
+
+  <link rel="shortcut icon" href="http://codepen.io/favicon.ico">
+
+  <meta content="authenticity_token" name="csrf-param">
+<meta content="WctUnm+k7XE6hpxDnC9HffIN4Kqo7YR+2EkBUQXD7zA=" name="csrf-token">
+
+</head>
+
+<body class="editor state-htmlOn-cssOn-jsOn layout-     logged-out">
+
+  
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 100 100" style="enable-background: new 0 0 100 100; display: none;" xml:space="preserve">
+  <defs>
+    <path id="icon-heart" d="M99.866,26.199C98.533,13.167,87.456,3,73.988,3C63.193,3,53.938,9.532,50,18.832C46.062,9.532,36.807,3,26.013,3
+  C12.544,3,1.466,13.167,0.134,26.199C0.045,27.067,0,27.95,0,28.842C0,60.24,38.788,75.059,50,96l0,0
+  c11.212-20.94,50-35.759,50-67.158C100,27.95,99.955,27.067,99.866,26.199z"></path>
+    <path id="icon-codepen-box" d="M99.961,34.205c-0.009-0.063-0.025-0.124-0.035-0.187c-0.021-0.121-0.043-0.242-0.075-0.36
+    c-0.019-0.071-0.044-0.14-0.067-0.208c-0.034-0.105-0.068-0.21-0.11-0.312c-0.029-0.071-0.063-0.142-0.096-0.21
+    c-0.045-0.097-0.092-0.192-0.146-0.284c-0.04-0.068-0.082-0.134-0.122-0.2c-0.058-0.089-0.117-0.176-0.182-0.26
+    c-0.047-0.063-0.097-0.126-0.147-0.187c-0.068-0.079-0.139-0.158-0.214-0.232c-0.056-0.058-0.112-0.115-0.171-0.168
+    c-0.079-0.071-0.161-0.14-0.243-0.205c-0.064-0.05-0.128-0.1-0.195-0.147c-0.025-0.016-0.047-0.037-0.071-0.053L52.383,0.722
+    c-1.444-0.962-3.323-0.962-4.767,0L1.914,31.19c-0.024,0.016-0.046,0.037-0.071,0.053c-0.067,0.047-0.13,0.098-0.193,0.147
+    c-0.084,0.065-0.166,0.134-0.243,0.205c-0.061,0.053-0.116,0.11-0.172,0.168c-0.075,0.074-0.146,0.153-0.213,0.232
+    c-0.051,0.061-0.101,0.124-0.148,0.187c-0.063,0.084-0.124,0.171-0.18,0.26c-0.043,0.066-0.084,0.132-0.124,0.2
+    c-0.053,0.092-0.1,0.187-0.146,0.284c-0.033,0.068-0.067,0.139-0.096,0.21c-0.042,0.103-0.076,0.208-0.11,0.312
+    c-0.022,0.068-0.047,0.137-0.067,0.208c-0.031,0.119-0.052,0.239-0.075,0.36c-0.011,0.063-0.026,0.124-0.034,0.187
+    C0.014,34.389,0,34.576,0,34.765v30.468c0,0.189,0.014,0.376,0.04,0.563c0.008,0.061,0.023,0.124,0.034,0.184
+    c0.022,0.121,0.043,0.242,0.075,0.36c0.02,0.071,0.045,0.14,0.067,0.208c0.034,0.105,0.068,0.21,0.11,0.315
+    c0.029,0.071,0.063,0.14,0.096,0.208c0.046,0.097,0.094,0.191,0.146,0.287c0.039,0.066,0.08,0.131,0.124,0.197
+    c0.056,0.089,0.117,0.176,0.18,0.261c0.047,0.065,0.097,0.126,0.148,0.187c0.067,0.079,0.138,0.158,0.213,0.231
+    c0.057,0.058,0.112,0.115,0.172,0.168c0.078,0.071,0.159,0.14,0.243,0.206c0.063,0.05,0.126,0.1,0.193,0.147
+    c0.025,0.016,0.047,0.037,0.071,0.053l45.703,30.469C48.338,99.758,49.169,100,50,100c0.83,0,1.661-0.242,2.383-0.723
+    l45.703-30.469c0.024-0.016,0.045-0.037,0.071-0.053c0.067-0.047,0.13-0.097,0.195-0.147c0.083-0.066,0.164-0.134,0.243-0.206
+    c0.059-0.053,0.115-0.11,0.171-0.168c0.075-0.074,0.146-0.153,0.214-0.231c0.05-0.061,0.1-0.121,0.147-0.187
+    c0.065-0.084,0.124-0.171,0.182-0.261c0.041-0.066,0.083-0.131,0.122-0.197c0.054-0.095,0.101-0.189,0.146-0.287
+    c0.033-0.068,0.067-0.137,0.096-0.208c0.042-0.105,0.076-0.21,0.11-0.315c0.022-0.068,0.048-0.137,0.067-0.208
+    c0.032-0.118,0.054-0.239,0.075-0.36c0.01-0.061,0.026-0.124,0.035-0.184C99.985,65.61,100,65.423,100,65.233V34.765
+    C100,34.576,99.985,34.389,99.961,34.205z M54.297,12.327l33.668,22.444L72.927,44.831L54.297,32.369V12.327z M45.703,12.327
+    v20.042L27.074,44.831l-15.04-10.061L45.703,12.327z M8.594,42.809L19.345,50L8.594,57.19V42.809z M45.703,87.672L12.035,65.228
+    l15.04-10.058L45.703,67.63V87.672z M50,60.165L34.802,50L50,39.833L65.198,50L50,60.165z M54.297,87.672V67.63L72.927,55.17
+    l15.039,10.058L54.297,87.672z M91.405,57.19L80.656,50l10.75-7.191V57.19z"></path>
+    <path id="icon-code" d="M28.871,21.5L0,50.004L28.874,78.5l10.497-10.349L20.998,50.004l18.373-18.13L28.871,21.5z M71.129,21.5
+  L60.633,31.865l18.378,18.131L60.633,68.122l10.496,10.365L100,49.974L71.129,21.5z"></path>
+    <path id="icon-key" d="M84,0H16C7.164,0,0,7.164,0,16v68c0,8.836,7.164,16,16,16h68c8.836,0,16-7.164,16-16V16C100,7.164,92.836,0,84,0z
+   M85,70.167c0,5.154-3.583,9.333-8.001,9.333H23c-4.418,0-8-4.179-8-9.333V18.833c0-5.155,3.582-9.333,8-9.333h53.999
+  C81.417,9.5,85,13.679,85,18.833V70.167z"></path>
+    <path id="icon-help" d="M75,0H25C11.19,0,0,11.193,0,25v50c0,13.802,11.19,25,25,25h50c13.811,0,25-11.198,25-25V25C100,11.193,88.811,0,75,0z
+   M57.203,85.067H41.504V72.542h15.699V85.067L57.203,85.067z M73.357,42.041c-0.84,2.066-1.873,3.834-3.102,5.298
+  c-1.235,1.474-2.604,2.718-4.101,3.751c-1.498,1.035-2.922,2.066-4.249,3.101c-1.333,1.034-1.553,2.214-2.596,3.547
+  c-1.025,1.335-0.977,3.004-0.977,5.006v3.924H41.668v-4.623c0-2.864,1.366-5.265,2.27-7.202c0.896-1.935,2.255-3.581,3.459-4.947
+  c1.196-1.367,2.62-2.556,3.955-3.557c1.327-0.993,2.637-1.993,3.776-2.995c1.123-1.001,2.083-2.1,2.783-3.304
+  c0.7-1.197,1.043-2.694,0.977-4.5c0-3.06-0.74-5.33-2.245-6.795c-1.498-1.465-3.582-2.206-6.25-2.206c-1.8,0-3.337,0.351-4.639,1.05
+  c-1.303,0.7-2.369,1.635-3.199,2.808c-0.837,1.163-1.448,3.593-1.847,5.156c-0.407,1.57-0.602,6.115-0.602,6.115H25.399
+  c0.073-8.333,0.684-7.963,1.855-10.965c1.164-2.995,2.8-6.132,4.899-8.33c2.099-2.197,4.63-4.179,7.601-5.417
+  c2.962-1.228,6.283-1.977,9.945-1.977c4.736,0,8.683,0.581,11.856,1.876c3.167,1.302,5.713,2.889,7.65,4.817
+  c1.929,1.937,3.312,4.004,4.149,6.234c0.831,2.237,1.245,4.313,1.245,6.242C74.601,37.354,74.187,39.975,73.357,42.041z"></path>
+    <g id="icon-logout">
+  <rect x="40.403" width="17.919" height="62.191"></rect>
+  <path d="M67.811,12.449v16.909c8.432,5.818,12.691,14.664,12.691,24.572c0,17.518-13.682,31.717-31.199,31.717
+  c-17.512,0-30.335-14.199-30.335-31.717c0-9.886,3.516-18.723,13.002-24.537V12.47C14.051,19.929,4.864,35.692,4.864,53.93
+  c0,25.444,20.072,46.07,45.51,46.07c25.445,0,44.763-20.626,44.763-46.07C95.137,35.675,85.729,19.904,67.811,12.449z"></path>
+</g>
+    <g id="icon-menu">
+  <rect y="3.415" width="100" height="22.532"></rect>
+  <rect y="38.734" width="100" height="22.532"></rect>
+  <rect y="74.053" width="100" height="22.532"></rect>
+</g>
+    <g id="icon-eye">
+  <path d="M50,12.548c-27.612,0-50,37.012-50,37.012s22.388,37.989,50,37.989c27.611,0,50-37.989,50-37.989S77.611,12.548,50,12.548z
+     M50,75.049c-13.807,0-25-11.193-25-25s11.193-25,25-25c13.807,0,25,11.193,25,25S63.807,75.049,50,75.049z"></path>
+  <path d="M62.5,50.097c0,6.909-5.598,12.5-12.5,12.5c-6.903,0-12.5-5.593-12.5-12.5c0-6.908,5.597-12.5,12.5-12.5
+    C56.902,37.597,62.5,43.189,62.5,50.097z"></path>
+</g>
+    <polygon id="icon-x" points="100,78.905 78.735,100 49.608,71.094 21.263,99.217 0,78.123 28.344,50 0,21.877 21.263,0.78 49.608,28.905 
+      78.735,0 100,21.094 70.862,50"></polygon>
+    <path id="icon-gear" d="M87.687,45.077c-0.313-2.433-0.816-4.807-1.542-7.079l8.145-11.73l-5.827-7.515l-0.094-0.123l-5.824-7.514
+  l-12.955,5.577c-2.041-1.265-4.192-2.362-6.459-3.219L59.42,0h-9.34h-0.153h-9.341l-3.709,13.474
+  c-2.27,0.857-4.421,1.955-6.463,3.222l-12.957-5.577l-5.825,7.514l-0.097,0.124l-5.822,7.517l8.146,11.731
+  c-0.726,2.271-1.233,4.645-1.544,7.079L0,52.032l2.08,9.375l0.033,0.15l2.08,9.375l14.001,0.761c1.295,2.028,2.771,3.926,4.4,5.668
+  l-2.396,14.227l8.416,4.173l0.138,0.067L37.169,100l9.309-10.796c1.161,0.109,2.335,0.173,3.524,0.173s2.358-0.074,3.52-0.184
+  l9.317,10.804l8.415-4.173l0.141-0.066l8.413-4.172l-2.396-14.228c1.628-1.741,3.104-3.64,4.4-5.672l14-0.759l2.078-9.375
+  l0.035-0.154L100,52.025L87.687,45.077z M50.003,34.51c8.435,0,15.272,7.035,15.272,15.719c0,8.679-6.839,15.717-15.272,15.717
+  c-8.436,0-15.272-7.038-15.272-15.717C34.731,41.545,41.569,34.51,50.003,34.51z"></path>
+    <path id="icon-arrow-right" d="M59.469,9.429L45.096,23.812c0,0,8.063,8.063,16.006,16.007H0v20.355h61.103L45.086,76.189l14.383,14.382
+  L100,50L59.469,9.429z"></path>
+    <polygon id="icon-arrow-down-mini" points="0,21.113 100,21.113 50,78.887 "></polygon>
+    <g id="icon-fork">
+  <path d="M84.339,62.504c-4.454,0-8.463,1.818-11.313,4.721c-0.519-0.49-1.041-1.006-1.578-1.572
+    c-6.965-7.211-14.451-19.189-22.311-29.678C41.16,25.766,32.941,15.562,20.125,15.069H0v14.37h20.126
+    c2.555-0.111,6.556,1.993,11.208,6.914c6.961,7.197,14.454,19.171,22.315,29.662c4.822,6.164,9.759,12.293,15.741,16.289
+    c1.99,6.191,7.93,10.688,14.949,10.688c8.648,0,15.661-6.824,15.661-15.244C100,69.328,92.987,62.504,84.339,62.504z"></path>
+  <path d="M51.541,29.438h18.986c2.637,4.795,7.831,8.059,13.811,8.059c8.648,0,15.661-6.824,15.661-15.243S92.986,7.01,84.338,7.01
+    c-5.979,0-11.174,3.264-13.811,8.058H36.3C42.307,18.619,47.161,23.992,51.541,29.438z"></path>
+</g>
+    <path id="icon-run" d="M55.702,50.002L77.85,72.324L100,50.002l-9.173-9.249l-6.611,6.668C82.878,25.187,64.56,7.5,42.169,7.5
+    C18.916,7.5,0,26.567,0,50.002C0,73.436,18.917,92.5,42.169,92.5h16.218V79.424H42.169c-16.102,0-29.193-13.197-29.193-29.421
+    c0-16.229,13.092-29.426,29.193-29.426c15.08,0,27.37,11.615,28.892,26.41l-6.184-6.233L55.702,50.002z"></path>
+    <path id="icon-save" d="M84.187,44.046c0.084-0.753,0.114-1.52,0.114-2.289c0-13.402-10.814-24.257-24.154-24.257
+  c-10.354,0-19.161,6.551-22.599,15.754c-2.274-2.508-5.521-4.111-9.166-4.111c-6.872,0-12.439,5.59-12.439,12.493
+  c0,0.816,0.084,1.606,0.239,2.38C7.014,45.534,0,53.472,0,63.095C0,73.824,8.648,82.5,19.323,82.5h61.354
+  C91.351,82.5,100,73.824,100,63.095C100,53.59,93.177,45.715,84.187,44.046z"></path>
+    <g id="icon-edit">
+  <path d="M24.56,92.536L0,100l7.453-24.583C13.809,75.173,24.775,86.209,24.56,92.536z"></path>
+  <path d="M96.617,32.082l-0.475,0.471L67.383,3.766l0.472-0.472C80.782-9.646,109.871,18.811,96.617,32.082z"></path>
+  <path d="M61.64,9.516l28.758,28.785L44.095,84.646c-1.222,1.221-2.234,0.884-2.234,0.884l2.314-15.356l-14.454,0.074l0.072-14.468
+    l-15.342,2.312c0,0-0.34-1.011,0.883-2.234L61.64,9.516z"></path>
+</g>
+    <path id="icon-share" d="M75,46.226v15.096l25-25.161L75,11v12.581c-38.25,0.25-37.5,37.742-37.5,37.742S51.126,42.477,75,46.226z M55,13.516H7.5
+    c-6.15,0-7.5,1.761-7.5,7.549v60.387C0,87.718,1.499,89,7.5,89H80c6.025,0,7.5-1.133,7.5-7.548v-20.13L75,72.117v4.302H12.5V26.097
+    h30L55,13.516z"></path>
+    <g id="icon-text">
+  <polygon points="44.937,10 0,10 0,55.171 24.117,90 41.296,77.165 26.218,55.171 44.937,55.171"></polygon>
+  <polygon points="100,10 55.062,10 55.062,55.171 79.183,90 96.361,77.165 81.284,55.171 100,55.171"></polygon>
+</g>
+    <path id="icon-check" d="M34.357,91.176L0,56.604L16.687,39.81l18.157,18.264l48.954-49.25L100,25.125L34.357,91.176z"></path>
+    <g id="icon-user">
+  <circle cx="50" cy="25" r="25"></circle>
+  <path d="M75,62.5H25c-6.903,0-12.5,5.597-12.5,12.5v25H25h50h12.5V75C87.5,68.097,81.903,62.5,75,62.5z"></path>
+</g>
+    <path id="icon-file" d="M56.2,0H12.5v100h75V31.2L56.2,0z M25,87.5v-75h25v25h25v50H25z"></path>
+    <path id="icon-comment" d="M50,9.939c-27.615,0-50,14.757-50,32.959c0,11.435,8.836,21.498,22.248,27.408v19.754l19.084-14.581l-0.805-0.234
+  c3.068,0.387,6.229,0.607,9.473,0.607c27.613,0,50-14.754,50-32.959C100,24.696,77.613,9.939,50,9.939z"></path>
+  </defs>
+</svg>
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" style="display: none;">
+  <defs>
+    <g id="icon-editor-top">
+  <rect x="72.521" width="27.479" height="48.365"></rect>
+  <rect y="55.952" width="100" height="44.048"></rect>
+  <rect x="36.26" width="27.479" height="48.365"></rect>
+  <rect width="27.479" height="48.365"></rect>
+</g>
+    <g id="icon-editor-left">
+  <rect width="48.365" height="27.479"></rect>
+  <rect x="55.951" width="44.049" height="100"></rect>
+  <rect y="36.262" width="48.365" height="27.479"></rect>
+  <rect y="72.521" width="48.365" height="27.479"></rect>
+</g>
+    <g id="icon-editor-right">
+  <rect x="51.637" y="72.521" width="48.363" height="27.479"></rect>
+  <rect width="44.048" height="100"></rect>
+  <rect x="51.637" y="36.261" width="48.363" height="27.479"></rect>
+  <rect x="51.637" width="48.363" height="27.479"></rect>
+</g>
+  </defs>
+</svg>
+
+
+  
+
+<header class="main-header group" id="main-header">
+
+  <div class="header-left">
+
+    <h1 class="logo header-chunk">
+  <a href="http://codepen.io/">
+    CodePen
+  </a>
+</h1>
+
+    <button id="run" class="top-button button run">
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="#icon-run"></use>
+      </svg>
+      Run
+    </button>
+
+
+
+          <button id="fork" class="top-button fork-button button">
+            <svg viewBox="0 0 100 100">
+              <use xlink:href="#icon-fork"></use>
+            </svg>
+            Fork
+          </button>
+
+
+        <div id="sharing-button" class="top-button button sharing-button">
+
+  <svg viewBox="0 0 100 100">
+    <use xlink:href="#icon-share"></use>
+  </svg>
+  <span id="share-link">Share</span>
+
+    <section id="sharing-panel" class="sharing-panel">
+
+  <ul id="share-buttons" class="share-buttons">
+    <li><a target="_blank" class="button mini-button twitter" href="https://twitter.com/intent/tweet?text=Canvas%20Hover%20Effect&url=http://codepen.io/Sonick/pen/yxzqL&via=CodePen">Share on Twitter</a></li>
+
+    <li><a target="_blank" class="button mini-button facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://codepen.io/Sonick/pen/yxzqL">Share on Facebook</a></li>
+
+    <li><a target="_blank" class="button mini-button gplus" href="https://plus.google.com/share?url=http://codepen.io/Sonick/pen/yxzqL">Share on G+</a></li>
+  </ul>
+
+  
+
+  <div class="share-actions">
+
+  <a id="share-gist" class="button">
+    Save as GitHub Gist
+  </a>
+
+  <a id="share-zip" href="http://codepen.io/Sonick/share/zip/yxzqL/" class="button">
+    Export .zip
+  </a>
+
+    <a href="http://codepen.io/Sonick/pen/yxzqL#0" class="button embed-builder-button">
+      Embed
+    </a>
+
+</div>
+
+  <div class="share-static">
+
+  Direct links to code:
+
+  <a target="_blank" href="http://codepen.io/Sonick/pen/yxzqL.html">.html</a>
+
+
+  <a target="_blank" href="http://codepen.io/Sonick/pen/yxzqL.css">.css</a>
+
+
+  <a target="_blank" href="http://codepen.io/Sonick/pen/yxzqL.js">.js</a>
+
+
+</div>
+
+</section>
+
+</div>
+
+
+
+
+  </div>
+
+  <div class="header-right">
+
+      
+<div class="header-chunk">
+
+  <div class="view-switcher tabs">
+
+    <nav>
+
+
+
+          <a id="editor-link" href="http://codepen.io/Sonick/pen/yxzqL/" class="view-switcher-row editor-link active">
+            Editor
+            <div class="view-about">
+              Write code, write it like the wind.
+            </div>
+            <span class="view-url">
+              <span class="view-url-text">Get URL</span>
+              <input type="text" class="view-url-url" value="http://codepen.io/Sonick/pen/yxzqL" style="display: none;">
+            </span>
+            <span data-href="http://blog.codepen.io/documentation/views/editor-view/" class="learn-more inline-q">
+              ?
+            </span>
+          </a>
+
+
+
+          <a id="details-link" href="http://codepen.io/Sonick/details/yxzqL/" class="view-switcher-row details-link">
+            Details
+            <div class="view-about">
+              Information, metadata, and comments
+            </div>
+            <span class="view-url">
+              <span class="view-url-text">Get URL</span>
+              <input type="text" class="view-url-url" value="http://codepen.io/Sonick/details/yxzqL" style="display: none;">
+            </span>
+            <span data-href="http://blog.codepen.io/documentation/views/details-view/" class="learn-more inline-q">
+              ?
+            </span>
+          </a>
+
+
+
+          <a id="full-page-link" href="http://codepen.io/Sonick/full/yxzqL/" class="view-switcher-row full-page-link">
+            Full Page
+            <div class="view-about">
+              Shareable full screen preview
+            </div>
+            <span class="view-url">
+              <span class="view-url-text">Get URL</span>
+              <input type="text" class="view-url-url" value="http://codepen.io/Sonick/full/yxzqL" style="display: none;">
+            </span>
+            <span data-href="http://blog.codepen.io/documentation/views/full-page-view/" class="learn-more inline-q">
+              ?
+            </span>
+          </a>
+
+
+
+          <a id="pres-link" href="http://codepen.io/Sonick/pres/yxzqL" class="view-switcher-row upsell pres-link" data-url="/ajax/upgrades/pres">
+              <span class="badge badge-pro">PRO</span>
+            Presentation
+            <div class="view-about">
+              More screen room, change display options on the fly
+            </div>
+            <span class="view-url">
+              <span class="view-url-text">Get URL</span>
+              <input type="text" class="view-url-url" value="http://codepen.io/Sonick/pres/yxzqL" style="display: none;">
+            </span>
+            <span data-href="http://blog.codepen.io/documentation/pro-features/presentation-mode/" class="learn-more inline-q">
+              ?
+            </span>
+          </a>
+
+          <a href="http://app.crossbrowsertesting.com/livetests/run?url=http%3A%2F%2Fcodepen.io%2FSonick%2Ffull%2FyxzqL" class="view-switcher-row">
+            Open on CrossBrowserTesting →
+            <div class="view-about">
+              Live testing on different browsers/platforms
+            </div>
+          </a>
+
+
+
+      <span class="mobile-trigger">
+  <svg viewBox="0 0 100 100">
+    <use xlink:href="#icon-menu"></use>
+  </svg>
+</span>
+
+
+    </nav>
+
+  </div>
+
+</div>
+
+
+
+    <div class="user-stuff header-chunk">
+
+
+  <a href="https://codepen.io/login" class="button top-button login-button" id="login-button">Log In</a>
+
+  <a href="http://codepen.io/signup/" class="button top-button signup-button">Sign Up</a>
+
+
+</div>
+
+
+  </div>
+
+</header>
+
+
+
+<div class="page-wrap twilight">
+
+  <div class="boxes">
+
+    <div class="top-boxes editor-parent">
+
+      <div id="box-html" class="box box-html none" data-type="html" style="flex: 0 1 487px;">
+
+        <div class="powers">
+
+          <div class="editor-actions-left">
+            <button id="settings-pane-html" class="settings-nub button mini-button" data-type="html" title="Open Settings">
+              <svg viewBox="0 0 100 100">
+                <use xlink:href="#icon-gear"></use>
+              </svg>
+            </button>
+
+            <h2>HTML</h2>
+          </div>
+
+          <div class="editor-actions-right">
+
+  <button id="html-tidy-code-button" data-type="html" class="button mini-button tidy-code-button">
+    Tidy
+  </button>
+
+  <button data-type="html" class="button mini-button view-compiled-button" title="Toggle Compiled View" id="html-view-compiled">
+    View Compiled
+  </button>
+
+  <button class="button mini-button close-editor-button" data-type="html" title="Click to close. Double-click to expand.">
+    <svg viewBox="0 0 100 100">
+      <use xlink:href="#icon-x"></use>
+    </svg>
+  </button>
+
+</div>
+
+
+        </div>
+
+        <div class="code-wrap">
+          <div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-simplescroll" style="height: 318px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 40px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;" tabindex="0"></textarea></div><div class="CodeMirror-simplescroll-horizontal" not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-simplescroll-vertical" not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-scrollbar-filler" not-content="true"></div><div class="CodeMirror-gutter-filler" not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 38px; margin-bottom: -17px; border-right-width: 13px; min-height: 30px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>1</div></div></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 2px; top: 0px; height: 21.5999984741211px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">1</div><div class="CodeMirror-gutter-elt" style="left: 28px; width: 10px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class="" style="text-indent: 0px; padding-left: 2px;"><span style="padding-right: 0.1px;"><span class="cm-tag cm-bracket">&lt;</span><span class="cm-tag">canvas</span> <span class="cm-attribute">id</span>=<span class="cm-string">"canvas"</span><span class="cm-tag cm-bracket">&gt;&lt;/</span><span class="cm-tag">canvas</span><span class="cm-tag cm-bracket">&gt;</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; top: 30px;"></div><div class="CodeMirror-gutters" style="height: 331px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 28px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+          <div class="error-bar" id="error-bar-html" style="display: none;">
+            <span class="error-icon" data-type="html">
+              !
+            </span>
+          </div>
+        </div>
+
+        <div class="settings" id="settings-html">
+          <form class="settings-row settings-row-1 preprocessor-choice group">
+
+  <div class="full-width">
+    <input type="radio" class="hidden" id="html-none" checked="" name="html-preprocessor" value="none">
+    <label class="button" for="html-none">None</label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="haml" name="html-preprocessor" value="haml">
+    <label class="button" for="haml">Haml <a class="inline-q" target="_blank" href="http://haml.info/">?</a></label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="markdown" name="html-preprocessor" value="markdown">
+    <label class="button" for="markdown">Markdown <a class="inline-q" target="_blank" href="http://daringfireball.net/projects/markdown/">?</a></label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="slim" name="html-preprocessor" value="slim">
+    <label class="button" for="slim">Slim <a class="inline-q" target="_blank" href="http://slim-lang.com/">?</a></label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="jade" name="html-preprocessor" value="jade">
+    <label class="button" for="jade">Jade <a class="inline-q" target="_blank" href="http://jade-lang.com/">?</a></label>
+  </div>
+
+</form>
+
+<form class="settings-row settings-row-2 prevent-form-submit">
+
+  <label for="html-classes" class="small">Add Class(es) to &lt;html&gt;</label>
+  <input type="text" id="html-classes" name="html-classes" class="fullwidth" placeholder="e.g. single post post-1234">
+
+  <input style="position: fixed; top: 500px; right: 500px;" id="tcolor" type="hidden">
+
+</form>
+
+<form class="settings-row settings-row-3">
+  <label for="head-content" class="small">Stuff for &lt;head&gt;</label>
+  <textarea id="head-content" name="head-content" class="fullwidth" placeholder="e.g. &lt;meta&gt;, &lt;link&gt;, &lt;script&gt;"></textarea>
+  <p id="meta-tag-insert">↑ Insert the most common viewport meta tag</p>
+</form>
+
+
+        </div>
+
+      </div>
+
+      <div class="editor-resizer ui-draggable ui-draggable-handle" id="editor-resizer-html" style="position: relative;"></div>
+
+      <div id="box-css" class="box box-css none neither" data-type="css">
+
+        <div class="powers">
+
+          <div class="editor-actions-left">
+            <button id="settings-pane-css" class="settings-nub button mini-button" data-type="css">
+              <svg viewBox="0 0 100 100">
+                <use xlink:href="#icon-gear"></use>
+              </svg>
+            </button>
+
+            <h2>CSS</h2>
+          </div>
+
+          <div class="editor-actions-right">
+
+  <button id="css-tidy-code-button" data-type="css" class="button mini-button tidy-code-button">
+    Tidy
+  </button>
+
+  <button data-type="css" class="button mini-button view-compiled-button" title="Toggle Compiled View" id="css-view-compiled">
+    View Compiled
+  </button>
+
+  <button class="button mini-button close-editor-button" data-type="css" title="Click to close. Double-click to expand.">
+    <svg viewBox="0 0 100 100">
+      <use xlink:href="#icon-x"></use>
+    </svg>
+  </button>
+
+</div>
+
+
+        </div>
+
+        <div class="code-wrap">
+          <div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-simplescroll" style="height: 318px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 4px; left: 42px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-simplescroll-horizontal" not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-simplescroll-vertical" not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-scrollbar-filler" not-content="true"></div><div class="CodeMirror-gutter-filler" not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 38px; margin-bottom: -17px; border-right-width: 13px; min-height: 202px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 4px; top: 0px; height: 21.5999984741211px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">1</div><div class="CodeMirror-gutter-elt" style="left: 28px; width: 10px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tag">body</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">2</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-property">margin</span>: <span class="cm-number">0</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">3</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-property">padding</span>: <span class="cm-number">0</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">4</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-property">overflow</span>: <span class="cm-atom">hidden</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">5</div></div><pre class=""><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">6</div></div><pre class=""><span style="padding-right: 0.1px;"><span>​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">7</div><div class="CodeMirror-gutter-elt" style="left: 28px; width: 10px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-builtin">#canvas</span> {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">8</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-property">background</span>: <span class="cm-keyword">black</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -38px; width: 38px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 20px;">9</div></div><pre class=""><span style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; top: 202px;"></div><div class="CodeMirror-gutters" style="height: 331px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 28px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+          <div class="error-bar" id="error-bar-css" style="display: none;">
+            <span class="error-icon" data-type="css">
+              !
+            </span>
+          </div>
+        </div>
+
+        <div class="settings" id="settings-css">
+          <form class="settings-row settings-row-1 preprocessor-choice group">
+
+  <div class="full-width">
+    <input type="radio" class="hidden" id="css-none" checked="" name="css-preprocessor" value="none">
+    <label class="button" for="css-none">None</label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="sass" name="css-preprocessor" value="sass">
+    <label class="button" for="sass">
+      Sass <small>(.sass)</small>
+      <a class="inline-q" target="_blank" href="http://sass-lang.com/">?</a>
+      <br>
+      <select id="sass-options" class="css-pre-processor-libs" data-css-pre-processor="sass">
+        <option value="">No Add-ons</option>
+        <option value="compass">with Compass</option>
+        <option value="bourbon">with Bourbon</option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="scss" name="css-preprocessor" value="scss">
+    <label class="button" for="scss">
+      Sass <small>(.scss)</small>
+      <a class="inline-q" target="_blank" href="http://sass-lang.com/">?</a>
+      <br>
+      <select id="scss-options" class="css-pre-processor-libs" data-css-pre-processor="scss">
+        <option value="">No Add-ons</option>
+        <option value="compass">with Compass</option>
+        <option value="bourbon">with Bourbon</option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="less" name="css-preprocessor" value="less">
+    <label class="button" for="less">
+      LESS
+      <a class="inline-q" target="_blank" href="http://lesscss.org/">?</a>
+      <br>
+      <select id="less-options" class="css-pre-processor-libs" data-css-pre-processor="less">
+        <option value="">No Add-ons</option>
+        <option value="lesshat">with LESS Hat</option>
+      </select>
+    </label>
+  </div>
+
+  <div>
+    <input type="radio" class="hidden" id="stylus" name="css-preprocessor" value="stylus">
+    <label class="button" for="stylus">
+      Stylus
+      <a class="inline-q" target="_blank" href="http://learnboost.github.io/stylus/">?</a>
+      <br>
+      <select id="stylus-options" class="css-pre-processor-libs" data-css-pre-processor="stylus">
+        <option value="">No Add-ons</option>
+        <option value="nib">with Nib</option>
+      </select>
+    </label>
+  </div>
+
+</form>
+
+<form id="startercss-options-form" class="settings-row settings-row-2 prevent-form-submit">
+  <input type="radio" id="startercss-normalize" name="startercss" checked="" value="normalize">
+  <label for="startercss-normalize" class="small-inline">Normalize</label>
+  <a class="inline-q" target="_blank" href="http://necolas.github.com/normalize.css/">?</a>
+
+   
+
+  <input type="radio" id="startercss-reset" name="startercss" value="reset">
+  <label for="startercss-reset" class="small-inline">Reset</label>
+  <a class="inline-q" target="_blank" href="http://meyerweb.com/eric/tools/css/reset/">?</a>
+
+   
+
+  <input type="radio" id="startercss-neither" name="startercss" value="neither">
+  <label for="startercss-neither" class="small-inline">Neither</label>
+</form>
+
+<form id="prefix-options-form" class="settings-row settings-row-3">
+  <input type="radio" id="prefix-prefixfree" name="prefix" value="prefixfree">
+  <label for="prefix-prefixfree" class="small-inline">-prefix-free</label>
+  <a class="inline-q" target="_blank" href="http://leaverou.github.com/prefixfree/">?</a>
+
+   
+
+  <input type="radio" id="prefix-autoprefixer" name="prefix" value="autoprefixer">
+  <label for="prefix-autoprefixer" class="small-inline">Autoprefixer</label>
+  <a class="inline-q" target="_blank" href="https://github.com/ai/autoprefixer">?</a>
+
+   
+
+  <input type="radio" id="prefix-neither" name="prefix" value="neither">
+  <label for="prefix-neither" class="small-inline">Neither</label>
+</form>
+
+<form id="external-css-resources" class="settings-row settings-row-4 prevent-form-submit">
+  <label class="small" for="external-css">
+    External CSS File or Another Pen&nbsp;
+    <a target="_blank" class="inline-q" href="http://blog.codepen.io/documentation/editor/adding-external-resources/">?</a></label>
+
+  <div class="external-resource-wrapper">
+    <input class="fullwidth css-resource external-resource" type="url" id="external-css" name="external-css" placeholder="https://yourwebsite.com/style.css">
+    <small class="error">Must be a valid URL.</small>
+  </div>
+
+  <span id="add-css-resource" class="add-resource" data-type="css">
+    <a data-type="css">+ add another resource</a>
+  </span>
+
+</form>
+
+
+<form class="settings-row settings-row-5" id="css-settings-row-5">
+  <button class="button mini-button" id="analyze-css">Analyze CSS
+  </button>
+  <small>via <a target="_blank" href="http://csslint.net/">CSS Lint</a></small>
+</form>
+        </div>
+
+      </div>
+
+      <div class="editor-resizer ui-draggable ui-draggable-handle" id="editor-resizer-css" style="position: relative;"></div>
+
+      <div id="box-js" class="box box-js none" data-type="js">
+
+        <div class="powers">
+
+          <div class="editor-actions-left">
+            <button id="settings-pane-js" class="settings-nub button mini-button" data-type="js">
+              <svg viewBox="0 0 100 100">
+                <use xlink:href="#icon-gear"></use>
+              </svg>
+            </button>
+
+            <h2>JS</h2>
+          </div>
+
+          <div class="editor-actions-right">
+
+  <button id="js-tidy-code-button" data-type="js" class="button mini-button tidy-code-button">
+    Tidy
+  </button>
+
+  <button data-type="js" class="button mini-button view-compiled-button" title="Toggle Compiled View" id="js-view-compiled">
+    View Compiled
+  </button>
+
+  <button class="button mini-button close-editor-button" data-type="js" title="Click to close. Double-click to expand.">
+    <svg viewBox="0 0 100 100">
+      <use xlink:href="#icon-x"></use>
+    </svg>
+  </button>
+
+</div>
+
+
+        </div>
+
+        <div class="code-wrap">
+          <div class="CodeMirror cm-s-default CodeMirror-wrap CodeMirror-simplescroll" style="height: 318px;"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 214.600036621094px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-simplescroll-horizontal" not-content="true" style="display: none;"><div></div></div><div class="CodeMirror-simplescroll-vertical" not-content="true" style="display: block; bottom: 0px;"><div style="height: 29.7171089779785px; top: 287.29531338227px;"></div></div><div class="CodeMirror-scrollbar-filler" not-content="true"></div><div class="CodeMirror-gutter-filler" not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 41px; margin-bottom: -17px; border-right-width: 13px; min-height: 3529px; padding-right: 9px; padding-bottom: 0px;"><div style="position: relative; top: 2959.19991455078px;"><div class="CodeMirror-lines"><div style="position: relative; outline: none;"><div class="CodeMirror-measure"><div class="CodeMirror-linenumber CodeMirror-gutter-elt"><div>157</div></div></div><div class="CodeMirror-measure"><pre><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-keyword">function</span>( <span class="cm-def">callback</span> ){</span></pre></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors" style=""><div class="CodeMirror-cursor" style="left: 173.599975585938px; top: -2829.59991455078px; height: 21.5999984741211px;">&nbsp;</div></div><div class="CodeMirror-code"><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">132</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-keyword">else</span> </span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">133</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-variable-2">p</span>.<span class="cm-property">vx</span> <span class="cm-operator">+=</span> <span class="cm-number">0.1</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">134</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">135</div></div><pre class=""><span class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">136</div><div class="CodeMirror-gutter-elt" style="left: 31px; width: 10px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-keyword">if</span>(<span class="cm-variable-2">p</span>.<span class="cm-property">x</span> <span class="cm-operator">+</span> <span class="cm-variable-2">p</span>.<span class="cm-property">w</span> <span class="cm-operator">&gt;</span> <span class="cm-variable">W</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">137</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-variable-2">p</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-variable">W</span> <span class="cm-operator">-</span> <span class="cm-variable-2">p</span>.<span class="cm-property">w</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">138</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-variable-2">p</span>.<span class="cm-property">vx</span> <span class="cm-operator">*=</span> <span class="cm-operator">-</span><span class="cm-variable">bounceFactor</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">139</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">140</div></div><pre class=""><span class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">141</div><div class="CodeMirror-gutter-elt" style="left: 31px; width: 10px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-keyword">if</span>(<span class="cm-variable-2">p</span>.<span class="cm-property">x</span> <span class="cm-operator">&lt;</span> <span class="cm-number">0</span>) {</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">142</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-variable-2">p</span>.<span class="cm-property">x</span> <span class="cm-operator">=</span> <span class="cm-number">0</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">143</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-variable-2">p</span>.<span class="cm-property">vx</span> <span class="cm-operator">*=</span> <span class="cm-operator">-</span><span class="cm-number">0.5</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">144</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">145</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-tab">  </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">146</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">147</div></div><pre class=""><span class="cm-tab-wrap-hack" style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">148</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-variable">ctx</span>.<span class="cm-property">globalCompositeOperation</span> <span class="cm-operator">=</span> <span class="cm-string">"lighter"</span>;</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">149</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-tab">  </span><span class="cm-variable-2">p</span>.<span class="cm-property">draw</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">150</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span>}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">151</div></div><pre class=""><span style="padding-right: 0.1px;">}</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">152</div></div><pre class=""><span style="padding-right: 0.1px;"><span>​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">153</div></div><pre class=""><span style="padding-right: 0.1px;"><span>​</span></span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">154</div><div class="CodeMirror-gutter-elt" style="left: 31px; width: 10px;"><div class="CodeMirror-foldgutter-open CodeMirror-guttermarker-subtle"></div></div></div><pre class=""><span style="padding-right: 0.1px;">(<span class="cm-keyword">function</span> <span class="cm-variable">animloop</span>(){</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">155</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-variable">requestAnimFrame</span>(<span class="cm-variable">animloop</span>);</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">156</div></div><pre class=""><span style="padding-right: 0.1px;"><span class="cm-tab">  </span><span class="cm-variable">update</span>();</span></pre></div><div style="position: relative;"><div class="CodeMirror-gutter-wrapper" style="left: -41.0000610351563px; width: 41px;"><div class="CodeMirror-linenumber CodeMirror-gutter-elt" style="left: 0px; width: 23px;">157</div></div><pre class=""><span style="padding-right: 0.1px;">})();</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 13px; width: 1px; top: 3529px;"></div><div class="CodeMirror-gutters" style="height: 3542px;"><div class="CodeMirror-gutter CodeMirror-linenumbers" style="width: 31px;"></div><div class="CodeMirror-gutter CodeMirror-foldgutter"></div></div></div></div>
+          <div class="error-bar" id="error-bar-js" style="display: none;">
+            <span class="error-icon" data-type="js">
+              !
+            </span>
+          </div>
+        </div>
+
+        <div class="settings" id="settings-js">
+          <form class="settings-row settings-row-1 preprocessor-choice group">
+  <div class="full-width">
+    <input type="radio" class="hidden" id="js-none" checked="" name="js-preprocessor" value="none">
+    <label class="button" for="js-none">None</label>
+  </div>
+  <div>
+    <input type="radio" class="hidden" id="coffeescript" name="js-preprocessor" value="coffeescript">
+    <label class="button" for="coffeescript">CoffeeScript <a class="inline-q" target="_blank" href="http://coffeescript.org/">?</a></label>
+  </div>
+  <div>
+    <input type="radio" class="hidden" id="livescript" name="js-preprocessor" value="livescript">
+    <label class="button" for="livescript">LiveScript <a class="inline-q" target="_blank" href="http://livescript.net/">?</a></label>
+  </div>
+  <div>
+    <input type="radio" class="hidden" id="traceur" name="js-preprocessor" value="traceur">
+    <label class="button" for="traceur">Traceur <a class="inline-q" target="_blank" href="https://github.com/google/traceur-compiler">?</a></label>
+  </div>
+</form>
+
+<form class="settings-row settings-row-2">
+  <label class="small" for="js-select">Latest Version of...</label>
+  <select data-placeholder="JavaScript Library" id="js-select" class="js-library-select">
+    <option value="">No Library</option>
+    <option value="jquery">jQuery</option>
+    <option value="jquery_and_jqueryui">jQuery &amp; jQuery UI (Base Theme)</option>
+    <option value="angular">Angular</option>
+    <option value="zepto">Zepto</option>
+    <option value="mootools">MooTools</option>
+    <option value="prototype">Prototype</option>
+    <option value="yui">YUI</option>
+    <option value="extjs">Ext JS</option>
+    <option value="dojo">Dojo</option>
+  </select>
+</form>
+
+<form id="external-js-resources" class="settings-row external-js-resources settings-row-3 prevent-form-submit">
+  <label class="small" for="external-js">
+    External JS File or Another Pen&nbsp;
+    <a target="_blank" class="inline-q" href="http://blog.codepen.io/documentation/editor/adding-external-resources/">?</a>
+    <span><a target="_blank" href="http://cdnjs.com/">cdnjs.com →</a>
+  </span></label>
+
+  <div class="external-resource-wrapper">
+    <input class="js-resource fullwidth external-resource" type="url" id="external-js" name="external-js" placeholder="https://yourwebsite.com/script.js">
+    <small class="error">Must be a valid URL.</small>
+  </div>
+
+  <span class="add-resource" id="add-js-resource" data-type="js">
+    <a data-type="js">+ add another resource</a>
+  </span>
+
+</form>
+
+<form class="settings-row settings-row-4 group">
+  <div style="float: left;">
+    <input type="checkbox" id="modernizr" name="modernizr">
+    <label for="modernizr" class="small-inline">Modernizr</label>
+  </div>
+</form>
+
+<form class="settings-row settings-row-5" id="js-settings-row-5">
+  <button class="button mini-button" id="analyze-js">Analyze JS
+  </button>
+  <small>via <a target="_blank" href="http://www.jshint.com/">JS Hint</a></small>
+</form>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div id="resizer" class="resizer ui-draggable ui-draggable-handle"><span></span><div id="width-readout" class="width-readout">999px</div></div>
+
+
+    <div id="result_div" class="result" style="height: 338px;"><iframe id="result481e5ecfb2200afe0e9f58845e1c3e011430946158609" src="./Canvas Hover Effect_files/index.html" name="CodePen" allowfullscreen="true" sandbox="allow-scripts allow-pointer-lock allow-same-origin allow-popups allow-forms" allowtransparency="true" class="result-iframe" style="height: 100%; width: 1473px;"></iframe>
+      
+
+
+        <section id="drawer" class="drawer">
+
+        </section>
+
+      <div id="loading-text" class="loading-text">
+        Loading
+        <span>
+          ..................
+        </span>
+      </div>
+
+      <div id="editor-drag-cover" class="drag-cover"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+  <footer class="site-footer editor-footer">
+
+  <div class="footer-left">
+
+
+        CodePen PRO is <a href="http://codepen.io/pro/">pretty sweet</a>. Just saying.
+
+
+
+      <a href="http://codepen.io/Sonick/pen/yxzqL#0" class="button mini-button embed-builder-button">
+        Embed
+      </a>
+
+      <a href="http://codepen.io/Sonick/pen/yxzqL#0" class="button mini-button" id="view-details-button">
+        <svg viewBox="0 0 100 100">
+          <use xlink:href="#icon-comment"></use>
+        </svg>
+        Details
+      </a>
+
+
+    <a href="http://codepen.io/Sonick/pen/yxzqL#0" class="keyboard-commands-button button mini-button">⌘</a>
+
+  </div>
+
+  <div class="footer-right">
+
+        A Pen by <a href="http://codepen.io/Sonick/">Nick Mkrtchyan</a>
+
+
+    &nbsp;
+
+
+
+    <a href="http://codepen.io/Sonick/pen/yxzqL#0" class="button mini-button" id="pen-settings-toggle">
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="#icon-gear"></use>
+      </svg>
+      Pen Settings
+    </a>
+    <section class="settings pen-settings-panel" id="pen-settings-panel" style="display: none;">
+
+  <h2 class="pen-settings-title">Pen Settings</h2>
+
+  <form class="settings-row settings-row-1 prevent-form-submit">
+
+    <div>
+      <input type="checkbox" id="auto-save" name="auto-save" checked="">
+      <label for="auto-save">Autosave</label>
+      <p class="hint">If active, Pens will autosave every 30 seconds after being saved once.</p>
+    </div>
+
+  </form>
+
+  <form class="settings-row settings-row-2 prevent-form-submit">
+
+    <div>
+      <input type="checkbox" id="auto-run" name="auto-run" checked="">
+      <label for="auto-run">Auto Update Preview</label>
+      <p class="hint">If active, the preview will update automatically when you change code.</p>
+    </div>
+
+  </form>
+
+  <form id="editor-settings-form" class="settings-row settings-row-3 prevent-form-submit">
+
+    <h5>Code Indentation</h5>
+
+    <div>
+      <input type="radio" id="indent-with-spaces" name="indent-with" value="spaces" checked="">
+      <label for="indent-with-spaces">Spaces</label>
+
+      &nbsp;
+
+
+        <input type="radio" id="indent-with-tabs" name="indent-with" value="tabs">
+        <label for="indent-with-tabs">Tabs</label>
+
+      &nbsp;&nbsp;&nbsp;
+
+      <input type="range" min="1" max="6" id="tab-size" name="tab-size" value="2" list="tab-width-options">
+      <datalist id="tab-width-options">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </datalist>
+      <label for="tab-size">Width of Indent</label>
+    </div>
+  </form>
+
+</section>
+
+
+
+    <div class="multi-button mini-multi-button">
+  <button class="button mini-button editor-toggle-button active" data-type="html" id="editor-toggle-button-html">
+    HTML
+  </button>
+  <button class="button mini-button editor-toggle-button active" data-type="css" id="editor-toggle-button-css">
+    CSS
+  </button>
+  <button class="button mini-button editor-toggle-button active" data-type="js" id="editor-toggle-button-js">
+    JS
+  </button>
+</div>
+
+
+    <a id="left-layout" href="http://codepen.io/Sonick/pen/yxzqL/left/" class=" footer-icon footer-icon-editor layout-change-icon">
+      <span class="screen-reader-text">Use Left Layout</span>
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="#icon-editor-left"></use>
+      </svg>
+    </a>
+
+    <a id="top-layout" href="http://codepen.io/Sonick/pen/yxzqL/top/" class="active footer-icon footer-icon-editor layout-change-icon">
+      <span class="screen-reader-text">Use Top Layout</span>
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="#icon-editor-top"></use>
+      </svg>
+    </a>
+
+    <a id="right-layout" href="http://codepen.io/Sonick/pen/yxzqL/right/" class=" footer-icon footer-icon-editor layout-change-icon">
+      <span class="screen-reader-text">Use Right Layout</span>
+      <svg viewBox="0 0 100 100">
+        <use xlink:href="#icon-editor-right"></use>
+      </svg>
+    </a>
+
+  </div>
+
+</footer>
+
+
+<div id="keycommands" class="modal-message modal-neutral">
+
+  <section class="editor-commands" style="padding-right: 10px;">
+
+    <h2>Editor Commands</h2>
+
+    <div class="key-group">
+      <kbr class="command">F</kbr>
+      Find
+    </div>
+    <div class="key-group">
+      <kbr class="command">⌥F</kbr>
+      Find &amp; Replace
+    </div>
+    <div class="key-group">
+      <kbr class="command">[</kbr>
+      Indent Code Right
+    </div>
+    <div class="key-group">
+      <kbr class="command">]</kbr>
+      Indent Code Left
+    </div>
+    <div class="key-group">
+      <kbr class="command">/</kbr>
+      Block Comment
+    </div>
+      <div class="key-group">
+        <kbr class="command-no-mod">⇧ Tab</kbr>
+        Tidy Up Code
+      </div>
+    <div class="key-group">
+      <kbr class="command">J</kbr>
+      Join This &amp; Next Line
+    </div>
+
+    <h2>Pen Actions</h2>
+
+    <div class="key-group">
+      <kbr class="command">P</kbr>
+      Create New Pen
+    </div>
+
+    <div class="key-group">
+      <kbr class="command">S</kbr>
+      Save
+    </div>
+
+    <div class="key-group">
+      <kbr class="command">I</kbr>
+      Info Panel (if owned)
+    </div>
+
+    <div class="key-group">
+      <kbr class="command">⇧5</kbr>
+      Re-Run Code
+    </div>
+
+    <p style="margin: 20px 0 0 0;">Also see: <a href="http://blog.codepen.io/documentation/features/tab-triggers/" target="_blank">Tab Triggers</a></p>
+
+  </section>
+
+
+  <section class="editor-commands">
+
+    <h2>HTML Specific</h2>
+
+    <div class="key-group">
+      <kbr class="command">D</kbr>
+      Select Outward Matching Pair
+    </div>
+    <div class="key-group">
+      <kbr class="command">⇧A</kbr>
+      Wrap With...
+    </div>
+    <div class="key-group">
+      <kbr class="command">Alt .</kbr>
+      Close Closest Open Tag
+    </div>
+
+
+    <h2>CSS Specific</h2>
+
+    <div class="key-group">
+      <kbr class="command">⇧Y</kbr>
+      Evaluate Simple Math
+    </div>
+
+    <div class="key-group">
+      <kbr class="command-no-mod">⌥ ↑</kbr>
+      Increment Number 0.1
+    </div>
+
+    <div class="key-group">
+      <kbr class="command-no-mod">⌥ ↓</kbr>
+      Decrement Number 0.1
+    </div>
+
+    <h2>Misc</h2>
+
+    <div class="key-group">
+      <kbr class="command">⇧8</kbr>
+      Clear All Analyze Errors
+    </div>
+
+    <div class="key-group">
+      <kbr class="command">⇧9</kbr>
+      Open This Dialog
+    </div>
+
+    <div class="key-group">
+      <kbr class="command no-mod">ESC</kbr>
+      Close Dialogs / Collapse Editors
+    </div>
+
+  </section>
+
+</div>
+
+  
+
+
+  <div id="overlay" class="overlay"></div>
+
+  <noscript>
+  &lt;input type="checkbox" class="modal-closing-trick" id="modal-closing-trick"&gt;
+  &lt;div class="noscript-overlay" style="display: block;"&gt;&lt;/div&gt;
+  &lt;div class="modal-message group modal-warning"&gt;
+    &lt;div class="modal-title"&gt;CodePen doesn't work very well without JavaScript.&lt;/div&gt;
+    &lt;p&gt;We're all for progressive enhancement, but CodePen is a bit unique in that it's all about writing and showing front end code, including JavaScript. It's required to use most of the features of CodePen.&lt;/p&gt;
+
+    &lt;p&gt;Need to know how to enable it? &lt;a href="http://enable-javascript.com/" target="_blank"&gt;Go here.&lt;/a&gt;&lt;/p&gt;
+
+    &lt;label class="button" for="modal-closing-trick"&gt;Close this, use anyway.&lt;/label&gt;
+  &lt;/div&gt;
+</noscript>
+
+  <input type="hidden" id="init-data" value="{&quot;__mobile&quot;:false,&quot;__cookieUsed&quot;:false,&quot;__turnOffJS&quot;:false,&quot;__sandboxVal&quot;:&quot;allow-scripts allow-pointer-lock allow-same-origin allow-popups allow-forms&quot;,&quot;__user&quot;:&quot;{\&quot;current_team_id\&quot;:0,\&quot;id\&quot;:1,\&quot;name\&quot;:\&quot;Captain Anonymous\&quot;,\&quot;username\&quot;:\&quot;anon\&quot;,\&quot;paid\&quot;:false,\&quot;plan_type\&quot;:\&quot;free\&quot;}&quot;,&quot;__editorSettings&quot;:&quot;{\&quot;theme\&quot;:\&quot;twilight\&quot;,\&quot;html_pre_processor\&quot;:\&quot;none\&quot;,\&quot;css_pre_processor\&quot;:\&quot;none\&quot;,\&quot;css_pre_processor_lib\&quot;:\&quot;\&quot;,\&quot;css_starter\&quot;:\&quot;neither\&quot;,\&quot;css_prefix\&quot;:\&quot;neither\&quot;,\&quot;js_pre_processor\&quot;:\&quot;none\&quot;,\&quot;js_library\&quot;:\&quot;none\&quot;,\&quot;js_modernizr\&quot;:false,\&quot;font_type\&quot;:\&quot;monaco\&quot;,\&quot;font_size\&quot;:\&quot;14\&quot;,\&quot;key_bindings\&quot;:\&quot;normal\&quot;,\&quot;indent_with\&quot;:\&quot;spaces\&quot;,\&quot;tab_size\&quot;:2,\&quot;auto_run\&quot;:true,\&quot;line_numbers\&quot;:true,\&quot;line_wrapping\&quot;:true,\&quot;code_folding\&quot;:true,\&quot;match_brackets\&quot;:true}&quot;,&quot;__phkPrefix&quot;:&quot;481e5ecfb2200afe0e9f58845e1c3e01&quot;,&quot;__pageType&quot;:&quot;pen&quot;,&quot;__layoutType&quot;:null,&quot;__rtData&quot;:&quot;{\&quot;roomType\&quot;:\&quot;live\&quot;,\&quot;rtClientID\&quot;:\&quot;\&quot;,\&quot;clientRoomID\&quot;:\&quot;:live:yxzqL:\&quot;,\&quot;clientRoleID\&quot;:\&quot;:live:yxzqL::role\&quot;,\&quot;roomID\&quot;:\&quot;live:yxzqL\&quot;,\&quot;role\&quot;:\&quot;\&quot;,\&quot;usesRoomData\&quot;:false,\&quot;maxMembers\&quot;:0,\&quot;pen\&quot;:{\&quot;slugHash\&quot;:\&quot;yxzqL\&quot;},\&quot;user\&quot;:{\&quot;id\&quot;:1,\&quot;name\&quot;:\&quot;Captain Anonymous\&quot;,\&quot;username\&quot;:\&quot;anon\&quot;,\&quot;paid\&quot;:false,\&quot;planType\&quot;:\&quot;free\&quot;,\&quot;role\&quot;:\&quot;\&quot;}}&quot;,&quot;__tags&quot;:&quot;[]&quot;,&quot;__pen&quot;:&quot;{\&quot;auto_run\&quot;:true,\&quot;checksum\&quot;:4194607056,\&quot;created_at\&quot;:\&quot;2013-11-27T10:52:15Z\&quot;,\&quot;css\&quot;:\&quot;body {\\n\\tmargin: 0;\\n\\tpadding: 0;\\n\\toverflow: hidden;\\n}\\n\\n#canvas {\\n\\tbackground: black;\\n}\&quot;,\&quot;css_external\&quot;:\&quot;\&quot;,\&quot;css_pre_processor\&quot;:\&quot;none\&quot;,\&quot;css_pre_processor_lib\&quot;:\&quot;\&quot;,\&quot;css_prefix\&quot;:\&quot;neither\&quot;,\&quot;css_prefix_free\&quot;:false,\&quot;css_starter\&quot;:\&quot;neither\&quot;,\&quot;description\&quot;:\&quot;\&quot;,\&quot;has_animation\&quot;:true,\&quot;head\&quot;:\&quot;\&quot;,\&quot;html\&quot;:\&quot;&lt;canvas id=\\\&quot;canvas\\\&quot;&gt;&lt;\\/canvas&gt;\&quot;,\&quot;html_classes\&quot;:\&quot;\&quot;,\&quot;html_pre_processor\&quot;:\&quot;none\&quot;,\&quot;id\&quot;:917921,\&quot;js\&quot;:\&quot;window.requestAnimFrame = (function(){\\n\\treturn  window.requestAnimationFrame       || \\n\\t\\twindow.webkitRequestAnimationFrame || \\n\\t\\twindow.mozRequestAnimationFrame    || \\n\\t\\twindow.oRequestAnimationFrame      || \\n\\t\\twindow.msRequestAnimationFrame     || \\n\\t\\tfunction( callback ){\\n\\t\\t\\twindow.setTimeout(callback, 1000 \\/ 60);\\n\\t\\t};\\n})();\\n\\nvar canvas = document.getElementById(\\\&quot;canvas\\\&quot;),\\n\\t\\tctx = canvas.getContext(\\\&quot;2d\\\&quot;),\\n\\t\\tkeyword = \\\&quot;Canvas Hover Effect\\\&quot;,\\n\\t\\timageData,\\n\\t\\tdensity =4,\\n\\t\\tmouse = {},\\n\\t\\thovered = false,\\n\\t\\tcolors = [\\\&quot;249,249,88\\\&quot;, \\\&quot;225,215,25\\\&quot;, \\\&quot;130,0,5\\\&quot;],\\n\\t\\tminDist = 20,\\n\\t\\tbounceFactor = 0.7;\\n\\nvar W = window.innerWidth,\\n\\t\\tH = window.innerHeight;\\n\\ncanvas.width = W;\\ncanvas.height = H;\\n\\ndocument.addEventListener(\\\&quot;mousemove\\\&quot;, function(e) {\\n\\tmouse.x = e.pageX;\\n\\tmouse.y = e.pageY;\\n}, false);\\n\\n\\/\\/ Particle Object\\nvar Particle = function() {\\n\\tthis.w = Math.random() * 10.5;\\n\\tthis.h = Math.random() * 10.5;\\n\\tthis.x = -W;\\n\\tthis.y = -H;\\n\\tthis.free = false;\\n\\t\\n\\tthis.vy = -5 + parseInt(Math.random() * 10) \\/ 2;\\n\\tthis.vx = -4 + parseInt(Math.random() * 8);\\n\\t\\n\\t\\/\\/ Color\\n\\tthis.a = Math.random();\\n\\tthis.color = colors[parseInt(Math.random()*colors.length)];\\n\\t\\n\\tthis.setPosition = function(x, y) {\\n\\t\\tthis.x = x;\\n\\t\\tthis.y = y;\\n\\t};\\n\\t\\n\\tthis.draw = function() {\\n\\t\\tctx.fillStyle = \\\&quot;rgba(\\\&quot;+this.color+\\\&quot;,\\\&quot;+this.a+\\\&quot;)\\\&quot;;\\n\\t\\tctx.fillRect(this.x, this.y,  this.w,  this.h);\\n\\t}\\n};\\n\\nvar particles = [];\\n\\n\\/\\/ Draw the text\\nfunction drawText() {\\n\\tctx.clearRect(0, 0, W, H);\\n\\tctx.fillStyle = \\\&quot;#000000\\\&quot;;\\n\\tctx.font = \\\&quot;100px &#39;Arial&#39;, sans-serif\\\&quot;;\\n\\tctx.textAlign = \\\&quot;center\\\&quot;;\\n\\tctx.fillText(keyword, W\\/2, H\\/2);\\n}\\n\\n\\/\\/ Clear the canvas\\nfunction clear() {\\n\\tctx.clearRect(0, 0, W, H);\\n}\\n\\n\\/\\/ Get pixel positions\\nfunction positionParticles() {\\n\\t\\/\\/ Get the data\\n\\timageData = ctx.getImageData(0, 0, W, W);\\n\\tdata = imageData.data;\\n\\t\\n\\t\\/\\/ Iterate each row and column\\n\\tfor (var i = 0; i &lt; imageData.height; i += density) {\\n\\t\\tfor (var j = 0; j &lt; imageData.width; j += density) {\\n\\t\\t\\t\\n\\t\\t\\t\\/\\/ Get the color of the pixel\\n\\t\\t\\tvar color = data[((j * ( imageData.width * 4)) + (i * 4)) - 1];\\n\\t\\t\\t\\n\\t\\t\\t\\/\\/ If the color is black, draw pixels\\n\\t\\t\\tif (color == 255) {\\n\\t\\t\\t\\tparticles.push(new Particle());\\n\\t\\t\\t\\tparticles[particles.length - 1].setPosition(i, j);\\n\\t\\t\\t}\\n\\t\\t}\\n\\t}\\n}\\n\\ndrawText();\\npositionParticles();\\n\\n\\n\\/\\/ Update\\nfunction update() {\\n\\tclear();\\n\\t\\n\\tfor(i = 0; i &lt; particles.length; i++) {\\n\\t\\tvar p = particles[i];\\n\\t\\t\\n\\t\\tif(mouse.x &gt; p.x &amp;&amp; mouse.x &lt; p.x + p.w &amp;&amp; mouse.y &gt; p.y &amp;&amp; mouse.y &lt; p.y + p.h) \\n\\t\\t\\thovered = true;\\n\\t\\t\\n\\t\\tif(hovered == true) {\\n\\t\\t\\t\\n\\t\\t\\tvar dist = Math.sqrt((p.x - mouse.x)*(p.x - mouse.x) + (p.y - mouse.y)*(p.y - mouse.y));\\n\\t\\t\\t\\n\\t\\t\\tif(dist &lt;= minDist)\\n\\t\\t\\t\\tp.free = true;\\n\\t\\t\\t\\n\\t\\t\\tif(p.free == true) {\\n\\t\\t\\t\\tp.y += p.vy;\\n\\t\\t\\t\\tp.vy += 0.15;\\n\\t\\t\\t\\tp.x += p.vx;\\n\\t\\t\\t\\t\\n\\t\\t\\t\\t\\/\\/ Collision Detection\\n\\t\\t\\t\\tif(p.y + p.h &gt; H) {\\n\\t\\t\\t\\t\\tp.y = H - p.h;\\n\\t\\t\\t\\t\\tp.vy *= -bounceFactor;\\n\\t\\t\\t\\t\\t\\n\\t\\t\\t\\t\\t\\/\\/ Friction applied when on the floor\\n\\t\\t\\t\\t\\tif(p.vx &gt; 0)\\n\\t\\t\\t\\t\\t\\tp.vx -= 0.1;\\n\\t\\t\\t\\t\\telse \\n\\t\\t\\t\\t\\t\\tp.vx += 0.1;\\n\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tif(p.x + p.w &gt; W) {\\n\\t\\t\\t\\t\\tp.x = W - p.w;\\n\\t\\t\\t\\t\\tp.vx *= -bounceFactor;\\n\\t\\t\\t\\t}\\n\\t\\t\\t\\t\\n\\t\\t\\t\\tif(p.x &lt; 0) {\\n\\t\\t\\t\\t\\tp.x = 0;\\n\\t\\t\\t\\t\\tp.vx *= -0.5;\\n\\t\\t\\t\\t}\\n\\t\\t\\t}\\n\\t\\t}\\n\\t\\t\\n\\t\\tctx.globalCompositeOperation = \\\&quot;lighter\\\&quot;;\\n\\t\\tp.draw();\\n\\t}\\n}\\n\\n\\n(function animloop(){\\n\\trequestAnimFrame(animloop);\\n\\tupdate();\\n})();\&quot;,\&quot;js_external\&quot;:\&quot;\&quot;,\&quot;js_library\&quot;:\&quot;none\&quot;,\&quot;js_modernizr\&quot;:false,\&quot;js_pre_processor\&quot;:\&quot;none\&quot;,\&quot;parent\&quot;:0,\&quot;screenshot_uuid\&quot;:\&quot;022c0d62-a768-4ab1-b2a5-5a7762161d99\&quot;,\&quot;session_hash\&quot;:\&quot;90ec1ba28fe12894cbc0e2c0e09b10b2\&quot;,\&quot;slug_hash\&quot;:\&quot;yxzqL\&quot;,\&quot;team_id\&quot;:0,\&quot;title\&quot;:\&quot;Canvas Hover Effect\&quot;,\&quot;updated_at\&quot;:\&quot;2013-11-27T10:52:15Z\&quot;,\&quot;user_id\&quot;:55781}&quot;,&quot;__lastUpdated&quot;:1385549535.0,&quot;__profiled&quot;:{&quot;id&quot;:55781,&quot;name&quot;:&quot;Nick Mkrtchyan&quot;,&quot;username&quot;:&quot;Sonick&quot;,&quot;type&quot;:&quot;user&quot;,&quot;is_team&quot;:false,&quot;base_url&quot;:&quot;/Sonick&quot;},&quot;__profileURLS&quot;:[&quot;showcase&quot;,&quot;tag&quot;,&quot;followers&quot;,&quot;following&quot;,&quot;popular&quot;,&quot;popular-list&quot;,&quot;popular-list-asc&quot;,&quot;public&quot;,&quot;public-list&quot;,&quot;public-list-asc&quot;,&quot;public-titles&quot;,&quot;public-titles-asc&quot;,&quot;private&quot;,&quot;private-list&quot;,&quot;private-list-asc&quot;,&quot;private-titles&quot;,&quot;private-titles-asc&quot;,&quot;forked&quot;,&quot;forked-list&quot;,&quot;forked-list-asc&quot;,&quot;forked-titles&quot;,&quot;forked-titles-asc&quot;,&quot;loved&quot;,&quot;gamma&quot;,&quot;beta&quot;,&quot;alpha&quot;,&quot;members&quot;]}">
+
+  <script src="./Canvas Hover Effect_files/everypage-fe0c9c37b55cdb65d2a9b60a3b6f1bb9.js" type="text/javascript"></script>
+
+  
+
+  <script src="./Canvas Hover Effect_files/libs.js" type="text/javascript"></script>
+
+  <script src="./Canvas Hover Effect_files/libs-327227f23f37f77d86058318d629ddbc.js" type="text/javascript"></script>
+
+    <script src="./Canvas Hover Effect_files/layout-top-ec76f17624cf12d2e900cafa2b602eda.js" type="text/javascript"></script>
+
+  <script src="./Canvas Hover Effect_files/index-3b6556d23dc9e6357d085cedc59ca3b8.js" type="text/javascript"></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+</body></html>

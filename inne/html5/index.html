@@ -1,0 +1,486 @@
+﻿<!document html>
+<html lang="pl">
+
+	<head>
+	  <meta charset="utf-8" />
+	  <title>Muja Tobelka</title>
+	  <script language="javascript" src="js/jquery.js" type="text/javascript"></script>
+	  <script language="javascript" src="js/jquery.hotkeys.js" type="text/javascript"></script>
+	  <script language="javascript" src="js/key_status.js" type="text/javascript"></script>
+	</head>
+	<body>
+	
+	<br><br><br>
+	
+	<canvas id="canvas" width="700" height="500"></canvas>
+	
+	<script type='text/javascript'>
+	
+	var width = 700;
+	var height = 500;
+	
+	/*var canvas = $("<canvas width='" + width + 
+    "' height='" + height + "'></canvas>");
+    var context = canvas.get(0).getContext("2d");
+    canvas.appendTo('body');*/
+	
+	var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+	
+	var gravity = .3;
+	var lastUpdate = Date.now();
+	var deltaTime = 1;
+	var gameSpeed = 1;
+	var slowmo = false;
+
+	var counter = 0;
+	var FPS = 60;
+	var oSnake;
+	var angle = 90;
+	var x = 0;
+	var y = 0;
+	var speed = 0;
+	
+	function snake(id)
+	{
+		id = id || {}; 
+		
+		x = 50 + Math.random() * width - 100;
+		y = 50 + Math.random() * height - 100;
+		
+		var tail = [];
+		var length = 60;
+		
+		id.born = function()
+		{
+			for(var i = 0; i < length; i++)
+			{
+				tail[i] = {};
+				tail[i].x = 0;
+				tail[i].y = 0;
+				tail[i].a = 0;
+			}
+			
+			for(var i = 1; i < length; i++)
+			{
+				tail[i].x = tail[i-1].x + lengthdir_x(10,tail[i-1].a+180);
+				tail[i].y = tail[i-1].y + lengthdir_y(10,tail[i-1].a+180);
+				tail[i].a = PointDirection(tail[i].x,tail[i].y,tail[i-1].x,tail[i-1].y);
+				
+			}
+			
+		}
+		
+		id.born();
+		
+		id.update = function()
+		{	
+			tail[0].x = x;
+			tail[0].y = y;
+			tail[0].a = angle;
+			var speedd = .425;
+			for(var i = 1; i < length; i++)
+			{
+			
+				/*tail[i].x = tail[i-1].x + lengthdir_x(10,tail[i-1].a+180);
+				tail[i].y = tail[i-1].y + lengthdir_y(10,tail[i-1].a+180);
+				tail[i].a = PointDirection(tail[i].x,tail[i].y,tail[i-1].x,tail[i-1].y);*/
+				
+				tail[i].x -= ( tail[i].x - tail[i-1].x + lengthdir_x(13,tail[i-1].a+0) ) * speedd;
+				tail[i].y -= ( tail[i].y - tail[i-1].y + lengthdir_y(13,tail[i-1].a+0) ) * speedd;
+				tail[i].a -= ( tail[i].a - PointDirection(tail[i].x,tail[i].y,tail[i-1].x,tail[i-1].y)+0 ) * speedd;
+				
+				/*tail[i].x += SmoothValue( tail[i].x, tail[i-1].x + lengthdir_x(10,tail[i-1].a+180), speedd );
+				tail[i].y += SmoothValue( tail[i].y - tail[i-1].y + lengthdir_y(10,tail[i-1].a+180), speedd  );
+				tail[i].a += SmoothValue( tail[i].a - PointDirection(tail[i].x,tail[i].y,tail[i-1].x, tail[i-1].a+180), speedd  );*/
+				
+			}
+			
+			if ( x < 0 ) x = 0; if ( x > 700 ) x = 700;
+			if ( y < 0 ) y = 0; if ( y > 500 ) y = 500;
+		}
+		
+		
+		id.draw = function()
+		{
+			/*context.beginPath();
+			context.strokeStyle = "#00FF00";
+			
+			for(i = 0; i < length; i++)
+			{
+				context.moveTo(tail[i].x, tail[i].y );
+				context.lineTo(tail[i].y, tail[i].y );
+			}
+			
+			context.strokeStyle = rgbToHex(100+Math.floor(Math.cos(counter)*85),100+Math.floor(Math.sin(counter*2.3)*100),85+Math.floor(Math.cos(counter*12.73)*75));
+			context.stroke();*/
+		
+			for(i = 1; i < length; i++)
+			{
+				context.beginPath();
+				context.arc(tail[i].x, tail[i].y, 8, 0, 2 * Math.PI, false);
+				
+				context.fillStyle = '#FF9966';
+				context.fill();
+				context.lineWidth = id.lineWidth;
+				context.strokeStyle = '#AA6633';
+				context.stroke();
+			}
+			
+			context.beginPath();
+			context.arc(tail[0].x, tail[0].y, 10, 0, 2 * Math.PI, false);
+			
+			context.fillStyle = '#DD4422';
+			context.fill();
+			context.lineWidth = id.lineWidth;
+			context.strokeStyle = '#AA3311';
+			context.stroke();
+		}
+		
+		return id;
+	}
+	
+	
+	flys = [];
+	function fly(id)
+	{
+		id = id || {}; 
+		id.radius = 4;  
+		id.lineWidth = 2;
+		
+		id.xspeed = 2 + Math.random() * 5;
+		id.yspeed = 2 + Math.random() * 5;
+		id.x = 50 + Math.random() * width - 100;
+		id.y = 50 + Math.random() * height - 100;
+		id.width = id.radius*2;
+		id.height = id.radius*2;
+		
+		id.offset = Math.random() * 40;
+		id.counter;
+		
+		
+		id.update = function()
+		{
+			id.counter = counter + id.offset;
+			id.x += t(id.xspeed + Math.sin(id.counter)*6 + Math.sin(id.counter*1.5+3.5)*4 + Math.cos(id.counter*1.5+3.5)*12);
+			id.y += t(id.yspeed + Math.cos(id.counter)*8 + Math.sin(id.counter*1.75+4.2)*4);
+			
+			if ( id.x > 700 - id.radius || id.x < id.radius ) { id.xspeed = -id.xspeed; id.x += t(id.xspeed); }
+			if ( id.y < id.radius || id.y > 500 - id.radius ) { id.yspeed = -id.yspeed; id.y += t(id.yspeed); }
+			
+			if ( id.x < id.radius ) id.x = id.radius; if ( id.x > width - id.radius ) id.x = width - id.radius;
+			if ( id.y < id.radius ) id.y = id.radius; if ( id.y > height - id.radius ) id.y = height - id.radius;
+		}
+		
+		
+		id.draw = function()
+		{
+			context.beginPath();
+			context.arc(id.x, id.y, id.radius, 0, 2 * Math.PI, false);
+			
+			context.fillStyle = rgbToHex(100+Math.floor(id.offset+Math.sin(id.counter)*100),100+Math.floor(id.offset+Math.cos(id.counter*2.3)*100),100+Math.floor(id.offset+Math.sin(id.counter*12.73)*100));
+			context.fill();
+			context.lineWidth = id.lineWidth;
+			//context.strokeStyle = rgbToHex(100+Math.floor(id.offset+Math.cos(id.counter)*85),100+Math.floor(id.offset+Math.sin(id.counter*2.3)*100),85+Math.floor(id.offset+Math.cos(id.counter*12.73)*75));
+			context.strokeStyle = '#888888';
+			context.stroke();
+		}
+		
+		return id;
+	}
+	
+	balls = [];
+	function ball(id)
+	{
+		id = id || {}; 
+		id.radius = 20;  
+		id.lineWidth = 3;
+		
+		id.xspeed = 2 + Math.random() * 12;
+		id.yspeed = 2 + Math.random() * 5;
+		id.x = 50 + Math.random() * width - 100;
+		id.y = 50 + Math.random() * height - 100;
+		id.width = id.radius*2;
+		id.height = id.radius*2;
+		
+		id.offset = Math.random() * 40;
+		id.counter;
+		id.cc = 0;
+		
+		
+		id.update = function()
+		{
+			id.counter = counter + id.offset;
+			//id.x += id.xspeed + Math.sin(id.counter)*6 + Math.sin(id.counter*1.5+3.5)*4 + Math.cos(id.counter*1.5+3.5)*12;
+			//id.y += id.yspeed + Math.cos(id.counter)*8 + Math.sin(id.counter*1.75+4.2)*4;
+			id.x += t(id.xspeed);
+			id.y += t(id.yspeed);
+			id.cc -= .1;
+	
+	
+			id.yspeed += t(gravity);
+			
+			if ( Math.random() < .01 ) { id.yspeed -= 3 + Math.random() * 7; id.xspeed *= 2; }
+			
+			if ( id.y > 500 - id.radius ) id.yspeed /= 2;
+			if ( id.x > 700 - id.radius || id.x < id.radius ) { id.xspeed = -id.xspeed; id.x += t(id.xspeed); id.xspeed /= 2; }
+			if ( id.y < id.radius || id.y > 500 - id.radius ) { id.yspeed = -id.yspeed; id.y += t(id.yspeed); }
+			
+			if ( id.x < id.radius ) id.x = id.radius; if ( id.x > width - id.radius ) id.x = width - id.radius;
+			if ( id.y < id.radius ) id.y = id.radius; if ( id.y > height - id.radius ) id.y = height - id.radius;
+		}
+		
+		
+		id.draw = function()
+		{
+			context.beginPath();
+			context.arc(id.x, id.y, id.radius, 0, 2 * Math.PI, false);
+			
+			context.fillStyle = '#DD0000';
+			context.fill();
+			context.lineWidth = id.lineWidth;
+			//context.strokeStyle = rgbToHex(100+Math.floor(id.offset+Math.cos(id.counter)*85),100+Math.floor(id.offset+Math.sin(id.counter*2.3)*100),85+Math.floor(id.offset+Math.cos(id.counter*12.73)*75));
+			context.strokeStyle = '#AA0000';
+			context.stroke();
+			/*
+			context.beginPath();
+			context.rect(id.x-id.width/2, id.y-id.height/2, id.width, id.height);
+			
+			context.fillStyle = '#00FF00';
+			context.fill();
+			context.lineWidth = id.lineWidth;
+			//context.strokeStyle = rgbToHex(100+Math.floor(id.offset+Math.cos(id.counter)*85),100+Math.floor(id.offset+Math.sin(id.counter*2.3)*100),85+Math.floor(id.offset+Math.cos(id.counter*12.73)*75));
+			context.strokeStyle = '#888888';
+			context.stroke();
+			context.closePath();*/
+			
+		}
+		
+		return id;
+	}
+
+	function componentToHex(c) 
+	{
+		var hex = c.toString(16);
+		return hex.length == 1 ? "0" + hex : hex;
+	}
+	
+    function rgbToHex(r, g, b) 
+	{ return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b); }
+	
+	function t(a)
+	{
+		return a * deltaTime * gameSpeed;
+	}
+	
+	function playSound(s)
+	{
+		var sound = new Audio(s);
+		sound.play();
+	}
+	
+	function lengthdir_x(len, dir)
+	{ return (Math.cos(dir * Math.PI / 180) * len); }
+		
+	function lengthdir_y(len, dir)
+	{ return (-Math.sin(dir * Math.PI / 180) * len); }	
+	
+	function PointDirection(x, y, newx, newy)
+	{ return ( (Math.atan2( x - newx, y - newy  ) * ( 180 / Math.PI ) ) + 450 ) % 360; }		
+	
+	function SmoothValue(Actual, New, Speed)
+	{ return ( (New - Actual) * Speed ); }
+	
+	setInterval(
+	function() 
+	{
+          update();
+          draw();
+    }, 1000/FPS);
+	
+	
+	
+	function update()
+	{
+		var now = Date.now();
+		var dt = now - lastUpdate;
+		lastUpdate = now;
+		deltaTime = dt/17;
+		
+		if ( counter == 0 ) oSnake = snake();
+		if ( counter < 3.5 ) { flys.push( fly() ); }
+		if ( counter < .3 ) { balls.push( ball() ); }
+		counter += t(.1);
+		
+		/*if(keydown.down) 
+		{
+			gameSpeed -= .01;
+        }
+			
+		if(keydown.up) 
+		{
+			gameSpeed += .01;
+        }
+		*/
+		
+		if(keydown.up) 
+		{
+			if ( speed < 6.5 ) speed += t(.4);
+			//accelerate
+        }
+			
+		if(keydown.down) 
+		{
+			speed -= t(.3);
+			//break
+        }
+		
+		if ( !keydown.up && !keydown.down ) speed -= ( speed - 0 ) * .2; 
+		
+		
+		if(keydown.left) 
+		{
+			angle += 5-speed/5;
+			//rotateL
+        }
+			
+		if(keydown.right) 
+		{
+			angle -= 5-speed/5;
+			//rotateR
+        }
+		
+		
+		
+		x += lengthdir_x(speed, angle);
+		y += lengthdir_y(speed, angle);
+
+		
+	
+			/*if(keyup.space)
+			{
+				slowmo = !slowmo;
+			}
+			*/
+			
+			//if ( slowmo ) gameSpeed += (.1 - gameSpeed) * 0.05; else gameSpeed += (1 - gameSpeed) * 0.05;
+			
+		oSnake.update();
+		
+		flys.forEach(function(fly) 
+		{
+            fly.update();
+        });
+		
+		balls.forEach(function(ball) 
+		{
+            ball.update();
+        });
+
+		handleCollisions();
+	}
+	
+    function collides(a, b) 
+	{
+		/*if ( b.x < a.x + a.width && b.x + b.width > a.x && 
+			 b.y + b.height > a.y && b.y < a.y + a.height ) 
+				return true;*/
+			//if ( b.x > a.x + a.width / 2 ) b.x = a.x + a.width; else b.x = a.x - b.width;
+			//if ( b.y < a.y + a.height / 2 ) b.y = a.y - b.height;
+					
+		if ( b.x < a.x + a.width && b.x + b.width > a.x )
+		{
+			//if ( b.x > a.x + a.width / 2 ) b.x = a.x + a.width; else b.x = a.x - b.width;
+			if ( b.y + b.height > a.y && b.y < a.y + a.height ) 
+			{
+				//if ( b.y < a.y + a.height / 2 ) b.y = a.y - b.height;
+				return true;
+			}
+		}
+					
+					
+    }
+        
+    function handleCollisions() 
+	{
+		balls.forEach(function(ball2)
+		{
+		
+			balls.forEach(function(ball) 
+			{
+				if ( ball != ball2 )
+				{	
+					if(collides(ball2, ball)) 
+					{
+						if (ball.cc < 0 )
+						{
+							var f = -1;
+							ball.cc = 1;
+							ball.xspeed *= f;
+							ball.yspeed *= f;
+							ball.x += t(ball.xspeed);
+							ball.y += t(ball.yspeed);
+							//playSound("./sounds/hit.wav");
+						}
+					}
+				}
+			});
+			
+		});
+    }
+	
+	function draw() 
+	{
+        context.clearRect(0, 0, 700, 500);
+        flys.forEach(function(fly) 
+		{
+            fly.draw();
+        });
+
+		balls.forEach(function(ball) 
+		{
+            ball.draw();
+        });
+		
+		oSnake.draw();
+		
+		drawFunction();
+		
+    }
+	
+	function drawFunction()
+	{
+		
+		var i = 0;
+		var x = 50;
+		var y = 300;
+		var length = 500;
+		var quality = 20;
+		var step = Math.floor(length / quality);
+		
+		context.beginPath();
+		//context.strokeStyle = "#00FF00";
+		
+		for(i = 1; i < quality; i++)
+		{
+			context.moveTo(x + (i-1)*step, y + f(i-1)*step );
+			context.lineTo(x + i*step, y + f(i)*step );
+		}
+		
+		
+		context.strokeStyle = rgbToHex(100+Math.floor(Math.cos(counter)*85),100+Math.floor(Math.sin(counter*2.3)*100),85+Math.floor(Math.cos(counter*12.73)*75));
+		context.stroke();
+		
+		function f(j)
+		{
+			return Math.sin(j+counter);
+		}
+	}
+	
+
+	
+	</script>
+	
+	</body>
+
+</html>

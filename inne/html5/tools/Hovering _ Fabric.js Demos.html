@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://fabricjs.com/hovering/ -->
+<html lang="en" ng-app="kitchensink"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide{display:none !important;}ng\:form{display:block;}</style>
+    <meta charset="utf-8">
+
+    <title>Hovering | Fabric.js Demos</title>
+
+    <link rel="stylesheet" href="http://fabricjs.com/css/master.css">
+    <link rel="stylesheet" href="http://fabricjs.com/css/prism.css">
+    <style>
+      pre { margin-left: 15px !important }
+    </style>
+
+    <!--[if lt IE 9]>
+      <script src="../lib/excanvas.js"></script>
+    <![endif]-->
+
+    <script id="twitter-wjs" src="./Hovering _ Fabric.js Demos_files/widgets.js"></script><script async="" src="./Hovering _ Fabric.js Demos_files/load.js"></script><script type="text/javascript" async="" src="./Hovering _ Fabric.js Demos_files/ga.js"></script><script src="./Hovering _ Fabric.js Demos_files/prism.js"></script>
+    <script>
+      (function() {
+        var fabricUrl = '../lib/fabric.js';
+        if (document.location.search.indexOf('load_fabric_from=') > -1) {
+          var match = document.location.search.match(/load_fabric_from=([^&]*)/);
+          if (match && match[1]) {
+            fabricUrl = match[1];
+          }
+        }
+        document.write('<script src="' + fabricUrl + '"><\/script>');
+      })();
+    </script><script src="./Hovering _ Fabric.js Demos_files/fabric.js"></script>
+    <script src="./Hovering _ Fabric.js Demos_files/master.js"></script>
+
+    <script src="./Hovering _ Fabric.js Demos_files/angular.min.js"></script>
+  </head>
+  <body data-twttr-rendered="true">
+    <ul id="header">
+  <li><a href="http://fabricjs.com/">Home</a></li>
+  <li><a href="http://fabricjs.com/demos">Demos</a></li>
+  <li><a href="http://fabricjs.com/articles">Tutorial</a></li>
+  <li><a href="http://fabricjs.com/docs">Docs</a></li>
+  <li><a href="http://fabricjs.com/build">Custom Build</a></li>
+  <li><a href="http://fabricjs.com/help">Support</a></li>
+  <li><a href="http://fabricjs.com/test">Tests/Benchmarks</a></li>
+  <li><a href="http://fabricjs.com/team">Team</a></li>
+
+  <li class="secondary">
+    <a href="https://codeclimate.com/repos/526a0ed089af7e6cf2001389/feed">
+      <img src="./Hovering _ Fabric.js Demos_files/gpa.png">
+    </a>
+    <a href="http://travis-ci.org/#!/kangax/fabric.js">
+      <img src="./Hovering _ Fabric.js Demos_files/fabric.js.png">
+    </a>
+  </li>
+  <li class="gittip secondary">
+    <iframe style="border: 0; margin: 0; padding: 0;" src="./Hovering _ Fabric.js Demos_files/widget.html" width="48pt" height="22pt"></iframe>
+  </li>
+  <li class="flattr secondary">
+    <iframe src="./Hovering _ Fabric.js Demos_files/saved_resource.html" class="FlattrButton" width="110" height="20" frameborder="0" scrolling="no" title="Flattr" border="0" marginheight="0" marginwidth="0" allowtransparency="true"></iframe>
+    <noscript>
+      &lt;a href="http://flattr.com/thing/391332/Fabric-js" target="_blank"&gt;
+        &lt;img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this" title="Flattr this" border="0" /&gt;
+      &lt;/a&gt;
+    </noscript>
+  </li>
+  <li class="github secondary">
+    <iframe src="./Hovering _ Fabric.js Demos_files/github-btn.html" allowtransparency="true" frameborder="0" scrolling="0" width="95px" height="20px"></iframe>
+  </li>
+  <li class="twitter secondary">
+    <iframe id="twitter-widget-0" scrolling="no" frameborder="0" allowtransparency="true" src="./Hovering _ Fabric.js Demos_files/follow_button.95466a0b743d88fdf27be4b6df8e2945.en.html" class="twitter-follow-button twitter-follow-button" title="Twitter Follow Button" data-twttr-rendered="true" style="position: static; visibility: visible; width: 201px; height: 19px;"></iframe>
+  </li>
+</ul>
+
+<script>
+(function() {
+
+  if (document.location.hostname === 'localhost') {
+    var links = document.getElementById('header').getElementsByTagName('a');
+    for (var i = 0, len = links.length; i < len; i++) {
+      // very retarted fix but fuck it
+      links[i].href = links[i].href.replace('fabricjs.com', 'localhost:4000');
+    }
+  }
+  else {
+    var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+    s.async = true;
+    s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+    t.parentNode.insertBefore(s, t);
+
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");
+  }
+})();
+</script>
+
+
+    <div id="bd-wrapper" ng-controller="CanvasControls">
+      <h2><span>Fabric.js demos</span> · Hovering</h2>
+
+      <div class="canvas-container" style="width: 600px; height: 500px; position: relative; -webkit-user-select: none;"><canvas id="c" width="600" height="500" class="lower-canvas" style="position: absolute; width: 600px; height: 500px; left: 0px; top: 0px; -webkit-user-select: none;"></canvas><canvas class="upper-canvas " width="600" height="500" style="position: absolute; width: 600px; height: 500px; left: 0px; top: 0px; -webkit-user-select: none; cursor: default;"></canvas></div>
+
+<script id="main">(function() {
+  var canvas = this.__canvas = new fabric.Canvas('c');
+  fabric.Object.prototype.transparentCorners = false;
+
+  canvas.on('mouse:over', function(e) {
+    e.target.setFill('red');
+    canvas.renderAll();
+  });
+
+  canvas.on('mouse:out', function(e) {
+    e.target.setFill('green');
+    canvas.renderAll();
+  });
+
+  // add random objects
+  for (var i = 15; i--; ) {
+    var dim = fabric.util.getRandomInt(30, 60);
+    var klass = ['Rect', 'Triangle', 'Circle'][fabric.util.getRandomInt(0,2)];
+    var options = {
+      top: fabric.util.getRandomInt(0, 600),
+      left: fabric.util.getRandomInt(0, 600),
+      fill: 'green'
+    };
+    if (klass === 'Circle') {
+      options.radius = dim;
+    }
+    else {
+      options.width = dim;
+      options.height = dim;
+    }
+    canvas.add(new fabric[klass](options));
+  }
+})();
+</script>
+
+    <pre class=" language-javascript"><code class=" language-javascript"><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">var</span> canvas <span class="token operator">=</span> this<span class="token punctuation">.</span>__canvas <span class="token operator">=</span> <span class="token keyword">new</span> fabric<span class="token punctuation">.</span>Canvas<span class="token punctuation">(</span><span class="token string">'c'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  fabric<span class="token punctuation">.</span>Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>transparentCorners <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+
+  canvas<span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token string">'mouse:over'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token number">e</span><span class="token punctuation">.</span>target<span class="token punctuation">.</span>setFill<span class="token punctuation">(</span><span class="token string">'red'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    canvas<span class="token punctuation">.</span>renderAll<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  canvas<span class="token punctuation">.</span>on<span class="token punctuation">(</span><span class="token string">'mouse:out'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token number">e</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token number">e</span><span class="token punctuation">.</span>target<span class="token punctuation">.</span>setFill<span class="token punctuation">(</span><span class="token string">'green'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    canvas<span class="token punctuation">.</span>renderAll<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  <span class="token comment" spellcheck="true">// add random objects
+</span>  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">15</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">;</span> <span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">var</span> dim <span class="token operator">=</span> fabric<span class="token punctuation">.</span>util<span class="token punctuation">.</span>getRandomInt<span class="token punctuation">(</span><span class="token number">30</span><span class="token punctuation">,</span> <span class="token number">60</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> klass <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Rect'</span><span class="token punctuation">,</span> <span class="token string">'Triangle'</span><span class="token punctuation">,</span> <span class="token string">'Circle'</span><span class="token punctuation">]</span><span class="token punctuation">[</span>fabric<span class="token punctuation">.</span>util<span class="token punctuation">.</span>getRandomInt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> options <span class="token operator">=</span> <span class="token punctuation">{</span>
+      top<span class="token punctuation">:</span> fabric<span class="token punctuation">.</span>util<span class="token punctuation">.</span>getRandomInt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      left<span class="token punctuation">:</span> fabric<span class="token punctuation">.</span>util<span class="token punctuation">.</span>getRandomInt<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      fill<span class="token punctuation">:</span> <span class="token string">'green'</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>klass <span class="token operator">==</span><span class="token operator">=</span> <span class="token string">'Circle'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      options<span class="token punctuation">.</span>radius <span class="token operator">=</span> dim<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span> <span class="token punctuation">{</span>
+      options<span class="token punctuation">.</span>width <span class="token operator">=</span> dim<span class="token punctuation">;</span>
+      options<span class="token punctuation">.</span>height <span class="token operator">=</span> dim<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    canvas<span class="token number">.add</span><span class="token punctuation">(</span><span class="token keyword">new</span> fabric<span class="token punctuation">[</span>klass<span class="token punctuation">]</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div>
+
+    <script>
+      (function(){
+        var mainScriptEl = document.getElementById('main');
+        if (!mainScriptEl) return;
+        var preEl = document.createElement('pre');
+        var codeEl = document.createElement('code');
+        codeEl.innerHTML = mainScriptEl.innerHTML;
+        codeEl.className = 'language-javascript';
+        preEl.appendChild(codeEl);
+        document.getElementById('bd-wrapper').appendChild(preEl);
+      })();
+    </script>
+
+    <script>
+(function() {
+  fabric.util.addListener(fabric.window, 'load', function() {
+    var canvas = this.__canvas || this.canvas,
+        canvases = this.__canvases || this.canvases;
+
+    canvas && canvas.calcOffset && canvas.calcOffset();
+
+    if (canvases && canvases.length) {
+      for (var i = 0, len = canvases.length; i < len; i++) {
+        canvases[i].calcOffset();
+      }
+    }
+  });
+})();
+</script>
+
+
+  
+
+</body></html>

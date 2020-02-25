@@ -1,0 +1,147 @@
+<song name='Trololo' bpm='90' tacts='5'>
+
+	<samplers>
+		<sampler name='Main Ble' x='1178' y='172' volume='1' cutItSelf='false' cutSound='0' sound='6' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='25' value='-2' duration='1'/>
+				<note start='27' value='1' duration='1'/>
+				<note start='29' value='3' duration='1'/>
+				<note start='31' value='6' duration='1'/>
+			</pattern>
+			<pattern id='2' name='pattern 2'>
+				<note start='15' value='-2' duration='1'/>
+				<note start='1' value='5' duration='1'/>
+				<note start='7' value='1' duration='1'/>
+				<note start='9' value='3' duration='1'/>
+				<note start='13' value='3' duration='1'/>
+				<note start='5' value='5' duration='1'/>
+				<note start='17' value='1' duration='1'/>
+				<note start='31' value='-1' duration='1'/>
+				<note start='25' value='-6' duration='1'/>
+				<note start='27' value='-4' duration='1'/>
+				<note start='29' value='-2' duration='1'/>
+			</pattern>
+			<pattern id='3' name='pattern 3'>
+				<note start='1' value='-2' duration='1'/>
+				<note start='25' value='-2' duration='1'/>
+				<note start='27' value='1' duration='1'/>
+				<note start='29' value='3' duration='1'/>
+				<note start='31' value='6' duration='1'/>
+			</pattern>
+			<pattern id='4' name='pattern 4'>
+				<note start='17' value='1' duration='1'/>
+				<note start='1' value='5' duration='1'/>
+				<note start='7' value='1' duration='1'/>
+				<note start='9' value='3' duration='1'/>
+				<note start='13' value='3' duration='1'/>
+				<note start='5' value='5' duration='1'/>
+				<note start='15' value='-2' duration='1'/>
+				<note start='25' value='-2' duration='1'/>
+				<note start='27' value='1' duration='1'/>
+				<note start='29' value='3' duration='1'/>
+				<note start='31' value='5' duration='1'/>
+			</pattern>
+			<pattern id='5' name='pattern 5'>
+				<note start='1' value='6' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='1'/>
+			<tact tact='2' pattern='2'/>
+			<tact tact='3' pattern='3'/>
+			<tact tact='4' pattern='4'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='Kick' x='1313.1999969482422' y='356.7333297729492' volume='0.75' cutItSelf='false' cutSound='0' sound='0' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='1' value='0' duration='1'/>
+				<note start='7' value='0' duration='1'/>
+				<note start='17' value='0' duration='1'/>
+				<note start='23' value='0' duration='1'/>
+				<note start='27' value='0' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='0'/>
+			<tact tact='3' pattern='0'/>
+			<tact tact='4' pattern='0'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='Snare' x='1412.1999969482422' y='598.7333297729492' volume='0.75' cutItSelf='false' cutSound='0' sound='1' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='5' value='0' duration='1'/>
+				<note start='13' value='0' duration='1'/>
+				<note start='21' value='0' duration='1'/>
+				<note start='29' value='0' duration='1'/>
+			</pattern>
+			<pattern id='2' name='pattern 2'>
+				<note start='29' value='0' duration='1'/>
+				<note start='5' value='0' duration='1'/>
+				<note start='13' value='0' duration='1'/>
+				<note start='21' value='0' duration='1'/>
+				<note start='31' value='0' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='0'/>
+			<tact tact='3' pattern='0'/>
+			<tact tact='4' pattern='1'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='Hat' x='1171.1999969482422' y='738.7333297729492' volume='0.75' cutItSelf='false' cutSound='0' sound='2' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='1' value='0' duration='1'/>
+				<note start='5' value='0' duration='1'/>
+				<note start='9' value='0' duration='1'/>
+				<note start='13' value='0' duration='1'/>
+				<note start='17' value='0' duration='1'/>
+				<note start='21' value='0' duration='1'/>
+				<note start='25' value='0' duration='1'/>
+				<note start='29' value='0' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='0'/>
+			<tact tact='3' pattern='0'/>
+			<tact tact='4' pattern='0'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='OverHead' x='693.1999969482422' y='100.73332977294922' volume='0.75' cutItSelf='false' cutSound='0' sound='3' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='1' value='0' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='undefined'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='undefined'/>
+			<tact tact='3' pattern='0'/>
+		</playlist>
+		</sampler>
+
+	</samplers>
+
+	<soundBank>
+		<sound id='6' path='https://dl.dropboxusercontent.com/u/36410575/html5Kompozytor/sounds/ble3.wav'/>
+	</soundBank>
+</song>

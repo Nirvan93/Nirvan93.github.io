@@ -1,0 +1,721 @@
+﻿<!document html>
+<html lang="pl">
+
+	<head>
+	  <meta charset="utf-8" />
+	  <title>Maciemce Atakują</title>
+	  <script language="javascript" src="js/jquery.js" type="text/javascript"></script>
+	  <script language="javascript" src="js/jquery.hotkeys.js" type="text/javascript"></script>
+	  <script language="javascript" src="js/key_status.js" type="text/javascript"></script>
+	  <script language="javascript" src="js/mySprite.js" type="text/javascript"></script>
+	</head>
+	<body>
+	
+	<canvas id="canvas" width="1700" height="900"></canvas>
+	
+	<script type='text/javascript'>
+	
+	document.getElementById('canvas').style.cursor = "none";
+	
+	var cWidth = 1700;
+	var cHeight = 900;
+	
+	var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+	
+	var gravity = .3;
+	var lastUpdate = Date.now();
+	var deltaTime = 1;
+	var gameSpeed = 1;
+	var slowmo = false;
+	
+    var DEGTORAD = Math.PI / 180;
+	var RADTODEG = 180 / Math.PI;
+
+	var counter = 0;
+	var FPS = 60;
+	
+	var sHamma = new mySprite(sHamma, "img/hamma2.png", 75, 51);
+	var sCrossair = new mySprite(sCrossair, "img/crossair.png", 25, 25);
+	var bc = new mySprite(bc,"img/bc.jpg",0,0);
+	var hAngle = -60;
+	var mouseX = 0;
+	var mouseY = 0;
+	var hit = 0;
+	
+	var health = 100;
+	var kills = 0;
+	var misses = 0;
+	
+	var noiseX = 0;
+	var noiseY = 0;
+	var noise = 0;
+	
+	canvas.addEventListener("mousedown", mClick, false);
+	canvas.addEventListener("mousemove", mMove, false);
+	
+	var alarm = .2;
+	
+	var snakes = [];
+	function snake(id)
+	{
+		id = id || {}; 
+		
+		var angle = Math.random()*360;
+		var speed = 4+counter/250 + Math.random()*8;
+		
+		var x = cWidth/2;
+		var y = cHeight/2;
+		
+		var tail = [];
+		var hodor = [];
+		var length = 14+Math.round(Math.random()*6);
+		var hodors = Math.round(length/5);
+		var offset = 25+Math.random()*10;
+		var lifetime = 300/speed;
+		
+		id.born = function()
+		{
+			x-=Math.sin((angle+90)*DEGTORAD)*cWidth;
+			y-=Math.cos((angle+90)*DEGTORAD)*cHeight;
+		
+			for(var i = 0; i < length; i++)
+			{
+				tail[i] = {};
+				tail[i].x = 0;
+				tail[i].y = 0;
+				tail[i].a = 0;
+				
+				switch(i)
+				{	case 0: tail[i].spr = new mySprite(tail[i].spr, "img/bodyRyj"+Math.round(Math.random()*14).toString()+".png", 57, 70);  break; 
+					case length-1: tail[i].spr = new mySprite(tail[i].spr, "img/ogunEnd.png", 25, 5); break; 
+					default: tail[i].spr = new mySprite(tail[i].spr, "img/ogun.png", 25, 5); break;
+				}
+				
+			}
+			
+			for(var i = 0; i < 4; i++)
+			{
+				hodor[i] = {};
+				hodor[i].x = 0;
+				hodor[i].y = 0;
+				hodor[i].a = 0;
+				hodor[i].s = 1;
+				hodor[i].z = 1;
+				var r; if ( Math.random() < .5 ) r = -1+Math.random()*0.5; else r = 0.5+Math.random()*0.5;
+				hodor[i].offset = r;
+				
+				hodor[i].spr = new mySprite(hodor[i].spr, "img/hodor.png", 7, 19);
+			}
+			
+			tail[0].x = x;
+			tail[0].y = y;
+			tail[0].a = angle;
+			
+			for(var i = 1; i < length; i++)
+			{
+				//tail[i].x = tail[i-1].x + lengthdir_x(offset,tail[i-1].a+180);
+				//tail[i].y = tail[i-1].y + lengthdir_y(offset,tail[i-1].a+180);
+				tail[i].x = x;
+				tail[i].y = y;
+				//tail[i].a = PointDirection(tail[i].x,tail[i].y,tail[i-1].x,tail[i-1].y);
+			}
+			
+		}
+		
+		id.born();
+		
+		id.clicked = function(mx,my)
+		{
+			
+			//bloods.push( bloodExplosion(mouseX, mouseY) );
+		
+			if ( x-tail[0].spr.width/2 < mx && x+tail[0].spr.width/2 > mx )
+				if ( y-tail[0].spr.height/2-70 < my && y+tail[0].spr.height/2 > my )
+				{
+					//for(i = length-1; i >= 0; i--) bloods.push(bloodExplosion(tail[i].x, tail[i].y, 20) );
+					playSound( "sounds/hit"+Math.round(1+Math.random()*2).toString()+".wav" );
+					if ( Math.random() < .6 ) playSound( "sounds/ble"+Math.round(Math.random()*5).toString()+".wav" );
+					floaters.push( new floater( tail.slice(0), speed*0.85 ) );
+					bloods.push(bloodExplosion(tail[0].x, tail[0].y) );
+					
+					kills++;
+					if ( kills % 25 == 0 ) bosses.push( new boss() );
+					for(var k = 0; k < snakes.length; k++ ) if (snakes[k] == id) { delete id; snakes.splice(k,1); }
+					return true;
+				}
+			return false;
+		}
+		
+		id.update = function()
+		{	
+			
+			//if (  )
+			
+			var rad = ( Math.PI / 180 );
+			tail[0].x = x + Math.sin(counter/3)*3;
+			tail[0].y = y - Math.cos(counter/3)*3;
+			tail[0].a = angle;
+			
+			angle += dt( Math.cos(counter*(speed/6))*(speed*1.3)/3 );
+			x += dt( lengthdir_x(speed, angle) );
+			y += dt( lengthdir_y(speed, angle) );
+			
+			lifetime -= dt(.1);
+			if ( lifetime < 0 ) for(var k = 0; k < snakes.length; k++ ) if (snakes[k] == id) { delete id; snakes.splice(k,1); }
+			
+			for(var i = 1; i < length; i++)
+			{
+				var speedd = .55+i/length/5;
+				tail[i].x -= dt(( tail[i].x - tail[i-1].x + lengthdir_x(offset,tail[i-1].a+0) ) * speedd);
+				tail[i].y -= dt(( tail[i].y - tail[i-1].y + lengthdir_y(offset,tail[i-1].a+0) ) * speedd);
+				
+				var dx = tail[i].x - tail[i-1].x,
+					dy = tail[i].y - tail[i-1].y;		
+				
+				var dirx = -Math.cos( tail[i].a * rad ),
+					diry = Math.sin( tail[i].a * rad );
+					
+				dirx += dt(( dx - dirx ) * speedd);
+				diry += dt(( dy - diry ) * speedd);
+					
+				tail[i].a = ( (Math.atan2( dirx, diry  ) * ( 180 / Math.PI ) ) + 450 ) % 360;	
+	
+			}
+			//console.log(tail[1].a * (Math.PI / 180));
+			//console.log( tail[1].a);
+			for(var i = 0; i < hodors; i+=1)
+			{
+				var t = 5+i*4;
+				var T = counter/1.5*hodor[i].offset;
+				hodor[i].x = tail[t].x + Math.sin(T)*120;
+				hodor[i].y = tail[t].y - Math.cos(T)*40;
+				hodor[i].a -= ( tail[t].a - PointDirection(tail[t].x,tail[t].y,tail[t-1].x,tail[t-1].y)+0 ) * speedd;
+				hodor[i].s = 1+Math.cos(T)*.25;
+				if ( hodor[i].s > 1 ) hodor[i].z = 1; else hodor[i].z = -1;
+			}
+			
+			//if ( x < 0 ) x = 0; if ( x > cWidth ) x = cWidth;
+			//if ( y < 0 ) y = 0; if ( y > cHeight ) y = cHeight;
+		}
+		
+		
+		
+		id.draw = function()
+		{
+			//if ( counter > 10 ) alert(tail[0].spr.sprite.);
+			for(i = 0; i < 4; i++) if ( hodor[i].z < 0 ) hodor[i].spr.draw(hodor[i].x, hodor[i].y, hodor[i].a+counter*80, hodor[i].s, hodor[i].s);
+			for(i = length-1; i > 0; i--) tail[i].spr.draw(tail[i].x, tail[i].y, -tail[i].a+90);
+			tail[0].spr.draw(tail[0].x, tail[0].y, Math.sin(counter /2 +offset ) * 10 - 90 );
+			for(i = 0; i < 4; i++) if ( hodor[i].z > 0 ) hodor[i].spr.draw(hodor[i].x, hodor[i].y, hodor[i].a+counter*80, hodor[i].s, hodor[i].s);
+			//sss.draw(100,200,counter*20,1,1+Math.sin(counter*2)/2);
+
+		}
+		
+		id.Destroy = function()
+		{
+			for(var k = 0; k < snakes.length; k++ ) if (snakes[k] == id) { delete id; snakes.splice(k,1); }
+		}
+		
+		
+		return id;
+	}
+	
+	var bosses = [];
+	function boss(id)
+	{
+		id = id || {}; 
+		
+		var angle = Math.random()*360;
+		var speed = 1+counter/50 + Math.random()*2;
+		
+		var x = cWidth/2;
+		var y = cHeight/2;
+		var lifeTime = 0;
+		
+		var hp = 30;
+		var tails = [];
+		tails[0] = [];
+		tails[1] = [];
+		tails[2] = [];
+		tails[3] = [];
+		
+		var head;
+		var hodor = [];
+		var length = 12+Math.round(Math.random()*6);
+		var offset = 32+Math.random()*3;
+		var aa = 0;
+		id.hitted = 0;
+		var xxx = -cWidth;
+		
+		id.born = function()
+		{
+			head = new mySprite(head, "img/bigRyjBoss.png", 105, 250);
+		
+			for(var j = 0; j < 4; j++)
+				for(var i = 0; i < length; i++)
+				{
+					
+					tails[j][i] = {};
+					tails[j][i].x = 0;
+					tails[j][i].y = 0;
+					tails[j][i].a = 0;
+					
+					switch(i)
+					{	case length-1: tails[j][i].spr = new mySprite(tails[j][i].spr, "img/ogunEnd.png", 25, 5); break; 
+						default: tails[j][i].spr = new mySprite(tails[j][i].spr, "img/ogun.png", 25, 5); break;
+					}
+				}	
+				
+				
+		}
+		
+		id.born();
+		
+		id.clicked = function(mx,my)
+		{
+			if ( x-head.width/2 < mx && x+head.width/2 > mx )
+				if ( y-head.height/2 < my && y+head.height/2 > my )
+				{
+					hp--;
+					id.hitted = 1;
+					bloods.push(bloodExplosion(x, y) );
+					
+					playSound( "sounds/hit"+Math.round(1+Math.random()*2).toString()+".wav" );
+					if ( Math.random() < .6 ) playSound( "sounds/ble"+Math.round(Math.random()*5).toString()+".wav" );
+					
+					if ( hp < 0 )
+					{	
+						bloods.push(bloodExplosion(x,y,12,"img/hodor.png",4,6,0.2));
+						bloods.push(bloodExplosion(x,y,4,"img/stypendium.png",2,40,0.2));
+						bloods.push(bloodExplosion(x, y, 30) );
+						
+						for(var k = 0; k < bosses.length; k++ ) if (bosses[k] == id) { delete id; bosses.splice(k,1); }
+					}
+					return true;
+				}	
+			return false;
+		}
+		
+		id.update = function()
+		{	
+			lifeTime += dt(.1);
+			xxx -= xxx / 10;
+			var rad = ( Math.PI / 180 );
+			//aa = Math.sin(lifeTime/2)*5+Math.cos( (lifeTime / 2.5)  * 2 )* Math.cos(lifeTime/2.5)*12;
+			aa = Math.sin(lifeTime/2)*5+Math.cos( lifeTime * Math.cos(lifeTime/4) /5 )*12;
+			
+			angle += dt( Math.cos(lifeTime*(speed/6))*(speed*1.3)/3 );
+			x = cWidth/2 + ( Math.sin( lifeTime/10 ) * cWidth / 4 + Math.cos(lifeTime / 5 ) * cWidth/9 ) + xxx;
+			y = cHeight/2 + ( -Math.cos( .3+lifeTime/11.2 ) * cHeight / 4 + Math.cos(lifeTime / 4 ) * cHeight/7 );	
+			
+			//console.log(tails[0][0]);
+			
+			for(var j = 0; j < 4; j++)
+			{
+				tails[j][0].x = x + Math.sin(lifeTime/3)*3;
+				tails[j][0].y = y - Math.cos(lifeTime/3)*3;
+				tails[j][0].a = 45+aa+90*j+Math.sin(j/2 + lifeTime)*30;
+				
+
+			
+				for(var i = 1; i < length; i++)
+				{
+					var speedd = .55+i/length/5;
+					tails[j][i].x -= dt(( tails[j][i].x - tails[j][i-1].x + lengthdir_x(offset,tails[j][i-1].a+0) ) * speedd);
+					tails[j][i].y -= dt(( tails[j][i].y - tails[j][i-1].y + lengthdir_y(offset,tails[j][i-1].a+0) ) * speedd);
+					
+					var dx = tails[j][i].x - tails[j][i-1].x,
+						dy = tails[j][i].y - tails[j][i-1].y;		
+					
+					var dirx = -Math.cos( tails[j][i].a * rad ),
+						diry = Math.sin( tails[j][i].a * rad );
+						
+					dirx += dt(( dx - dirx ) * speedd);
+					diry += dt(( dy - diry ) * speedd);
+						
+					tails[j][i].a = ( (Math.atan2( dirx, diry  ) * ( 180 / Math.PI ) ) + 450 ) % 360;	
+				}
+			}
+		}
+		
+		
+		
+		id.draw = function()
+		{
+			for(var j = 0; j < 4; j++)
+				for(i = length-1; i >= 0; i--) tails[j][i].spr.draw(tails[j][i].x, tails[j][i].y, -tails[j][i].a+90);
+
+			head.draw( x, y, aa);
+			
+		}
+		
+		return id;
+	}
+	//bosses.push(new boss());
+	
+	bloods = [];
+	function bloodExplosion(xx,yy,ccount, ssrc, ppower, origins, fadeSpeedd)
+	{
+		var id = {};
+		var count = ccount || 24+Math.round( Math.random() * 3 );
+		var src = ssrc || "img/blood.png";
+		var power = ppower || 1;
+		var origin = origins || 50;
+		var fadeSpeed = fadeSpeedd || 1;
+		
+		var part = [];
+		var x = xx || mouseX;
+		var y = yy || mouseY;
+		
+		for (var i = 0; i < count; i++ )
+		{
+			part[i] = {};
+			part[i].spr = new mySprite(part[i], src, origin, origin);
+			part[i].s = 7 + Math.random() * 4;
+			part[i].a = (360/count) * i + Math.random() * 10;
+			part[i].x = Math.sin(part[i].a*DEGTORAD) * ( 3 +  Math.random() * 5 );
+			part[i].y = -Math.cos(part[i].a*DEGTORAD) * ( 3 +  Math.random() * 5 );
+			part[i].r = Math.random() * 360;
+			part[i].sc = .55* power + Math.random() * 0.1 ;
+			part[i].al = 2.25;
+		}
+		
+		id.draw = function()
+		{
+			
+			for(i = 0; i < count; i++)
+			{
+				part[i].x += dt(Math.sin(part[i].a*DEGTORAD) * part[i].s);
+				part[i].y -= dt(Math.cos(part[i].a*DEGTORAD) * part[i].s - gravity);
+				part[i].spr.draw( x+part[i].x, y+part[i].y, part[i].r, part[i].spr.sc, part[i].spr.sc, part[i].spr.al );
+				part[i].spr.sc -= dt(.025)*fadeSpeed;
+				part[i].s -= dt(.36);
+				part[i].spr.al -= dt(.125)*fadeSpeed;
+			}
+			
+			if ( part[0].spr.al <= -.15 ) id.Destroy();
+			
+		}
+		
+		id.Destroy = function()
+		{
+			for(var k = 0; k < bloods.length; k++ ) if (bloods[k] == id) { delete id; bloods.splice(k,1); }
+		}
+		
+		return id;
+		
+	}
+	
+	floaters = [];
+	function floater(tab, speedd)
+	{
+		var id = {};
+		var part = tab;
+		var speed = speedd || 3 + counter/50;
+		id.alphas = 2.25;
+		//console.log(part[2].x);i
+		
+		
+		for (var i = 1; i < part.length; i++ )
+		{
+			part[i].s = speed + Math.random() * 2;
+			part[i].a = -part[i].a+90;
+			
+			part[i].x += dt( Math.sin( part[i].a * DEGTORAD) * part[i].s );
+			part[i].y -= dt( Math.cos( part[i].a * DEGTORAD) * part[i].s );
+		}
+		
+		id.draw = function()
+		{
+			
+			for(i = 1; i < part.length; i++)
+			{
+				part[i].x += dt( Math.sin( part[i].a * DEGTORAD) * part[i].s );
+				part[i].y -= dt( Math.cos( part[i].a * DEGTORAD) * part[i].s );
+				
+				part[i].spr.draw( part[i].x, part[i].y, part[i].a, 1, 1, id.alphas );
+				//part[i].spr.sc -= dt(.025);
+				//part[i].s -= dt(.36);
+			}
+			
+			id.alphas -= dt(.05);
+			if ( id.alphas <= 0 ) { for(var k = 0; k < floaters.length; k++ ) if (floaters[k] == id) { delete id; floaters.splice(k,1); } }
+			
+		}
+		
+		id.Destroy = function()
+		{
+			for(var k = 0; k < floaters.length; k++ ) if (floaters[k] == id) { delete id; floaters.splice(k,1); }
+		}
+		
+		return id;
+		
+	}
+	
+	flys = [];
+	function fly(id)
+	{
+		id = id || {}; 
+		id.radius = 4;  
+		id.lineWidth = 2;
+		
+		id.xspeed = 2 + Math.random() * 5;
+		id.yspeed = 2 + Math.random() * 5;
+		id.x = 50 + Math.random() * cWidth - 100;
+		id.y = 50 + Math.random() * cHeight - 100;
+		id.width = id.radius*2;
+		id.height = id.radius*2;
+		
+		id.offset = Math.random() * 40;
+		id.counter;
+		
+		
+		id.update = function()
+		{
+			id.counter = counter + id.offset;
+			id.x += t(id.xspeed + Math.sin(id.counter)*6 + Math.sin(id.counter*1.5+3.5)*4 + Math.cos(id.counter*1.5+3.5)*12);
+			id.y += t(id.yspeed + Math.cos(id.counter)*8 + Math.sin(id.counter*1.75+4.2)*4);
+			
+			if ( id.x > 700 - id.radius || id.x < id.radius ) { id.xspeed = -id.xspeed; id.x += t(id.xspeed); }
+			if ( id.y < id.radius || id.y > 500 - id.radius ) { id.yspeed = -id.yspeed; id.y += t(id.yspeed); }
+			
+			if ( id.x < id.radius ) id.x = id.radius; if ( id.x > cWidth - id.radius ) id.x = cWidth - id.radius;
+			if ( id.y < id.radius ) id.y = id.radius; if ( id.y > cHeight - id.radius ) id.y = cHeight - id.radius;
+		}
+		
+		
+		id.draw = function()
+		{
+			context.beginPath();
+			context.arc(id.x, id.y, id.radius, 0, 2 * Math.PI, false);
+			
+			context.fillStyle = rgbToHex(100+Math.floor(id.offset+Math.sin(id.counter)*100),100+Math.floor(id.offset+Math.cos(id.counter*2.3)*100),100+Math.floor(id.offset+Math.sin(id.counter*12.73)*100));
+			context.fill();
+			context.lineWidth = id.lineWidth;
+			//context.strokeStyle = rgbToHex(100+Math.floor(id.offset+Math.cos(id.counter)*85),100+Math.floor(id.offset+Math.sin(id.counter*2.3)*100),85+Math.floor(id.offset+Math.cos(id.counter*12.73)*75));
+			context.strokeStyle = '#888888';
+			context.stroke();
+		}
+		
+		return id;
+	}
+	
+	balls = [];
+	function ball(id)
+	{
+		id = id || {}; 
+		id.radius = 20;  
+		id.lineWidth = 3;
+		
+		id.xspeed = 2 + Math.random() * 12;
+		id.yspeed = 2 + Math.random() * 5;
+		id.x = 50 + Math.random() * cWidth - 100;
+		id.y = 50 + Math.random() * cHeight - 100;
+		id.width = id.radius*2;
+		id.height = id.radius*2;
+		
+		id.offset = Math.random() * 40;
+		id.counter;
+		id.cc = 0;
+		
+		
+		id.update = function()
+		{
+			id.counter = counter + id.offset;
+			id.x += t(id.xspeed);
+			id.y += t(id.yspeed);
+			id.cc -= .1;
+	
+	
+			id.yspeed += t(gravity);
+			
+			//if ( Math.random() < .01 ) { id.yspeed -= 3 + Math.random() * 7; id.xspeed *= 2; }
+			
+			if ( id.y > cHeight - id.radius ) id.yspeed /= 2;
+			if ( id.x > cWidth - id.radius || id.x < id.radius ) { id.xspeed = -id.xspeed; id.x += t(id.xspeed); id.xspeed /= 2; }
+			if ( id.y < id.radius || id.y > cHeight - id.radius ) { id.yspeed = -id.yspeed; id.y += t(id.yspeed); }
+			
+			if ( id.x < id.radius ) id.x = id.radius; if ( id.x > cWidth - id.radius ) id.x = cWidth - id.radius;
+			if ( id.y < id.radius ) id.y = id.radius; if ( id.y > cHeight - id.radius ) id.y = cHeight - id.radius;
+		}
+		
+		id.clicked = function(mx,my)
+		{
+			if ( id.x-id.radius < mx && id.x+id.radius > mx )
+				if ( id.y-id.radius < my && id.y+id.radius > my )
+				{
+					playSound( "sounds/hit"+Math.round(1+Math.random()*2).toString()+".wav" );
+					//if ( Math.random() < .6 ) playSound( "sounds/ble"+Math.round(Math.random()*5).toString()+".wav" );
+					id.yspeed -= 6 + Math.random() * 7; id.xspeed *= 2;
+					return true;
+				}
+			return false;
+		}		
+		
+		id.draw = function()
+		{
+			context.beginPath();
+			context.arc(id.x, id.y, id.radius, 0, 2 * Math.PI, false);
+			
+			context.fillStyle = '#DD0000';
+			context.fill();
+			context.lineWidth = id.lineWidth;
+			//context.strokeStyle = rgbToHex(100+Math.floor(id.offset+Math.cos(id.counter)*85),100+Math.floor(id.offset+Math.sin(id.counter*2.3)*100),85+Math.floor(id.offset+Math.cos(id.counter*12.73)*75));
+			context.strokeStyle = '#AA0000';
+			context.stroke();
+		}
+		
+		return id;
+	}
+
+	setInterval(
+	function() 
+	{
+          update();
+          draw();
+    }, 1000/FPS);
+	
+	function t(a)
+	{
+		return a * deltaTime * gameSpeed;
+	}
+	
+	function dt(a)
+	{
+		return a * deltaTime * gameSpeed;
+	}
+	
+	function update()
+	{
+		var now = Date.now();
+		var dt = now - lastUpdate;
+		lastUpdate = now;
+		deltaTime = dt/17;
+		
+		if ( noise > 0 )
+		{
+			noiseX = noise + Math.random()*noise;
+			noiseY = noise + Math.random()*noise;
+			noise -= deltaTime;
+		}
+		
+		if( keydown.up && hit < 0 ) 
+		{
+			hit = 1;
+			bosses.push( new boss() );
+        }
+		
+		if ( alarm < 0 ) { snakes.push(snake()); alarm = .3+Math.random()*.5; }
+		else alarm -= t(.0015+counter/25000);
+		if ( counter < 2.5 ) { flys.push( fly() ); }
+		if ( counter < .3 ) { balls.push( ball() ); }
+		counter += t(.1);
+		
+		if ( hit > 0 ) hAngle += 30; else if ( hAngle > -60 ) hAngle -= 5;
+		if ( hAngle == -30 && hit > 0 )
+		{
+			var hitted = false;
+			snakes.forEach(function(snake) { if ( snake.clicked(mouseX,mouseY) ) {hitted = true; return;}} );
+			bosses.forEach(function(boss) { if ( boss.clicked(mouseX,mouseY) ) {hitted = true; return;}});
+			balls.forEach(function(ball) { if ( ball.clicked(mouseX,mouseY) ) {hitted = true; return;}});
+			if ( !hitted ) 
+			{
+				bloods.push(bloodExplosion(mouseX, mouseY, 8, "img/star.png") );
+				playSound( "sounds/metalHit.wav" );
+				misses++;
+			} else noise += 10;
+			noise += 5;
+			//hit = -1;
+		}
+		
+		hit -= 0.05;
+		
+		snakes.forEach(function(snake) { snake.update(); });
+		balls.forEach(function(ball) { ball.update(); });
+		bosses.forEach(function(boss) { boss.update(); });
+		flys.forEach(function(fly) { fly.update(); });
+	}
+	
+	
+	function draw() 
+	{
+        context.clearRect(0, 0, cWidth, cHeight);
+		context.save();
+		context.translate(noiseX,noiseY);
+		context.moveTo(noiseX+counter,noiseY);
+		
+		context.save();
+		//context.scale(1.5,1.3);
+		bc.draw(-250,-100);
+		context.restore();
+		floaters.forEach(function(floater) { floater.draw(); });
+		flys.forEach(function(fly) { fly.draw(); });
+        snakes.forEach(function(snake) { snake.draw(); });
+		balls.forEach(function(ball) { ball.draw(); });
+		bosses.forEach(function(boss) { boss.draw(); });
+		bloods.forEach(function(bloodExplosion) { bloodExplosion.draw(); });
+		
+		sHamma.draw(mouseX-190,mouseY-75,hAngle);
+		sCrossair.draw(mouseX,mouseY,counter*4);
+		
+		
+		context.restore();
+		
+		context.font="20px Georgia";
+		context.fillStyle = "#AA0000";
+		context.fillText("Zdrowie: " + health.toString() + "  \nUbicia: " + kills.toString()+"  \nChybienia: " + misses.toString(),10,30);
+		
+		
+		
+    }
+	
+	function componentToHex(c) 
+	{
+		var hex = c.toString(16);
+		return hex.length == 1 ? "0" + hex : hex;
+	}
+	
+    function rgbToHex(r, g, b) 
+	{ return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b); }
+	
+
+	function playSound(s)
+	{
+		var sound = new Audio(s);
+		sound.play();
+	}
+	
+	function lengthdir_x(len, dir)
+	{ return (Math.cos(dir * Math.PI / 180) * len); }
+		
+	function lengthdir_y(len, dir)
+	{ return (-Math.sin(dir * Math.PI / 180) * len); }	
+	
+	function PointDirection(x, y, newx, newy)
+	{ return ( (Math.atan2( x - newx, y - newy  ) * ( 180 / Math.PI ) ) + 450 ) % 360; }		
+	
+	function SmoothValue(Actual, New, Speed)
+	{ 
+		return ( (New - Actual) * Speed ); 
+	}
+	
+	function mClick(event)
+	{
+		//bosses.forEach(function(boss) { boss.hitted = 0; });
+		hAngle = -60;
+		hit = .15;       
+	}
+	
+	function mMove(event)
+	{
+		mouseX = event.x;
+		mouseY = event.y;
+	}
+	
+	
+	</script>
+	
+	</body>
+
+</html>

@@ -1,0 +1,130 @@
+﻿<!document html>
+<html lang="pl">
+
+	<head>
+	  <meta charset="utf-8" />
+	  <title>Muja Tobelka</title>
+	  <link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+	
+	<canvas id="canvas" width="700" height="500" style="position:fixed; z-index:-1;"></canvas>
+	<br><br><br><br><br><br>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<span class="text1">Tyxttojest</span>
+	
+	<script type='text/javascript'>
+	
+	var width = 700;
+	var height = 500;
+	
+	var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+	
+	var lastUpdate = Date.now();
+	var deltaTime = 1;
+	var gameSpeed = 1;
+	var counter = 0;
+	var slowmo = false;
+	var FPS = 60;
+	var tt = [];
+	
+	var bcImg = new Image();
+	
+    bcImg.onload = function() 
+	{
+		var width = 700;
+		var height = 500;
+/**/
+		var partsX = 20;
+		var partsY = 15;
+		var stepX = Math.round(width/partsX);
+		var stepY = Math.round(height/partsY);
+		
+		for(var i = 0; i < 40; i++) tt.push(Math.random()*20);
+		
+		x = 1;
+		y = 1;
+		var xx = x*stepX;
+		var yy = y*stepY;
+		xx = 250;
+		yy = 50;
+        
+		
+		//for(var x = 0; x < Math.round(width/20); x++ )
+			//for(var y = 0; y < Math.round(width/15); y++ )
+			{
+				//context.drawImage(bcImg,xx-250,yy,width,height,xx+250,yy,width,height);
+				//context.drawImage(bcImg,xx,0,width,height,yy,0,width,height);
+				
+			}
+		
+    };
+	
+	bcImg.src = "muszlaciej.png";
+	
+	setInterval(
+	function() 
+	{
+          update();
+          draw();
+    }, 1000/FPS);
+	
+	function update()
+	{
+		var now = Date.now();
+		var dt = now - lastUpdate;
+		lastUpdate = now;
+		deltaTime = dt/17;
+		counter += 1;
+		
+	}
+	
+	function draw() 
+	{
+        context.clearRect(0, 0, 700, 500);
+		
+		
+		for(var i=1; i < 15; i++)
+		{
+			var xx = -100 + tt[i];
+			var yy = 100 - tt[i];
+			var ii = i * 20;
+			var iii = 1;
+			
+			
+			var v1 = tt[i];
+			var v2 = tt[i]/4;
+			
+			var v3 = 0; //v3 = tt[i]/4;
+			var v4 = 0; //v4 = tt[i]/5;
+			
+			
+			context.drawImage(bcImg,
+			xx+ii+Math.sin(counter/(30*v1))*60*iii,
+			xx+iii+Math.cos(counter/30*v2)*60*iii,
+			width,
+			height,
+			xx+ii+Math.sin(counter/30*v3)*60*iii,
+			yy-ii+Math.cos(counter/30*v4)*60*iii,
+			width,
+			height
+			);
+			
+		}
+		
+		
+
+			
+			
+			
+    }
+	
+
+	</script>
+	
+	
+
+	</body>
+
+</html>

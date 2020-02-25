@@ -1,0 +1,138 @@
+﻿<!document html>
+<html lang="pl">
+
+	<head>
+	  <meta charset="utf-8" />
+	  <title>Muje Kwiotki</title>
+	  <script language="javascript" src="js/jquery.js" type="text/javascript"></script>
+	  <script language="javascript" src="js/jquery.hotkeys.js" type="text/javascript"></script>
+	  <script language="javascript" src="js/key_status.js" type="text/javascript"></script>
+	</head>
+	<body>
+	
+	<canvas id="canvas" width="1000" height="700"></canvas>
+	
+	<script type='text/javascript'>
+	
+	var width = 1000;
+	var height = 700;
+	
+	var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+	
+	var gravity = .3;
+	var lastUpdate = Date.now();
+	var deltaTime = 1;
+	var gameSpeed = 1;
+	var slowmo = false;
+
+	var counter = 0;
+	var FPS = 60;
+	var DEGTORAD = Math.PI / 180;
+	var RADTODEG = 180 / Math.PI;
+	
+	setInterval(
+	function() 
+	{
+          update();
+          draw();
+    }, 1000/FPS);
+	
+	var flowers = [];
+	function flower(id)
+	{
+		id = id || {}; 
+		x = 500;
+		y = 300;
+		radius = 150;
+		count = 1;
+		
+		bRadius = 15;
+		bThickness = 4;
+		
+		id.update = function()
+		{
+			radius = 150+Math.cos(counter/2)*45;
+		}
+		
+		id.draw = function()
+		{
+			count = 22 + Math.sin(counter/5)*21;
+			//count++;
+			for(var i = 0; i < count; i++)
+			{
+				var ii = ( i*(360/count) ) * DEGTORAD + counter / 5;
+				
+				context.beginPath();
+				
+				context.arc(x + Math.sin( ii ) * radius , y - Math.cos( ii ) * radius, bRadius, 0, 2 * Math.PI, false);
+				context.fillStyle = '#DD0000';
+				
+				context.fill();
+				
+				context.lineWidth = bThickness;
+				context.strokeStyle = '#AA0000';
+				
+				context.stroke();
+			}
+		}
+		
+		return id;
+	}
+	
+	for(var i = 0; i < 1; i++) flowers.push( flower() );
+	
+	function update()
+	{
+		var now = Date.now();
+		var dt = now - lastUpdate;
+		lastUpdate = now;
+		deltaTime = dt/17;
+		
+		counter += t(.1);
+		flowers.forEach( function(flower) { flower.update(); } );
+		
+		if(keydown.down) gameSpeed -= .01;
+		if(keydown.up) gameSpeed += .01;
+	}
+	
+
+
+	
+	function draw() 
+	{
+        context.clearRect(0, 0, 1000, 700);
+		flowers.forEach(function(flower) { flower.draw(); });
+    }
+		
+	// { Additional Functions
+	
+	function componentToHex(c) 
+	{
+		var hex = c.toString(16);
+		return hex.length == 1 ? "0" + hex : hex;
+	}
+	
+    function rgbToHex(r, g, b) 
+	{ 
+		return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b); 
+	}
+	
+	function t(a)
+	{
+		return a * deltaTime * gameSpeed;
+	}
+	
+	function playSound(s)
+	{
+		var sound = new Audio(s);
+		sound.play();
+	}
+
+	//End }
+	
+	</script>
+	
+	</body>
+
+</html>

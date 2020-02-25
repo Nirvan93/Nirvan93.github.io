@@ -1,0 +1,254 @@
+<song name='Example' bpm='140' tacts='19'>
+
+	<samplers>
+		<sampler name='Kick' x='740' y='140' volume='0.75' cutItSelf='false' cutSound='0' sound='0' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='1' value='0' duration='1'/>
+				<note start='11' value='0' duration='1'/>
+				<note start='17' value='0' duration='1'/>
+				<note start='29' value='0' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='0'/>
+			<tact tact='3' pattern='0'/>
+			<tact tact='4' pattern='0'/>
+			<tact tact='5' pattern='0'/>
+			<tact tact='6' pattern='0'/>
+			<tact tact='7' pattern='0'/>
+			<tact tact='8' pattern='0'/>
+			<tact tact='9' pattern='0'/>
+			<tact tact='10' pattern='0'/>
+			<tact tact='11' pattern='0'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='Snare' x='1173.5' y='194' volume='0.75' cutItSelf='false' cutSound='0' sound='1' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='9' value='0' duration='1'/>
+				<note start='25' value='0' duration='1'/>
+			</pattern>
+			<pattern id='2' name='pattern 2'>
+				<note start='9' value='0' duration='1'/>
+				<note start='25' value='0' duration='1'/>
+				<note start='27' value='0' duration='1'/>
+				<note start='31' value='0' duration='1'/>
+			</pattern>
+			<pattern id='3' name='pattern 3'>
+				<note start='9' value='0' duration='1'/>
+				<note start='25' value='0' duration='1'/>
+				<note start='21' value='0' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='0'/>
+			<tact tact='3' pattern='1'/>
+			<tact tact='4' pattern='0'/>
+			<tact tact='5' pattern='0'/>
+			<tact tact='6' pattern='0'/>
+			<tact tact='7' pattern='1'/>
+			<tact tact='8' pattern='0'/>
+			<tact tact='9' pattern='2'/>
+			<tact tact='10' pattern='0'/>
+			<tact tact='11' pattern='2'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='Hat' x='1375.5' y='349' volume='0.75' cutItSelf='false' cutSound='0' sound='2' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='1' value='0' duration='1'/>
+				<note start='9' value='0' duration='1'/>
+				<note start='17' value='0' duration='1'/>
+				<note start='25' value='0' duration='1'/>
+			</pattern>
+			<pattern id='2' name='pattern 2'>
+				<note start='1' value='0' duration='1'/>
+				<note start='17' value='0' duration='1'/>
+			</pattern>
+			<pattern id='3' name='pattern 3'>
+				<note start='1' value='-11' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='0'/>
+			<tact tact='3' pattern='0'/>
+			<tact tact='4' pattern='0'/>
+			<tact tact='5' pattern='0'/>
+			<tact tact='6' pattern='0'/>
+			<tact tact='7' pattern='0'/>
+			<tact tact='8' pattern='0'/>
+			<tact tact='9' pattern='0'/>
+			<tact tact='10' pattern='0'/>
+			<tact tact='11' pattern='0'/>
+			<tact tact='12' pattern='1'/>
+			<tact tact='13' pattern='1'/>
+			<tact tact='14' pattern='1'/>
+			<tact tact='15' pattern='1'/>
+			<tact tact='16' pattern='1'/>
+			<tact tact='17' pattern='null'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='Strings' x='1404.5' y='615' volume='0.75' cutItSelf='false' cutSound='0' sound='4' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='1' value='-7' duration='1'/>
+				<note start='5' value='-5' duration='1'/>
+			</pattern>
+			<pattern id='2' name='pattern 2'>
+				<note start='1' value='-7' duration='1'/>
+				<note start='5' value='-5' duration='1'/>
+				<note start='17' value='-7' duration='1'/>
+				<note start='21' value='-5' duration='1'/>
+				<note start='25' value='1' duration='1'/>
+				<note start='29' value='-2' duration='1'/>
+			</pattern>
+			<pattern id='3' name='pattern 3'>
+				<note start='17' value='10' duration='1'/>
+				<note start='9' value='10' duration='1'/>
+				<note start='9' value='-7' duration='1'/>
+				<note start='9' value='5' duration='1'/>
+				<note start='1' value='10' duration='1'/>
+				<note start='1' value='5' duration='1'/>
+				<note start='1' value='-7' duration='1'/>
+				<note start='5' value='12' duration='1'/>
+				<note start='25' value='10' duration='1'/>
+				<note start='13' value='12' duration='1'/>
+				<note start='21' value='13' duration='1'/>
+				<note start='29' value='12' duration='1'/>
+			</pattern>
+			<pattern id='4' name='pattern 4'>
+				<note start='25' value='10' duration='1'/>
+				<note start='5' value='12' duration='1'/>
+				<note start='9' value='10' duration='1'/>
+				<note start='13' value='12' duration='1'/>
+				<note start='17' value='10' duration='1'/>
+				<note start='21' value='13' duration='1'/>
+				<note start='29' value='12' duration='1'/>
+				<note start='1' value='10' duration='1'/>
+				<note start='9' value='-12' duration='1'/>
+				<note start='9' value='0' duration='1'/>
+				<note start='1' value='-12' duration='1'/>
+				<note start='1' value='0' duration='1'/>
+				<note start='25' value='-11' duration='1'/>
+				<note start='25' value='1' duration='1'/>
+			</pattern>
+			<pattern id='5' name='pattern 5'>
+				<note start='1' value='-14' duration='1'/>
+				<note start='2' value='0' duration='1'/>
+			</pattern>
+			<pattern id='6' name='pattern 6'>
+				<note start='1' value='-12' duration='1'/>
+				<note start='2' value='1' duration='1'/>
+			</pattern>
+			<pattern id='7' name='pattern 7'>
+				<note start='1' value='-9' duration='1'/>
+				<note start='2' value='5' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='0'/>
+			<tact tact='1' pattern='0'/>
+			<tact tact='2' pattern='0'/>
+			<tact tact='3' pattern='1'/>
+			<tact tact='4' pattern='0'/>
+			<tact tact='5' pattern='0'/>
+			<tact tact='6' pattern='0'/>
+			<tact tact='7' pattern='1'/>
+			<tact tact='8' pattern='2'/>
+			<tact tact='9' pattern='3'/>
+			<tact tact='10' pattern='2'/>
+			<tact tact='11' pattern='3'/>
+			<tact tact='12' pattern='4'/>
+			<tact tact='13' pattern='null'/>
+			<tact tact='14' pattern='5'/>
+			<tact tact='15' pattern='undefined'/>
+			<tact tact='16' pattern='6'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='Hats Bc' x='708.5' y='663' volume='0.15' cutItSelf='false' cutSound='0' sound='2' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='15' value='8' duration='1'/>
+				<note start='17' value='9' duration='1'/>
+				<note start='5' value='9' duration='1'/>
+				<note start='7' value='8' duration='1'/>
+				<note start='9' value='9' duration='1'/>
+				<note start='3' value='8' duration='1'/>
+				<note start='11' value='8' duration='1'/>
+				<note start='1' value='9' duration='1'/>
+				<note start='13' value='9' duration='1'/>
+				<note start='19' value='8' duration='1'/>
+				<note start='21' value='9' duration='1'/>
+				<note start='23' value='8' duration='1'/>
+				<note start='25' value='9' duration='1'/>
+				<note start='27' value='8' duration='1'/>
+				<note start='29' value='9' duration='1'/>
+				<note start='31' value='8' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='null'/>
+			<tact tact='1' pattern='null'/>
+			<tact tact='2' pattern='null'/>
+			<tact tact='3' pattern='null'/>
+			<tact tact='4' pattern='0'/>
+			<tact tact='5' pattern='0'/>
+			<tact tact='6' pattern='0'/>
+			<tact tact='7' pattern='0'/>
+			<tact tact='8' pattern='0'/>
+			<tact tact='9' pattern='0'/>
+			<tact tact='10' pattern='0'/>
+			<tact tact='11' pattern='0'/>
+			<tact tact='12' pattern='null'/>
+		</playlist>
+		</sampler>
+
+
+		<sampler name='OverHead' x='1249.5' y='807' volume='0.75' cutItSelf='false' cutSound='0' sound='3' soundNr='null'>
+		<patterns>
+			<pattern id='1' name='pattern 1'>
+				<note start='1' value='0' duration='1'/>
+			</pattern>
+			<pattern id='2' name='pattern 2'>
+				<note start='1' value='0' duration='1'/>
+				<note start='1' value='8' duration='1'/>
+				<note start='1' value='-8' duration='1'/>
+			</pattern>
+		</patterns>
+		<playlist>
+			<tact tact='0' pattern='null'/>
+			<tact tact='1' pattern='undefined'/>
+			<tact tact='2' pattern='undefined'/>
+			<tact tact='3' pattern='undefined'/>
+			<tact tact='4' pattern='0'/>
+			<tact tact='5' pattern='undefined'/>
+			<tact tact='6' pattern='undefined'/>
+			<tact tact='7' pattern='undefined'/>
+			<tact tact='8' pattern='undefined'/>
+			<tact tact='9' pattern='undefined'/>
+			<tact tact='10' pattern='undefined'/>
+			<tact tact='11' pattern='undefined'/>
+			<tact tact='12' pattern='1'/>
+		</playlist>
+		</sampler>
+
+	</samplers>
+
+	<soundBank>
+	</soundBank>
+</song>

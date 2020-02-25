@@ -1,0 +1,296 @@
+@font-face{
+	font-family: czcionka;
+	src: url('./fonts/amble/Amble-Bold.ttf');
+}
+
+
+body
+{
+	text-align: left;
+	color: #424541;
+	max-width: 100%;
+    overflow-x: hidden;
+	font-size: 30px;
+	line-height: 40px;
+	text-shadow: 0 0 5px #FFFFFF;
+}
+
+.link{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	width: 246px;
+	height: 100px;
+}
+
+.link a {
+  border: 5px solid #fff;
+  margin-right: 5px;
+  width: 67px;
+  height: 67px;
+  background: rgba(0,0,0,.5) no-repeat center center;
+  float: left;
+}
+
+/*.link a.fb { background-image:url(../img/fb.png)}
+*/
+
+a.fb {
+.link a.fb { background-image:url(../img/fb.png)}
+.link a.ms { background-image:url(../img/ms.jpeg)}
+.link a.yt { background-image:url(../img/yt.png)}
+#about .link { width:246px; margin-left:362px; margin-top:30px}
+.link a:hover { background-color:#ed1b23}
+}
+
+#video { width:960px; height:540px; display:inline-block; background:#000; border:15px solid #EEE; position:relative; z-index:3; left:50%; margin-top:40px; margin-left:-500px; }
+#video .hide { display:none}
+.music { display:block; width:80px; height:80px; background:#fff; position:absolute; right:-80px; top:-80px}
+.control {display:block; width:80px; height:80px; background:#fff; position:absolute; left:-80px; bottom:-80px}
+.music a,
+.control a { display:block; width:100%; height:100%; overflow:hidden; text-indent:-999px}
+.play { background:url(img/play.png) #fff no-repeat center center}
+.pause { background:url(img/stop.png) #fff no-repeat center center;}
+.mute { background:url(img/music.png) #fff no-repeat center center}
+.unmute { background:url(img/musicOff.png) #fff no-repeat center center;}
+.music a:hover ,
+.control a:hover { opacity:0.8}
+.music a + a:hover ,
+.control a+ a:hover { opacity:1}
+
+#bcParallax
+{
+	background-image:url(img/bcbw.jpg);
+	background-repeat: repeat-y;
+	background-size: 100%;
+	/*background-attachment: fixed;*/
+}
+
+.parallax-img { margin-bottom: 0; 
+	margin-left: auto;  
+	margin-right: auto;  
+	margin-top: 0;  
+	position: relative; 
+	width: 960px;}
+
+.parallax-img > img, .parallax-img > a , .parallax-img > div 
+{ 
+	position: absolute;
+	z-index: -5;
+	right: 0px;
+	top:0;
+	display:block;
+}
+
+.parallax-container { 
+	height: 1110px; 
+}
+
+a:hover 
+{
+	cursor:pointer;
+}
+
+#menuUp 
+{
+    position: fixed;
+    top: 0;
+    left: 0px;
+	width: 100%;
+	z-index: 10;
+
+	
+	background-image: -moz-linear-gradient(top, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(255, 255, 255, .3)), to(rgba(0, 0, 0, 0)));
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));
+    background-image: linear-gradient(top, rgba(255, 255, 255, .3), rgba(0, 0, 0, 0));
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='rgba(255, 255, 255, .3)', endColorstr='rgba(0, 0, 0, 0)', GradientType=1);
+    padding: 2rem 0;
+}
+
+#menu_zaw{
+	margin-right: auto;
+	margin-left: auto;
+	width:1000px;
+}
+
+.skladItem
+{
+	margin: 10px 55px;
+	/*
+	display: inline-block;
+	margin-right: auto;
+	margin-left: auto;
+	*/
+}
+
+/* Preloader */
+#preloader {
+	position: fixed;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background-color:#000;
+	z-index:99;
+}
+
+#status {
+	width:200px;
+	height:200px;
+	position:absolute;
+	left:50%; 
+	top:50%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+a#gripLogo	
+{ 
+	width:512px; 
+	height:256px; 
+	/*text-indent:-3000px; */
+	background:url(img/GRIP.png) 0 0 no-repeat; 
+	display:block; 
+	z-index:5;
+	padding-top: 120px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+a#gripLogo span 
+{ 
+	float: left;
+	display: block;
+	background-image: url(img/GRIP.png); 
+	background-repeat: no-repeat;
+}
+
+a#buttSt	
+{ 
+	width:120px; 
+	height:40px; 
+	text-indent:-3000px; 
+	background:url(img/START.png) 0 0 no-repeat; 
+	display:block; 
+	z-index:3; 
+	display: inline-block;
+}
+a#buttSt span 
+{ 
+	float:left;
+	display:block;
+	background-image:url(img/START.png); 
+	background-repeat:no-repeat;
+}
+
+a#buttSk	
+{ 
+	width:120px; 
+	height:40px; 
+	text-indent:-3000px; 
+	background:url(img/SKLAD.png) 0 0 no-repeat; 
+	display:block; 
+	z-index:2; 
+	display: inline-block;
+}
+
+a#buttSk span 
+{ 
+	float:left;
+	display:block;
+	background-image:url(img/SKLAD.png); 
+	background-repeat:no-repeat;
+}
+
+a#buttOn	
+{ 
+	width:120px; 
+	height:40px; 
+	text-indent:-3000px; 
+	background:url(img/ONAS.png) 0 0 no-repeat; 
+	display:block; 
+	z-index:2; 
+	display: inline-block;
+}
+
+a#buttOn span 
+{ 
+	float:left;
+	display:block;
+	background-image:url(img/ONAS.png); 
+	background-repeat:no-repeat;
+}
+
+a#buttMu	
+{ 
+	width:160px; 
+	height:40px; 
+	text-indent:-3000px; 
+	background:url(img/MUZYKA.png) 0 0 no-repeat; 
+	display:block; 
+	z-index:2; 
+	display: inline-block;
+}
+
+a#buttMu span 
+{ 
+	float:left;
+	display:block;
+	background-image:url(img/MUZYKA.png); 
+	background-repeat:no-repeat;
+}
+
+a#buttKonc	
+{ 
+	width:180px; 
+	height:40px; 
+	text-indent:-3000px; 
+	background:url(img/KONCERTY.png) 0 0 no-repeat; 
+	display:block; 
+	z-index:2; 
+	display: inline-block;
+}
+
+a#buttKonc span 
+{ 
+	float:left;
+	display:block;
+	background-image:url(img/KONCERTY.png); 
+	background-repeat:no-repeat;
+}
+
+a#buttKont	
+{ 
+	width:180px; 
+	height:40px; 
+	text-indent:-3000px; 
+	background:url(img/KONTAKT.png) 0 0 no-repeat; 
+	display:block; 
+	z-index:2; 
+	display: inline-block;
+}
+
+a#buttKont span 
+{ 
+	float:left;
+	display:block;
+	background-image:url(img/KONTAKT.png); 
+	background-repeat:no-repeat;
+}
+
+.clear { clear:both; }
+
+
+section{
+	width:1000px;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	z-index: -1;
+	margin-bottom: 200px;
+	font-family: czcionka;
+}

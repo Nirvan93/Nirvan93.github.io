@@ -1,0 +1,121 @@
+﻿<!document html>
+<html lang="pl">
+
+	<head>
+	  <meta charset="utf-8" />
+	  <title>Muja Tobelka</title>
+	</head>
+	<body>
+	
+	<br><br><br>
+	
+	<canvas id="canvas" width="700" height="500"></canvas>
+	
+	<script type='text/javascript'>
+	
+	var canvas = document.getElementById('canvas');
+    var context = canvas.getContext('2d');
+	
+	var width = 700;
+	var height = 500;
+	var counter = 0;
+	var FPS = 60;
+	
+	flys = [];
+	function fly(id)
+	{
+		id = id || {}; 
+		id.radius = 4;  
+		id.lineWidth = 2;
+		
+		id.xspeed = 2 + Math.random() * 5;
+		id.yspeed = 2 + Math.random() * 5;
+		id.x = 50 + Math.random() * width - 100;
+		id.y = 50 + Math.random() * height - 100;
+		
+		id.offset = Math.random() * 40;
+		id.counter;
+		
+		
+		id.update = function()
+		{
+			id.counter = counter + id.offset;
+			id.x += id.xspeed + Math.sin(id.counter)*6 + Math.sin(id.counter*1.5+3.5)*4 + Math.cos(id.counter*1.5+3.5)*12;
+			id.y += id.yspeed + Math.cos(id.counter)*8 + Math.sin(id.counter*1.75+4.2)*4;
+			
+			if ( id.x > 700 - id.radius || id.x < id.radius ) { id.xspeed = -id.xspeed; id.x += id.xspeed; }
+			if ( id.y < id.radius || id.y > 500 - id.radius ) { id.yspeed = -id.yspeed; id.y += id.yspeed; }
+			
+			//id.x = Math.clamp(id.radius, width-id.radius);
+			//id.y = id.y.clamp(id.radius, height - id.radius);
+			if ( id.x < id.radius ) id.x = id.radius; if ( id.x > width - id.radius ) id.x = width - id.radius;
+			if ( id.y < id.radius ) id.y = id.radius; if ( id.y > height - id.radius ) id.y = height - id.radius;
+		}
+		
+		
+		id.draw = function()
+		{
+			context.beginPath();
+			context.arc(id.x, id.y, id.radius, 0, 2 * Math.PI, false);
+			
+			context.fillStyle = rgbToHex(100+Math.floor(id.offset+Math.sin(id.counter)*100),100+Math.floor(id.offset+Math.cos(id.counter*2.3)*100),100+Math.floor(id.offset+Math.sin(id.counter*12.73)*100));
+			context.fill();
+			context.lineWidth = id.lineWidth;
+			//context.strokeStyle = rgbToHex(100+Math.floor(id.offset+Math.cos(id.counter)*85),100+Math.floor(id.offset+Math.sin(id.counter*2.3)*100),85+Math.floor(id.offset+Math.cos(id.counter*12.73)*75));
+			context.strokeStyle = '#888888';
+			context.stroke();
+		}
+		
+		return id;
+	}
+
+
+	
+	function componentToHex(c) {
+    var hex = c.toString(16);
+    return hex.length == 1 ? "0" + hex : hex;
+}
+	
+    function rgbToHex(r, g, b) {
+    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
+}
+	
+	setInterval(
+	function() 
+	{
+          update();
+          draw();
+    }, 1000/FPS);
+	
+	function update()
+	{
+		if ( counter <= 4.5 ) { flys.push( fly() ); }
+		counter += 0.1;
+		
+		flys.forEach(function(fly) 
+		{
+            fly.update();
+        });
+		
+
+
+	}
+	
+	function draw() 
+	{
+        //canvas.clearRect(0, 0, 700, 500);
+        flys.forEach(function(fly) 
+		{
+            fly.draw();
+        });
+
+    }
+
+	
+
+	
+	</script>
+	
+	</body>
+
+</html>
