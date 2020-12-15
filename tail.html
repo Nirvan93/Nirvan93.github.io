@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tail Animator</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/tail.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/loader.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+        <script src="https://unpkg.com/scrollreveal@4"></script>
+        <script src="js/loader.js"></script>
+    </head>
+    <body>
+        <!-- LOADER -->
+        <div class="loader">
+			<div id="status"><canvas id="loadStatus" width="80" height="80"></canvas></div>
+			<script src="js/fspinner.js"></script>
+        </div>
+        <!-- NAWIGACJA -->
+        <nav>
+            <div class="logo">
+                <a href="index.html"><img src="img/logo_nav_bar.png" alt="logo"></a>
+            </div>
+            <input type="checkbox" id="click">
+            <label for="click" class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </label>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="assets.html">ASSETS</a></li>
+                <li><a href="projects.html">PROJECTS</a></li>
+                <li><a href="about.html">ABOUT ME</a></li>
+                <!-- UNITY -->
+                <a href="https://assetstore.unity.com/publishers/37262">
+                    <img src="icons/unity.png"></img>
+                </a>
+                <!-- YOUTUBE -->
+                <a href="https://www.youtube.com/c/FImpossibleCreations">
+                    <img src="icons/youtube.png"></img>
+                </a>
+                <!-- FACEBOOK -->
+                <a href="https://www.facebook.com/FImpossibleCreations">
+                    <img src="icons/fb.png"></img>
+                </a>
+                <!-- UNREAL
+                <a href="https://www.unreal.com">
+                    <img src="icons/unreal.png"></img>
+                </a>-->
+                <!-- TWITTER -->
+                <a href="https://twitter.com/FimpossibleC">
+                    <img src="icons/twitter.png"></img>
+                </a>
+            </ul>
+        </nav>
+        <!-- TAIL ANIMATOR BANNER -->
+        <div class class="banner">
+            <img src="img/AssetBg_Tail.jpg"  width="100%" height="auto">
+        </div>
+        <!-- TAIL ANIMATOR BANNER INFO -->
+        <div class="banner__info">
+            <h1>TAIL ANIMATOR</h1>
+            <p>Add new quality to animations of your creatures and characters! <br>
+            Tail Animator will make limbs / clothes or other elements move <br>
+            with realistic tail / drag motion with very easy way to setup!</p>
+            <br><br>
+            <!-- BUTTON -->
+            <center>
+                <div class="btn">
+                    <button type="button"><a href="https://assetstore.unity.com/packages/tools/animation/tail-animator-121819">BUY IT NOW</a></button>
+                </div>
+            </center>
+            <h2>For Unity</h2>
+        </div>
+        <!-- TAIL ANIMATOR SAMPLES
+        <div class="samples">
+            <div class="samples__img">
+                <img src="img/screen1.jpg"></img>
+                <img src="img/screen2.jpg"></img>
+                <img src="img/tailtestgif.gif"></img>
+                <img src="img/screen3.jpg"></img>
+                <img src="img/screen4.jpg"></img>
+            </div>
+        </div> -->
+        <!-- TAIL ANIMATOR YOUTUBE VIDEO -->
+        <div class="newvidtxt__container">
+            <div class="newvidtxt">
+                <h3>Watch the newest video:</h3>
+            </div>
+        </div>
+        <div class="video__container">
+            <div class="yt__video">
+                <iframe src="https://www.youtube.com/embed/fJm-GA94op0" frameborder='0'></iframe>
+            </div>
+        </div>
+        <!-- FOOTER -->
+        <footer>
+        <div class="footer-txt">
+            Copyright © 2020 Fimpossible <x style="color:#ec4343;">Creations</x>
+            <br>
+            Website created with help of Sebastian Szwankowski
+        </div>
+        <div class="footer-img">
+                <a href="https://www.linkedin.com/in/filipmoeglich"><img src="icons/linkedin.png"></a>
+                <a href="https://twitter.com/FimpossibleC"><img src="icons/twitter.png"></a>
+                <a href="http://www.Discord.gg/Y3WrzQp"><img src="icons/discord.png"></a>
+        </div>
+    </footer>
+    <script>
+        ScrollReveal().reveal('.logo');
+        ScrollReveal().reveal('.banner');
+        ScrollReveal().reveal('.banner__info');
+        ScrollReveal().reveal('.btn');
+        ScrollReveal().reveal('.samples');
+        ScrollReveal().reveal('.yt__video');
+        ScrollReveal().reveal('.footer-txt');
+        ScrollReveal().reveal('.footer-img');
+    </script>
+</body>
+</html>

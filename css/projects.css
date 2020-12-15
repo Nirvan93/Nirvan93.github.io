@@ -1,69 +1,87 @@
-.projects_container
+/*##################################*/
+/*
+INDEX.HTML
+1.
+2.
+3.
+4.
+5.
+6.
+7.
+8.
+9.
+10.
+*/
+/*##################################*/
+body 
 {
-  margin:0px auto;
-  width:1100px;
-  margin-top:32px !important;
-  margin-left:191px;
+	background-image: url("../img/bgside.jpg");
+    background-attachment: scroll;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-.project
-{
-  display: block;
-  float: left;
-  padding: 3px 7px;
-  margin: 30px 20px;
-  margin-left: 80px;
-  margin-right: 80px;
-  background: #111111;
-  line-height: 6px;
-  border-style: solid;
-  border-width: 1px;
-  border-color: #2D2D2D;
-  color: #DDDDDD;
-  transition:all 0.3s ease;
-  cursor: pointer;
-  opacity:0.75;
-}
-
-.project:hover
-{
-	background: #131313;
-	border-color: #2F2F2F;
-	color: #FF8C48;
-	transform:scale(1.05);
-	opacity:1;
-	box-shadow:5px 3px 5px rgba(0, 0, 0, 0.3);
-	z-index:2;
-}
-
-.project:target
-{
-	background: #131313;
-	border-color: #2F2F2F;
-  
-	transform:scale(2.05);
-	opacity:1;
-	box-shadow:5px 3px 5px rgba(0, 0, 0, 0.3);
-	z-index:2;
-}
-
-.project img
-{
-  padding: 0px 2px 6px 2px;
-  width: 335px;
-  height: 200px;
-}
-
-.project t
-{
-  /*color: #DDDDDD;*/
-  float: center;
-  display: block;
+/* GENERAL */
+h1 {
   text-align: center;
-  font-family: 'defaultf';
-  padding-top: 7px;
-  font-size: 16px;
-  line-height: 22px;
-  text-decoration: none;
+  padding-top: 40px;
+  font-family: "Calibri";
 }
 
+.grid__img {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid__img .column {
+  max-height: 250px;
+  max-width: 470px;
+}
+
+.column {
+  -ms-flex: 25%;
+  flex: 25%;
+  padding: 0 4px;
+}
+.column img {
+  width: 100%;
+}
+
+p {
+  text-align: center;
+  padding-top: 10px;
+  font-family: "Calibri";
+  font-size: 13px;
+}
+
+/* BANNER TOP */
+.banner__top {
+  width: 100%;
+  height: 500px;
+}
+
+/* BANNER TOP */
+.banner__bottom {
+  width: 100%;
+  height: 600px;
+  background-color: #FFFFFF77;
+  /*background-color: #FFFFFF88;*/
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/*# sourceMappingURL=projects.css.map */

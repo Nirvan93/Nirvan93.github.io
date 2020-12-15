@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en-US" class="cufon-active cufon-ready">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="UTF-8">
+	<title>Filip Moeglich - Portfolio</title>
+	
+	<link rel="stylesheet" type="text/css" media="all" href="./css/main.css">
+	<link rel="icon" type="image/png" href="/favicon.png"/>
+</head>
+
+<body class="">
+
+<!-- Preloader 
+<div id="preloader">
+	<div id="status"><canvas id="loadStatus" width="80" height="80"></canvas></div>
+	<script type="text/javascript">
+	
+		var ctx = document.getElementById('loadStatus').getContext('2d');
+		var timer = 0;
+		var fade = false;
+		
+		setInterval(
+		function() 
+		{
+			if ( !fade )
+			{
+				timer += .05;
+				ctx.clearRect(0, 0, 80, 80);
+				ctx.save();
+				ctx.beginPath();
+						ctx.arc(40, 40, 25 + Math.sin(timer)*10, timer*2.5, timer * Math.PI + timer, false);
+						ctx.lineWidth = 5;
+						ctx.strokeStyle = '#444';
+						ctx.stroke();
+				ctx.closePath();
+				ctx.restore();
+			}	
+		}, 1000/60);
+		
+	</script>
+</div>-->
+
+<!-- START top bar menu -->
+<div class="topbar">
+	<div class="topbar-wrapper">
+	
+    	<div class="topbar-options">
+			<ul class="top-social"> 
+				<!--<li class="ttwiter"><a href="">Twitter</a></li> 
+				<li class="tfacebook"><a href="https://www.facebook.com/filip.moeglich" target="_blank">Facebook</a></li>  -->        
+                <li class="tyoutube"><a href="https://www.youtube.com/c/FImpossibleCreations" target="_blank">Youtube</a></li>                                                        
+				<li class="tlinkedin"><a href="https://pl.linkedin.com/in/filip-moeglich-637959b1" target="_blank">LinkedIn</a></li>     
+			</ul>
+			
+		
+        </div>    
+		
+		
+        <div id="menul-wrapper">
+        
+            <div class="menul-header_menul-container">
+
+                <ul id="menul-header_menu" class="sf-menul">
+                    <li><a id="menul-other" href="https://assetstore.unity.com/publishers/37262">Unity Asset Store</a>    </li>
+                    <li><a id="menul-other" href="https://www.youtube.com/user/NirvanaTGM/">Old Youtube Channel</a>    </li>
+                </ul>
+                
+            </div>   
+        </div> 
+
+
+		<div id="menu-wrapper">
+		
+			<div class="menu-header_menu-container">
+			
+				<ul id="menu-header_menu" class="sf-menu">
+					<li><a id="menu-current">Games</a></li>
+					<!-- <li><a id="menu-other" href="audio.html">Audio</a></li> -->
+					<li><a id="menu-other" href="contact.html">Contact</a></li>
+				</ul>
+				
+			</div>   
+        </div> 
+		
+    </div>
+</div>
+<!-- END top bar menu -->
+
+
+<!-- START theme body -->
+<div class="ac-hbody">
+
+	<div class="header-wrapper">
+	
+        <div id="logo">		 
+			<a href=""><img src="./img/thumb.png"></a>
+		</div>
+		
+	</div>
+	
+	<hr>
+	<br>
+    
+	<div class="ac-hcontent" style="margin-bottom: 25px;">    
+	
+        <!-- start homepage slider -->    
+        <div class="hcontent-wrapper">
+				<div style="display: table; margin: 0 5px; text-align: left; font-size: 20px; color: #FF8C48; font-weight: 0;">
+					<p>I am a Game Designer, Programmer, 3D/2D Artist, Animator, Composer and Audio Engineer in Poland.</p><p>
+					Creating games was always in my hearth and in junior high I found my second passion - music.
+					<br>For many years I was developing my game production skills by making a lot of small personal projects. 
+					<br>During this time I gained perfectionist senses and earn a lot of 
+					knowledge about many things which<br>are needed to create great game.</p><br>
+                    <a href="https://assetstore.unity.com/publishers/37262">Check my assets at Unity Asset Store</a>
+
+					<br>
+				</div>              
+        </div>         
+        <!-- end homepage slider -->    
+                
+		<hr>
+		
+		<h1 style="display: table; margin: 30px auto; color: #FF8C48;">Lastest showcases</h1>
+		<br>
+		
+		    <div id="pinner">
+			<iframe id="iframeoff" width="440" height="248" src="https://www.youtube.com/embed/4oE1wJy4pXw" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<iframe id="iframeoff" width="440" height="248" src="https://www.youtube.com/embed/g3hMib5eUA4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<br>
+			
+			<iframe id="iframeoff" width="440" height="248" src="https://www.youtube.com/embed/k5dEAcBcGJk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+			<iframe id="iframeoff" width="440" height="248" src="https://www.youtube.com/embed/BzkxhSDE_Rk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+			<br>
+			</div>
+			
+		<hr>
+		
+		<!-- Start Slideshow -->
+						
+		<h1 style="display: table; margin: 30px auto; color: #FF8C48;">Other Works</h1>
+		
+		<div class="GalleryContainer" id="gallery">
+			<div class="GalleryView" id="big">
+			
+				<img id="back" src="./beautyshots/DT7.jpg"/>		
+				<img id="front" src="./beautyshots/DT0.jpg"/>
+				<canvas id="galleryLoader" width="80" height="80">Loading...</canvas>
+				<button id="galleryAutoplayButton">Play<div id="galleryPlay"></div></button>
+			</div>
+			
+			<div style="margin: 0px auto; display: table; margin-top: 26px;">
+			<ul>
+
+				<li><img class="clickable" id="thumb" nr="0" src="./beautyshots/Thumb/DT0.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="1" src="./beautyshots/Thumb/DT1.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="2" src="./beautyshots/Thumb/DT2.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="3" src="./beautyshots/Thumb/DT3.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="4" src="./beautyshots/Thumb/DT4.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="5" src="./beautyshots/Thumb/DT5.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="6" src="./beautyshots/Thumb/DT6.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="7" src="./beautyshots/Thumb/DT7.jpg" width=100 heigh=73/></li><br>
+				<li><img class="clickable" id="thumb" nr="8" src="./beautyshots/Thumb/DT8.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="9" src="./beautyshots/Thumb/DT9.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="10" src="./beautyshots/Thumb/DT10.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="11" src="./beautyshots/Thumb/DT11.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="12" src="./beautyshots/Thumb/DT12.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="13" src="./beautyshots/Thumb/DT13.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="14" src="./beautyshots/Thumb/DT14.jpg" width=100 heigh=73/></li>
+				<li><img class="clickable" id="thumb" nr="15" src="./beautyshots/Thumb/DT15.jpg" width=100 heigh=73/></li>
+				
+			</ul>
+			</div>
+		
+		</div>
+		
+		<br>
+		
+		<!-- End Slideshow -->
+		
+		<hr>
+		<section id="proj">
+        <div class="projects_container">
+		
+			<h1 style="display: table; margin: 0 auto; color: #FF8C48;">Detailed jobs over few individual projects</h1>
+			<br>
+		
+			<a id="DTButton" >
+			<div class="project">
+			<t>Dark Time<br>Unity 5 ∙ C# ∙ 2015-2016</t>      
+			<br>
+			<img src="./projects/slav/small.jpg"/>
+			</div>
+			</a>
+			
+			<a id="WIGButton">
+			<div class="project">
+			<t>Wiggly<br>Windows Phone ∙ Silverlight C# ∙ 2015</t>      
+			<br>
+			<img src="./projects/wiggly/small.jpg"/>
+			</div>
+			</a>	
+			
+			<a id="CATHButton">
+			<div class="project">
+			<t>Catharsis Alpha<br>Unity 4 ∙ C# ∙ 2014</t>      
+			<br>
+			<img src="./projects/catharsis/small.jpg"/>
+			</div>
+			</a>
+
+			<a id="ZOMBButton">
+			<div class="project">
+			<t>Zombies Everywhere!<br>Flash ∙ AS3 ∙ 2013</t>      
+			<br>
+			<img src="./projects/zombies/small.jpg"/>
+			</div>
+			</a>
+			
+        </div>		
+        </section>
+	</div>  
+	
+	<hr>
+	
+<br>
+
+<div class="project-wrapper">
+	<div class="project-container">
+		<section id="proj-dt">
+		<div class="title-wrapper">
+			<div style="width: 120px; height: 60px; float:left; margin-left: 30px;"><br>
+			<a id="ProjButton1" class="button-rounded">← Back</a>
+			<a id="WIGButton2" class="button-rounded">Next →</a>
+			</div>
+			<img src="./projects/slav/header.jpg" class="title-image" style="float:left; margin-left: 30px;"/>
+		</div>
+		<br>
+		<div class = "project-content">
+		
+			<div id="hr2"></div>
+		
+			<div class="project-info">
+				<div class="project-info-text">
+					<br>
+					Title: <t>“Dark Time”</t><br>
+					Genre: <t>Survival RPG</t><br>
+					Engine: <t>Unity 5</t><br>
+					Technology: <t>C#</t><br>
+					<br>
+					Responsible for: <t>Idea, Story, Planning, <br>
+					Design, Programming, most Graphics, <br>
+					Animations, Music, Sound Effects</t><br>
+					<br>
+					Software used: <t>Unity, Visual Studio,<br>
+					Adobe Fireworks, Cinema 4D, FL Studio</t><br>
+				</div>
+				
+			<div class="project-info-media">
+				<!--<video src="./projects/galx/galx.mp4" autoplay="false" loop="true"><source src="./projects/galx/galx.mp4" type="video/mp4"></video>-->
+				<iframe width="464" height="320" src="https://www.youtube.com/embed/SK3LtqiAESk" frameborder="0" allowfullscreen></iframe>
+			</div>
+			</div>
+			
+			<div class="project-description">
+			<div id="hr2"></div>
+				Description:<br><t>
+				Dark Time is my newest project, designed for college engineer exam.<br>
+				Current objective is to make good foundations to easily develop game later to bigger shape.<br>
+				For more info visit this page: <a href="http://warsztat.gd/projects/SlavicSurvivalRPG">http://www.warsztat.gd/projects/SlavicSurvivalRPG</a><br>
+				</t><br id="screenshots">
+				Screenshots:<br>
+				<sm>(Click to enlarge)</sm>
+			</div>
+			<div class="image-viewer">
+				<ul>
+					<li><img class='lightbox-g' nr="0" src="./projects/slav/1.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="1" src="./projects/slav/2.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="2" src="./projects/slav/3.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="3" src="./projects/slav/4.jpg" class="image-viwer-image"></li>
+				</ul>
+			</div>
+		</div>
+		<br>
+		<hr>
+	</section>
+	</div>
+</div>
+	
+<br>
+	
+<div class="project-wrapper">
+	<div class="project-container">
+		<section id="proj-wiggly">
+
+		<div class="title-wrapper">
+			<div style="width: 120px; height: 60px; float:left; margin-left: 30px;"><br>
+			<a id="ProjButton3" class="button-rounded">← Back</a>
+			<a id="CATHButton2" class="button-rounded">Next →</a>
+			</div>
+			<img src="./projects/wiggly/header.jpg" class="title-image" style="float:left; margin-left: 30px;"/>
+		</div>
+		
+		</div>
+		<br>
+		<div class = "project-content">
+		
+			<div id="hr2"></div>
+		
+			<div class="project-info">
+				<div class="project-info-text">
+					<br>
+					Title: <t>“Wiggly”</t><br>
+					Genre: <t>Arcade</t><br>
+					Engine: <t>Silverlight</t><br>
+					Technology: <t>C#</t><br>
+					<br>
+					Responsible for: <t>Idea, Story, Planning, <br>
+					Design, Programming, Graphics, <br>
+					Animations, Sound Effects</t><br>
+					<br>
+					Software used: <t>Visual Studio, Adobe Fireworks<br>
+					FL Studio</t><br>
+				</div>
+				
+			<div class="project-info-media">
+				<iframe width="464" height="320" src="https://www.youtube.com/embed/OXjStWMGt6E" frameborder="0" allowfullscreen></iframe>
+			</div>
+			</div>
+			
+			<div class="project-description">
+			<div id="hr2"></div>
+				Description:<br><t>
+				Wiggly is a windows phone game, made for college rate.<br>
+				You can download it for free from store: <a href="https://www.microsoft.com/pl-pl/store/games/wiggly/9wzdncrd8j29">Wiggly in Windows Phone Store</a><br></t>
+				<br id="screenshots">
+				Screenshots:<br>
+				<sm>(Click to enlarge)</sm>
+			</div>
+			<div class="image-viewer">
+				<ul>
+					<li><img class='lightbox-g' nr="0" src="./projects/wiggly/1.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="1" src="./projects/wiggly/2.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="2" src="./projects/wiggly/3.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="3" src="./projects/wiggly/4.jpg" class="image-viwer-image"></li>
+				</ul>
+			</div>
+		</div>
+		</section>
+		<br>
+		<hr>
+		
+	</div>
+</div>
+
+<br>
+	
+<div class="project-wrapper">
+	<div class="project-container">
+		<section id="proj-cath">
+		
+		<div class="title-wrapper">
+			<div style="width: 120px; height: 60px; float:left; margin-left: 30px;"><br>
+			<a id="ProjButton4" class="button-rounded">← Back</a>
+			<a id="ZOMBButton2" class="button-rounded">Next →</a>
+			</div>
+			<img src="./projects/catharsis/header.jpg" class="title-image" style="float:left; margin-left: 30px;"/>
+		</div>
+		
+		<br>
+		<div class = "project-content">
+		
+			<div id="hr2"></div>
+		
+			<div class="project-info">
+				<div class="project-info-text">
+					<br>
+					Title: <t>“Catharsis: Alpha Version”</t><br>
+					Genre: <t>Survival Horror</t><br>
+					Engine: <t>Unity 4</t><br>
+					Technology: <t>C#</t><br>
+					<br>
+					Responsible for: <t>Idea, Story, Planning, <br>
+					Design, Programming, Graphics, <br>
+					Animations, Music, Sound Effects</t><br>
+					<br>
+					Software used: <t>Visual Studio, Adobe Fireworks<br>
+					Cinema 4D, FL Studio</t><br>
+				</div>
+				
+			<div class="project-info-media">
+				<iframe width="464" height="320" src="https://www.youtube.com/embed/PJmbuOSneaY" frameborder="0" allowfullscreen></iframe>
+			</div>
+			</div>
+			
+			<div class="project-description">
+			<div id="hr2"></div>
+				Description:<br><t>
+				Catharsis is a game placed in psychodelic nightmare world, where main character<br>
+				have to find memory rooms, fix his sins and come back to life...<br>
+				Game was spotted by famous youtubers like Pewdiepie, Markiplier, Rojo etc.<br>
+				For more info visit this page:</t> <a href="http://www.indiedb.com/games/catharsis">http://www.indiedb.com/games/catharsis</a><br>
+				<br id="screenshots">
+				Screenshots:<br>
+				<sm>(Click to enlarge)</sm>
+			</div>
+			<div class="image-viewer">
+				<ul>
+					<li><img class='lightbox-g' nr="0" src="./projects/catharsis/1.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="1" src="./projects/catharsis/2.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="2" src="./projects/catharsis/3.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="3" src="./projects/catharsis/4.jpg" class="image-viwer-image"></li>
+				</ul>
+			</div>
+		</div>
+		<br>
+		<hr>
+		</section>
+	</div>
+</div>
+	
+<br>
+
+<div class="project-wrapper">
+	<div class="project-container">
+		<section id="proj-zombies">
+		<div class="title-wrapper">
+			<a id="ProjButton6" class="button-rounded">← Back</a>
+			<img src="./projects/zombies/header.jpg" class="title-image"/>
+		</div>
+		<br>
+		<div class = "project-content">
+		
+			<div id="hr2"></div>
+		
+			<div class="project-info">
+				<div class="project-info-text">
+					<br>
+					Title: <t>“Zombies Everywhere!”</t><br>
+					Genre: <t>Survival Arcade</t><br>
+					Engine: <t>Flashpunk</t><br>
+					Technology: <t>Flash, Actionscript 3</t><br>
+					<br>
+					Responsible for: <t>Idea, Story, Planning, <br>
+					Design, Programming, Graphics, <br>
+					Animations, Sound Effects</t><br>
+					<br>
+					Software used: <t>Flash Develop, Adobe Fireworks<br>
+					Cinema 4D, FL Studio</t><br>
+				</div>
+				
+			<div class="project-info-media">
+				<iframe width="464" height="320" src="https://www.youtube.com/embed/DrQ6Fih5l_0" frameborder="0" allowfullscreen></iframe>
+			</div>
+			</div>
+			
+			<div class="project-description">
+			<div id="hr2"></div>
+				Description:<br><t>
+				Simple arcade survival flash game, inspired by Contra Nes game.<br>Game has been sponsored by creators of game Dead Frontier.<br>
+				Free to play here: <a href="http://www.newgrounds.com/portal/view/619165">Zombies Everywhere on Newgrounds</a></t><br>
+				<br id="screenshots">
+				Screenshots:<br>
+				<sm>(Click to enlarge)</sm>
+			</div>
+			<div class="image-viewer">
+				<ul>
+					<li><img class='lightbox-g' nr="0" src="./projects/zombies/1.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="1" src="./projects/zombies/2.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="2" src="./projects/zombies/3.jpg" class="image-viwer-image"></li>
+					<li><img class='lightbox-g' nr="3" src="./projects/zombies/4.jpg" class="image-viwer-image"></li>
+				</ul>
+			</div>
+		</div>
+		<br>
+		<hr>
+		</section>
+		<br><br>
+        <div class="hcontent-wrapper">
+				<div style="display: table; margin: 0 auto; text-align: center; font-size: 20px; color: #FF8C48; font-weight: 0;">
+					<p>It's only a part of my productions, want to see more?<br><br> 
+					I invite you to my facebook pages: <a href="https://www.facebook.com/DragonsShadowStudio">"My Games Fanpage"</a>, <a href="https://www.facebook.com/aldehydband/">"My Audio Fanpage"</a>, <a href="https://www.facebook.com/grip.rapcore">"My Band Fanpage"</a><br><br><br>
+					If you have proposition for me go to <a href="contact.html">contact</a> section.
+					</a></p>
+				</div>              
+        </div>   
+		
+	</div>
+</div>
+
+<br>
+	
+</div>
+<!-- END theme body -->
+
+
+<!-- START footer -->
+<div id="footer" style="margin-top: 50px" >
+    
+    <div id="footer-bottom">
+    	<div class="footer-bottom-wrapper">
+		
+        	<div id="fmenu-wrapper">
+	            <div class="menu-footer_menu-container">
+				<ul id="menu-footer_menu" class="menu">
+					<li><a>Games</a></li>
+					<!-- <li><a href="audio.html">Audio</a></li> -->
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+				</div>  
+            </div>
+			
+			<div class="footer-copyright">
+				<p><strong>Copyright © 2018 Filip Moeglich. All rights reserved.</strong></p>
+			</div>
+			
+        </div>
+    </div>
+</div>    
+<!-- END footer -->
+
+<!-- Scripts -->
+	<link rel="stylesheet" type="text/css" media="all" href="./css/projects.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/footer.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/social.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/header.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/topmenu.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/gallery.css">
+	<link rel="stylesheet" type="text/css" media="all" href="./css/style-css.css">
+
+	<link rel="stylesheet" type="text/css" media="all" href="./css/projectpage.css">
+	<script type="text/javascript" src="./javascript/jquery.js"></script>
+	<script type="text/javascript" src="./javascript/lightbox.js"></script>
+	<script type="text/javascript" src="./javascript/gallery.js"></script>
+	<script type="text/javascript" src="./javascript/scrollTo.js"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="./css/buttons.css">
+		
+<!--- Preloader 
+<script type="text/javascript">
+	//<![CDATA[
+		$(window).load(function() 
+		{
+			$('#status').fadeOut();
+			$('#preloader').delay(350).fadeOut('slow');
+			fade = true;
+		})
+	//]]>
+</script> -->
+
+
+</body>
+</html>
