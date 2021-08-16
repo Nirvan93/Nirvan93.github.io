@@ -1,0 +1,7 @@
+1 - High Voice
+2 - Low Voice
+3 - Very Low Voice
+4 - Multi Voice
+5 - Roboto Voice
+6 - Psychodelic 
+7 - Choppy
