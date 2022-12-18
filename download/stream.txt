@@ -1,7 +1,7 @@
-1 - High Voice
-2 - Low Voice
-3 - Very Low Voice
-4 - Multi Voice
-5 - Roboto Voice
-6 - Psychodelic 
-7 - Choppy
+F2 - High Voice
+F3 - Low Voice
+F4 - Very Low Voice
+F5 - Multi Voice
+F6 - Roboto Voice
+F7 - Psychodelic 
+F8 - Choppy
