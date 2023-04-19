@@ -1,0 +1,60 @@
+.top-social, .top-social li 
+{
+	float:left;
+	list-style:none;
+	margin:0;
+}
+
+.top-social 
+{
+	margin-top:11px;
+}
+
+.top-social li a 
+{
+	display:block;
+	width:33px;
+	height:33px;		
+	text-indent:-9999px;
+	margin-right:4px;
+}
+
+.top-social .ttwiter a
+{
+	background:url(../img/icons/top_twitter.png) no-repeat 0 0;  		
+}
+
+.top-social .ttwiter a:hover 
+{
+	background:url(../img/icons/top_twitter.png) no-repeat 0 -33px;  			
+}
+
+.top-social .tfacebook a 
+{
+	background:url(../img/icons/top_facebook.png) no-repeat 0 0;  		
+}
+
+.top-social .tfacebook a:hover 
+{
+	background:url(../img/icons/top_facebook.png) no-repeat 0 -33px;  			
+}
+
+.top-social .tyoutube a 
+{
+	background:url(../img/icons/top_youtube.png) no-repeat 0 0;  		
+}
+
+.top-social .tyoutube a:hover 
+{
+	background:url(../img/icons/top_youtube.png) no-repeat 0 -33px;  			
+}
+
+.top-social .tlinkedin a 
+{
+	background:url(../img/icons/top_linkedin.png) no-repeat 0 0;  		
+}
+
+.top-social .tlinkedin a:hover 
+{
+	background:url(../img/icons/top_linkedin.png) no-repeat 0 -33px;  			
+}

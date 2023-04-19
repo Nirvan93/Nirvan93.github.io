@@ -1,0 +1,88 @@
+@media (min-width: 768px) {
+  /* HERO SECTION */
+  .container {
+    min-width: 50rem;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    min-width: 40rem;
+    text-align: center;
+  }
+  /* HERO SECTION */
+  .logo {
+    height: 7rem;
+    width: auto;
+  }
+  .heading-primary {
+    font-size: 2.3rem;
+  }
+  /* PROJECTS SECTION */
+  .paragrowth,
+  .specteared,
+  .fimpossible {
+    width: 10rem;
+  }
+  .paragrowth img,
+  .specteared img,
+  .fimpossible img {
+    height: 15rem;
+    width: auto;
+    border-radius: 3%;
+  }
+  /* MORE SECTION */
+  .grid-two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 500px) {
+  .container {
+    min-width: 23rem;
+    text-align: center;
+  }
+  /* HERO SECTION */
+  .logo {
+    height: 5rem;
+    width: auto;
+  }
+  .heading-primary {
+    font-size: 1.5rem;
+  }
+  .icon {
+    height: 1.5rem;
+  }
+  /* PROJECTS SECTION */
+  .heading-secondary {
+    font-size: 1rem;
+    padding-bottom: 2rem;
+  }
+  .grid-three-columns {
+    grid-template-columns: 1fr;
+  }
+  .paragrowth,
+  .specteared,
+  .fimpossible {
+    width: 80vw;
+  }
+  .paragrowth img,
+  .specteared img,
+  .fimpossible img {
+    height: 7rem;
+    width: auto;
+    border-radius: 3%;
+  }
+  .card-title {
+    padding: 0.5rem 0;
+    font-size: 0.8rem;
+  }
+  /* MORE SECTION */
+  .more-list-item {
+    font-size: 0.8rem;
+    justify-content: center;
+    gap: 1rem;
+  }
+  /* ABOUT SECTION */
+  .about-text {
+    font-size: 0.8rem;
+  }
+}/*# sourceMappingURL=queries.css.map */

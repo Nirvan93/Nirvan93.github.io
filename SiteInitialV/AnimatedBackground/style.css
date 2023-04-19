@@ -1,0 +1,10 @@
+body 
+{
+	#background-image: url("img/BGSide.jpg");
+	#background-image: url("img/bgheader.jpg");
+	background-color: white;
+	background-attachment: fixed;
+  	background-position: center;
+  	background-repeat: no-repeat;
+  	background-size: cover;
+}

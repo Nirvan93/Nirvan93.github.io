@@ -1,0 +1,153 @@
+#lightboxClose
+{
+	width: 24px;
+	height: 24px;
+	
+	background: url(../img/x-mark.png);
+	
+	top: 15px;
+	left: 94%;
+	
+	position: absolute;
+	cursor: pointer;
+	
+	z-index: 99;
+	
+  transition:all 0.2s ease;
+  opacity:0.75;
+}
+
+#lightboxClose:hover
+{
+	/*transform:scale(1.0);*/
+	opacity:1;
+}
+
+.GalleryContainer
+{
+	display: table;
+	margin: 0 auto;
+}
+
+.GalleryContainer ul 
+{
+	list-style-type: none;
+}
+
+.GalleryContainer li 
+{
+	display: inline;
+	cursor: pointer;
+}
+
+.GalleryContainer img 
+{
+	cursor: hand;
+}
+
+.GalleryContainer #galleryLoader
+{
+	top: 290px;
+	left: 560px;
+	position: absolute;
+	opacity: 0.0;
+	z-index: 10;
+}
+
+.GalleryContainer #galleryAutoplayButton
+{
+	top: 35px;
+	left: 15px;
+	position: absolute;
+	z-index: 2;
+	text-align: left;
+	
+	width: 60px;
+	height: 25px;
+	
+	font-size: 12px;
+	background:transparent;
+	border:1px solid #e4e4e4;
+	
+	color:#ffffff;
+	padding:5px 10px 5px 10px;	
+	
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;	
+}
+
+.GalleryContainer #galleryAutoplayButton:focus { outline: 0; }
+.GalleryContainer #galleryAutoplayButton:hover { cursor: pointer; }
+
+#galleryPlay
+{
+	height: 13px;
+    margin-left: 7px;
+	position: absolute;
+	display: inline-block;
+	z-index: 2;
+	
+    width: 5px;
+	background: url(../img/control_icons.gif) no-repeat -14px 50%;
+}
+
+#galleryStop
+{
+	height: 13px;
+    margin-left: 6px;
+	position: absolute;
+	display: inline-block;
+	z-index: 2;
+
+    width: 6px;
+    background: url(../img/control_icons.gif) no-repeat -19px 50%;
+}
+
+#thumb 
+{
+	cursor: hand;
+	transform:scale(0.95);
+	transition:all 0.3s ease;
+	opacity: 0.85;
+}
+
+#thumb:hover
+{
+    transform:scale(1.0);
+    opacity:1;
+	display: inline;
+}
+
+.GalleryView
+{
+	top: 0;
+	left: 0;
+	width: 1200px;
+	height: 667px;
+	position: relative;
+}
+
+#front
+{
+	z-index:1;
+	
+	position: absolute;
+	margin-left:auto;
+    margin-right:auto;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+#back
+{
+	z-index:0;
+	
+	position: absolute;
+    margin-left:auto;
+    margin-right:auto;
+	top: 0;
+	left: 0;
+	right: 0;
+}

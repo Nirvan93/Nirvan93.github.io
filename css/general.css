@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+
+.main {
+  height: 100%;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.main::-webkit-scrollbar {
+  display: none;
+}
+
+section {
+  height: 100vh;
+  width: 100%;
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section:nth-of-type(1) {
+  background-image: url(../background/Background1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section:nth-of-type(2) {
+  background-image: url(../background/Background2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section:nth-of-type(3) {
+  background-image: url(../background/Background3.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section:nth-of-type(4) {
+  background-image: url(../background/Background4.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.grid-two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-items: center;
+}
+
+.grid-three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 2rem;
+}
+
+.heading-primary {
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+.heading-secondary {
+  color: rgb(255, 255, 255);
+  font-size: 1.5rem;
+  text-align: center;
+  padding-bottom: 4rem;
+}
+
+.red {
+  color: rgb(236, 67, 67);
+}
+
+.icon {
+  height: 2.5rem;
+  width: auto;
+}
+
+.scroll-icon {
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+}/*# sourceMappingURL=general.css.map */

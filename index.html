@@ -1,164 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Fimpossible</title>
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/index.css">
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/loader.css">
-        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-        <script src="https://unpkg.com/scrollreveal@4"></script>
-        <script src="js/loader.js"></script>
-    </head>
-    <body>
-        <!-- LOADER -->
-        <div class="loader">
-			<div id="status"><canvas id="loadStatus" width="80" height="80"></canvas></div>
-			<script src="js/fspinner.js"></script>
-        </div>
-        <!-- NAWIGACJA -->
-        <nav>
-            <div class="logo">
-                <a href="index.html"><img src="img/logo_nav_bar.png" alt="logo"></a>
-            </div>
-            <input type="checkbox" id="click">
-            <label for="click" class="menu-btn">
-                <i class="fas fa-bars"></i>
-            </label>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="assets.html">ASSETS</a></li>
-                <li><a href="projects.html">PROJECTS</a></li>
-                <li><a href="about.html">ABOUT ME</a></li>
-                <!-- UNITY -->
-                <a href="https://assetstore.unity.com/publishers/37262">
-                    <img src="icons/unity.png"></img>
-                </a>
-                <!-- YOUTUBE -->
-                <a href="https://www.youtube.com/c/FImpossibleCreations">
-                    <img src="icons/youtube.png"></img>
-                </a>
-                <!-- FACEBOOK -->
-                <a href="https://www.facebook.com/FImpossibleCreations">
-                    <img src="icons/fb.png"></img>
-                </a>
-                <!-- UNREAL
-                <a href="https://www.unreal.com">
-                    <img src="icons/unreal.png"></img>
-                </a>
-                -->
-                <!-- TWITTER -->
-                <a href="https://twitter.com/FimpossibleC">
-                    <img src="icons/twitter.png"></img>
-                </a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fimpossible - Filip Moeglich</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/queries.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"
+      defer
+    ></script>
+    <script src="script.js" defer></script>
+    <script
+      src="https://kit.fontawesome.com/69aa13af25.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <div class="button">
+          <input type="checkbox" id="menuToggle" />
+          <label for="menuToggle" class="menu-icon">
+            <i class="fa-solid fa-bars"></i>
+          </label>
+          <div class="menu">
+            <ul class="nav-list">
+              <h2 class="heading-secondary">Useful Links:</h2>
+              <li class="nav-item">
+                <a
+                  href="https://store.steampowered.com/curator/40266762-FImpossible-Games/list/84166/"
+                  class="link"
+                  target="_blank"
+                  ><img src="icons/Logo_Steam.png" alt="Steam logo" />
+                  Fimpossible<span class="red">Games</span>Steam Page</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="https://assetstore.unity.com/publishers/37262"
+                  class="link"
+                  target="_blank"
+                  ><img src="icons/Logo_Unity.png" alt="Unity logo" />
+                  Fimpossible<span class="red">Creations</span>Asset Page</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="https://www.youtube.com/@_FimpossibleGames"
+                  class="link"
+                  target="_blank"
+                  ><img src="icons/Logo_Youtube.png" alt="Youtube logo" /> Games
+                  Youtube Channel</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  href="https://www.youtube.com/c/FImpossibleCreations"
+                  class="link"
+                  target="_blank"
+                >
+                  <img src="icons/Logo_Youtube.png" alt="Youtube logo" /> Assets
+                  Youtube Channel</a
+                >
+              </li>
             </ul>
-        </nav>
-        <!-- TOP YOUTUBE CONTAINER WITH BACKGROUND IMAGE-->
-        <header>
-            <div class="textdiv">
-                <p class="header_text">Delivering impressive features for your projects!</p>
-            </div>
-            <iframe src="https://www.youtube.com/embed/k5dEAcBcGJk"></iframe>
-        </header>
-        <!-- ASSETS & PROJECTS CONTAINER -->
-        <div class="container">
-            <!-- ASSETS -->
-            <div class="item">
-                <div class="item__header">
-                    <h2 class="item__title">ASSETS</h2>
-                </div>
-                <div class="item__content">
-                    <p class="item__paragraph">
-                        Fimpossible Creations is offering coded assets universal for any
-                        project giving new quality on animations making them realistic
-                        thanks to procedural animation.
-                        <br><br>
-                        You will also find packages for optimization and other useful tools.
-                    </p>
-                </div>
-            </div>
-            <!-- PROJECTS -->
-            <div class="item">
-                <div class="item__header">
-                    <h2 class="item__title">PROJECTS</h2>
-                </div>
-                <div class="item__content">
-                    <p class="item__paragraph">
-                        Fimpossible Creations is preparing some own game projects as well
-                        as cooperating with other companies to help improve their visuals.
-                        You can find some of this projects under tab.
-                    </p>
-                </div>
-            </div>
+          </div>
         </div>
-        <!-- ASSETS BY FIMPOSIBLE CREATIONS CONTAINER-->
-        <div class="assetsby-container">
-            <div class="assetsby-transparency">
-                <h1>ASSETS by Fimpossible Creations</h1>
-                <p>All the Assets are prepared with ease of use in mind. <br>
-                Customized windows and GUI does many things done automatically to make you implement new features very quickly.</p>
-                <p>Packages are constantly updated with new features and new exciting packages are in production! </p>
-                <p>Each package have prepared User Manual but also tutorials can be found on the Youtube channel. <br>
-                If having some questions you can also write on my mail! ;)</p>
-            </div>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="section-hero">
+        <div class="hero-video">
+          <video playsinline autoplay loop muted>
+            <source src="video/video_hero.mp4" type="video/mp4" />
+          </video>
         </div>
-        <!-- UNITY, ABOUT, YOUTUBE CONTAINER -->
-        <div class="bottom-container">
-            <!-- UNITY -->
-            <div class="bottom-item">
-                <div class="bottom-item__header">
-                    <a href="https://assetstore.unity.com/publishers/37262"><h2 class="bottom-item__title">Fimpossible Creations at <br> Unity Asset Store</h2></a>
-                </div>
-                <div class="bottom-item__content">
-                    <p class="bottom-item__paragraph">
-                        <a href="https://assetstore.unity.com/publishers/37262"><img src="icons/unity.png"></a>
-                    </p>
-                </div>
-            </div>
-            <!-- ABOUT -->
-            <div class="bottom-item">
-                <div class="bottom-item__content">
-                    <p class="bottom-item__button">
-                        <a href="about.html"><button type="button">ABOUT ME</button></a>
-                    </p>
-                </div>
-            </div>
-             <!-- YOUTUBE -->
-            <div class="bottom-item">
-                <div class="bottom-item__header">
-                    <a href="https://www.youtube.com/c/FImpossibleCreations"><h2 class="bottom-item__title">News, Tutorials & More at <br> Youtube Channel</h2></a>
-                </div>
-                <div class="bottom-item__content">
-                    <p class="bottom-item__paragraph">
-                        <a href="https://www.youtube.com/c/FImpossibleCreations"><img src="icons/youtube.png"></a>
-                    </p>
-                </div>
-            </div>
+        <div class="container hero-content">
+          <div class="grid-two-columns">
+            <a
+              href="https://store.steampowered.com/curator/40266762-FImpossible-Games/list/84166/"
+              target="_blank"
+            >
+              <img
+                src="logo/FimpoGames.png"
+                alt="Fimpossible Games"
+                class="logo"
+              />
+            </a>
+            <a
+              href="https://assetstore.unity.com/publishers/37262"
+              target="_blank"
+            >
+              <img
+                src="logo/FimpoCreations.png"
+                alt="Fimpossible Creations"
+                class="logo"
+              />
+            </a>
+          </div>
+          <div class="hero-text">
+            <h1 class="heading-primary">
+              Independent game developer <br />
+              and Unity Asset Store publisher.
+            </h1>
+          </div>
+          <div class="scroll-icon">
+            <img src="icons/scroll.png" alt="Mouse scroll icon" class="icon" />
+          </div>
         </div>
-        <!-- FOOTER -->
-        <footer>
-            <div class="footer-txt">
-                Copyright © 2020 Fimpossible <x style="color:#ec4343;">Creations</x>
-                <br>
-                Website created with help of Sebastian Szwankowski
+      </section>
+      <section class="section-projects">
+        <div class="container projects-content">
+          <h2 class="heading-secondary heading-projects">
+            Check out Fimpossible projects:
+          </h2>
+          <div class="grid-three-columns">
+            <div class="paragrowth">
+              <a
+                href="https://store.steampowered.com/app/1761310"
+                target="_blank"
+              >
+                <img
+                  src="card/IMG_ParagrowthTall500.jpg"
+                  alt="Paragrowth card"
+                />
+              </a>
+              <div class="paragrowth-title">
+                <h3 class="card-title">Paragrowth</h3>
+              </div>
+              <div class="paragrowth-description">
+                <p class="card-paragraph">
+                  Survival RPG game. Placed in mysteriously corrupted woods in
+                  ~70’s Poland countryside. Complemented with horror and slavic
+                  myths. Inspirations: The Witcher, Darkwood, Vallheim
+                </p>
+              </div>
             </div>
-            <div class="footer-img">
-                <a href="https://www.linkedin.com/in/filipmoeglich"><img src="icons/linkedin.png"></a>
-                <a href="https://twitter.com/FimpossibleC"><img src="icons/twitter.png"></a>
-                <a href="http://www.Discord.gg/Y3WrzQp"><img src="icons/discord.png"></a>
+            <div class="specteared">
+              <a
+                href="https://store.steampowered.com/app/1593880"
+                target="_blank"
+              >
+                <img
+                  src="card/IMG_SpectearedTall500.jpg"
+                  alt="Specteared card"
+                />
+              </a>
+              <div class="specteared-title">
+                <h3 class="card-title">Specteared</h3>
+              </div>
+              <div class="specteared-description">
+                <p class="card-paragraph">
+                  Survival FPS Horror game. Playing as contestant of brutal show
+                  but equipped with smart gear. Inspirations: Amnesia, Penumbra,
+                  Dead Space
+                </p>
+              </div>
             </div>
-        </footer>
-        <script>
-            ScrollReveal().reveal('.logo');
-            ScrollReveal().reveal('.textdiv');
-            ScrollReveal().reveal('.container');
-            ScrollReveal().reveal('.assetsby-container');
-            ScrollReveal().reveal('.bottom-container');
-            ScrollReveal().reveal('.footer-txt');
-            ScrollReveal().reveal('.footer-img');
-        </script>
-    </body>
+            <div class="fimpossible">
+              <a
+                href="https://assetstore.unity.com/publishers/37262"
+                target="_blank"
+              >
+                <img src="card/IMG_FimpoTall500.jpg" alt="Fimpossible card" />
+              </a>
+              <div class="fimpossible-title">
+                <h3 class="card-title">Fimpossible</h3>
+              </div>
+              <div class="fimpossible-description">
+                <p class="card-paragraph">
+                  A lot of great solutions for game developers. Procedural
+                  animation, procedeural generation tools and many others.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="section-more">
+        <div class="container more-content">
+          <h2 class="heading-secondary heading-more">Visit for more:</h2>
+          <div class="grid-two-columns">
+            <ul class="more-list more-column-left">
+              <li class="more-list-item">
+                <a href="#" class="link">
+                  <img
+                    src="icons/Logo_Steam.png"
+                    alt="Steam logo"
+                    class="icon"
+                  />
+                  <p>Fimpossible <span class="red">Games</span> Steam Page</p>
+                </a>
+              </li>
+              <li class="more-list-item">
+                <a
+                  href="https://twitter.com/FimpossibleG"
+                  target="_blank"
+                  class="link"
+                >
+                  <img
+                    src="icons/Logo_Twitter.png"
+                    alt="Steam logo"
+                    class="icon"
+                  />
+                  <p>Fimpossible <span class="red">Games</span> Twitter</p>
+                </a>
+              </li>
+              <li class="more-list-item">
+                <a
+                  href="https://discord.gg/wEhyXV3apu"
+                  target="_blank"
+                  class="link"
+                >
+                  <img
+                    src="icons/Logo_Discord.png"
+                    alt="Steam logo"
+                    class="icon"
+                  />
+                  <p>Paragrowth Discord Server</p>
+                </a>
+              </li>
+              <li class="more-list-item">
+                <a
+                  href="https://discord.gg/PYGqT7MdeT"
+                  target="_blank"
+                  class="link"
+                >
+                  <img
+                    src="icons/Logo_Discord.png"
+                    alt="Steam logo"
+                    class="icon"
+                  />
+                  <p>SPECTEARED Discord Server</p>
+                </a>
+              </li>
+            </ul>
+            <ul class="more-list more-column-right">
+              <li class="more-list-item">
+                <a
+                  href="https://assetstore.unity.com/publishers/37262"
+                  target="_blank"
+                  class="link"
+                >
+                  <img
+                    src="icons/Logo_Unity.png"
+                    alt="Steam logo"
+                    class="icon"
+                  />
+                  <p>
+                    Fimpossible <span class="red">Creations</span> Asset Store
+                  </p>
+                </a>
+              </li>
+              <li class="more-list-item">
+                <a
+                  href="https://twitter.com/FimpossibleC"
+                  target="_blank"
+                  class="link"
+                >
+                  <img
+                    src="icons/Logo_Twitter.png"
+                    alt="Steam logo"
+                    class="icon"
+                  />
+                  <p>Fimpossible <span class="red">Creations</span> Twitter</p>
+                </a>
+              </li>
+              <li class="more-list-item">
+                <a
+                  href="https://www.discord.gg/Y3WrzQp"
+                  target="_blank"
+                  class="link"
+                >
+                  <img
+                    src="icons/Logo_Discord.png"
+                    alt="Steam logo"
+                    class="icon"
+                  />
+                  <p>
+                    Fimpossible <span class="red">Creations</span> Discord
+                    Server
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section class="section-about">
+        <div class="hero-video">
+          <video playsinline autoplay loop muted>
+            <source src="video/video_about.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="container about-content">
+          <h2 class="heading-secondary heading-about">About:</h2>
+          <div class="about">
+            <p class="about-text">
+              I am an independent game developer based in Poland.
+              <br /><br />
+              I started creating games in 2007, and over the years, I have
+              learned how to code, do computer graphics and animation, compose
+              music, sing, and create sound effects.
+              <br /><br />
+              In 2018, I joined the Unity Asset Store. Currently, I am
+              developing my game projects using own technology that I also put
+              on the Unity Asset Store.
+            </p>
+          </div>
+          <div class="grid-two-columns">
+            <div class="mail-fimpossible-games">
+              <a
+                href="mailto:fimpossiblegames@gmail.com"
+                target="_blank"
+                class="link"
+              >
+                <img src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
+                <p>Fimpossible <span class="red">Games</span></p>
+              </a>
+            </div>
+            <div class="mail-fimpossible-creations">
+              <a
+                href="mailto:fimpossiblecreations@gmail.com"
+                target="_blank"
+                class="link"
+              >
+                <img src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
+                <p>Fimpossible <span class="red">Creations</span></p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer class="footer">
+        <div class="hero-footer-left">
+          <span class="small">Filip Moeglich 2023</span>
+        </div>
+        <div class="hero-footer-right">
+          <span class="small">
+            <a href="#" class="link">Created by Sebastian Szwankowski</a></span
+          >
+        </div>
+      </footer>
+    </main>
+  </body>
 </html>
