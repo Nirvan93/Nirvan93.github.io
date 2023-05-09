@@ -2,10 +2,6 @@
   position: absolute;
 }
 
-.button {
-  padding: 2rem;
-}
-
 .navigation {
   display: flex;
   justify-content: end;
@@ -16,24 +12,31 @@
   font-family: "Poppins", sans-serif;
 }
 
-.nav-list {
-  padding-left: 0;
+.button {
+  padding: 2rem;
 }
 
-.nav-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style-type: none;
-  padding: 1rem 0;
+.menu-icon {
+  cursor: pointer;
+  font-size: 20px;
+  z-index: 2;
+  padding-right: 20px;
 }
-.nav-item img {
-  height: 2.5rem;
-  width: auto;
+
+#menuToggle {
+  display: none;
+  z-index: 4;
 }
-.nav-item .link {
-  font-size: 1.3rem;
-  padding-left: 1rem;
+
+#menuToggle:checked ~ .menu {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+}
+
+.fa-bars {
+  font-size: 30px;
+  color: rgb(255, 255, 255);
 }
 
 .menu {
@@ -54,25 +57,30 @@
   top: 0;
 }
 
-.menu-icon {
-  cursor: pointer;
-  font-size: 20px;
-  z-index: 2;
-  padding-right: 20px;
+.nav-list {
+  padding-left: 0;
 }
 
-.fa-bars {
-  font-size: 30px;
-  color: rgb(255, 255, 255);
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  padding: 1rem 0;
 }
-
-#menuToggle {
-  display: none;
-  z-index: 4;
+.nav-item img {
+  height: 2.5rem;
+  width: auto;
+  padding-right: 1rem;
 }
-
-#menuToggle:checked ~ .menu {
-  position: absolute;
-  left: 0;
-  z-index: -1;
+.nav-item .link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+}
+.nav-item .link:hover {
+  color: rgb(214, 62, 74);
 }/*# sourceMappingURL=nav.css.map */

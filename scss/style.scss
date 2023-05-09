@@ -1,10 +1,6 @@
 /**************************/
-/* HERO SECTION */
+/* VIDEO */
 /**************************/
-.hero-video {
-  width: 100%;
-}
-
 video {
   object-fit: cover;
   width: 100%;
@@ -14,19 +10,19 @@ video {
   z-index: -1;
 }
 
-.video {
-  scroll-snap-align: start;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.hero-content {
+/**************************/
+/* HERO SECTION */
+/**************************/
+.hero-center {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.hero-content-logos {
+  display: flex;
+  justify-content: space-between;
 }
 
 .logo {
@@ -39,14 +35,17 @@ video {
   }
 }
 
-.hero-text {
-  padding-top: 2rem;
+.hero-content-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 3rem;
 }
 
 /**************************/
 /* PROJECTS SECTION */
 /**************************/
-.projects-content {
+.projects-center {
   position: absolute;
   top: 150%;
   left: 50%;
@@ -79,52 +78,47 @@ video {
   font-size: 0.8rem;
 }
 
+/*ONLY MOBILE DEVICES*/
+.for-mobile {
+  display: none;
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgb(172, 172, 172);
+}
+
 /**************************/
 /* MORE SECTION */
 /**************************/
-.more-content {
+.more-center {
   position: absolute;
   top: 250%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
 
-.more {
-  &-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  &-list-item {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    padding-bottom: 2rem;
-    font-size: 1.2rem;
-    min-width: 28rem;
-  }
-}
-
 .link {
   display: flex;
   align-items: center;
-  //justify-content: center;
   color: white;
   text-decoration: none;
   text-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.5);
   transition: all 0.2s;
-  gap: 1rem;
+  padding-bottom: 2rem;
 
   &:hover {
     color: rgb(214, 62, 74);
   }
 }
 
+.icon {
+  height: 3rem;
+}
+
 /**************************/
 /* ABOUT SECTION */
 /**************************/
-.about-content {
+.about-center {
   position: absolute;
   top: 350%;
   left: 50%;
@@ -141,6 +135,7 @@ video {
     font-size: 1.2rem;
     display: flex;
     align-items: center;
+    padding-bottom: 5rem;
   }
 }
 
@@ -149,7 +144,6 @@ video {
   display: flex;
   align-items: center;
   gap: 2rem;
-  padding-top: 3rem;
 }
 
 /**************************/
@@ -160,8 +154,12 @@ video {
   justify-content: space-between;
   position: fixed;
   bottom: 0;
-  width: 100vw;
-  padding: 0.5rem 2rem;
+  width: 100%;
+  padding: 1rem;
   font-size: 0.7rem;
   font-weight: 200;
+
+  .link {
+    padding-bottom: 0;
+  }
 }

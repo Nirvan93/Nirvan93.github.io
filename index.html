@@ -4,26 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
     <title>Fimpossible - Filip Moeglich</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/nav.css" />
+    <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/queries.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
-      defer
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"
-      defer
-    ></script>
-    <script src="script.js" defer></script>
-    <script
-      src="https://kit.fontawesome.com/69aa13af25.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <!-- HEADER -->
     <header class="header">
       <nav class="navigation">
         <div class="button">
@@ -76,15 +65,20 @@
         </div>
       </nav>
     </header>
-    <main class="main">
-      <section class="section-hero">
-        <div class="hero-video">
-          <video playsinline autoplay loop muted>
-            <source src="video/video_hero.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="container hero-content">
-          <div class="grid-two-columns">
+    <!--HERO SECTION-->
+    <section class="section-hero scroll">
+      <!-- VIDEO -->
+      <div class="video">
+        <video playsinline autoplay loop muted>
+          <source src="video/video_hero.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <!-- HERO CONTENT -->
+      <div class="container hero-center">
+        <div class="hero-content content">
+          <!-- LOGOS -->
+          <div class="hero-content-logos">
+            <!-- FIMPOSSIBLE GAMES -->
             <a
               href="https://store.steampowered.com/curator/40266762-FImpossible-Games/list/84166/"
               target="_blank"
@@ -95,6 +89,7 @@
                 class="logo"
               />
             </a>
+            <!-- FIMPOSSIBLE CREATIONS -->
             <a
               href="https://assetstore.unity.com/publishers/37262"
               target="_blank"
@@ -106,23 +101,30 @@
               />
             </a>
           </div>
-          <div class="hero-text">
+          <!-- HEADING TEXT-->
+          <div class="hero-content-text">
             <h1 class="heading-primary">
               Independent game developer <br />
               and Unity Asset Store publisher.
             </h1>
           </div>
-          <div class="scroll-icon">
-            <img src="icons/scroll.png" alt="Mouse scroll icon" class="icon" />
+          <div class="hero-content-icon">
+            <img src="icons/scroll.png" alt="Scroll icon" class="icon">
           </div>
         </div>
-      </section>
-      <section class="section-projects">
-        <div class="container projects-content">
+      </div>
+    </section>
+
+    <!--PROJECTS SECTION-->
+    <section class="section-projects scroll">
+      <!-- PROJECTS CONTENT -->
+      <div class="container projects-center">
+        <div class="projects-content">
           <h2 class="heading-secondary heading-projects">
             Check out Fimpossible projects:
           </h2>
           <div class="grid-three-columns">
+            <!-- PARAGROWTH -->
             <div class="paragrowth">
               <a
                 href="https://store.steampowered.com/app/1761310"
@@ -140,10 +142,11 @@
                 <p class="card-paragraph">
                   Survival RPG game. Placed in mysteriously corrupted woods in
                   ~70’s Poland countryside. Complemented with horror and slavic
-                  myths. Inspirations: The Witcher, Darkwood, Valheim
+                  myths. Inspirations: The Witcher, Darkwood, Valheim.
                 </p>
               </div>
             </div>
+            <!-- SPECTEARED -->
             <div class="specteared">
               <a
                 href="https://store.steampowered.com/app/1593880"
@@ -161,10 +164,11 @@
                 <p class="card-paragraph">
                   Survival FPS Horror game. Playing as contestant of brutal show
                   but equipped with smart gear. Inspirations: Amnesia, Penumbra,
-                  Dead Space
+                  Dead Space.
                 </p>
               </div>
             </div>
+            <!-- FIMPOSSIBLE -->
             <div class="fimpossible">
               <a
                 href="https://assetstore.unity.com/publishers/37262"
@@ -183,25 +187,30 @@
               </div>
             </div>
           </div>
+          <!-- VIEW FOR MOBILE DEVICES -->
+          <p class="for-mobile">slide to see more
+          </p>
         </div>
-      </section>
-      <section class="section-more">
-        <div class="container more-content">
+      </div>
+    </section>
+
+    <!--MORE SECTION-->
+    <section class="section-more scroll">
+      <!-- MORE CONTENT -->
+      <div class="container more-center">
+        <div class="more-content">
           <h2 class="heading-secondary heading-more">Visit for more:</h2>
           <div class="grid-two-columns">
-            <ul class="more-list more-column-left">
-              <li class="more-list-item">
-                <a href="#" class="link">
-                  <img
-                    src="icons/Logo_Steam.png"
-                    alt="Steam logo"
-                    class="icon"
-                  />
-                  <p>Fimpossible <span class="red">Games</span> Steam Page</p>
-                </a>
-              </li>
-              <li class="more-list-item">
-                <a
+            <div class="col-one">
+              <a href="https://store.steampowered.com/curator/40266762-FImpossible-Games/list/84166/" class="link">
+                <img
+                  src="icons/Logo_Steam.png"
+                  alt="Steam logo"
+                  class="icon"
+                />
+                <p class="padding-left">Fimpossible <span class="red">Games</span> Steam Page</p>
+              </a>
+              <a
                   href="https://twitter.com/FimpossibleG"
                   target="_blank"
                   class="link"
@@ -211,25 +220,21 @@
                     alt="Steam logo"
                     class="icon"
                   />
-                  <p>Fimpossible <span class="red">Games</span> Twitter</p>
+                  <p class="padding-left">Fimpossible <span class="red">Games</span> Twitter</p>
                 </a>
-              </li>
-              <li class="more-list-item">
                 <a
-                  href="https://discord.gg/wEhyXV3apu"
-                  target="_blank"
-                  class="link"
-                >
-                  <img
-                    src="icons/Logo_Discord.png"
-                    alt="Steam logo"
-                    class="icon"
-                  />
-                  <p>Paragrowth Discord Server</p>
-                </a>
-              </li>
-              <li class="more-list-item">
-                <a
+                href="https://discord.gg/wEhyXV3apu"
+                target="_blank"
+                class="link"
+              >
+                <img
+                  src="icons/Logo_Discord.png"
+                  alt="Steam logo"
+                  class="icon"
+                />
+                <p class="padding-left">Paragrowth Discord Server</p>
+              </a>
+              <a
                   href="https://discord.gg/PYGqT7MdeT"
                   target="_blank"
                   class="link"
@@ -239,69 +244,69 @@
                     alt="Steam logo"
                     class="icon"
                   />
-                  <p>SPECTEARED Discord Server</p>
+                  <p class="padding-left">SPECTEARED Discord Server</p>
                 </a>
-              </li>
-            </ul>
-            <ul class="more-list more-column-right">
-              <li class="more-list-item">
-                <a
-                  href="https://assetstore.unity.com/publishers/37262"
-                  target="_blank"
-                  class="link"
-                >
-                  <img
-                    src="icons/Logo_Unity.png"
-                    alt="Steam logo"
-                    class="icon"
-                  />
-                  <p>
-                    Fimpossible <span class="red">Creations</span> Asset Store
-                  </p>
-                </a>
-              </li>
-              <li class="more-list-item">
-                <a
-                  href="https://twitter.com/FimpossibleC"
-                  target="_blank"
-                  class="link"
-                >
-                  <img
-                    src="icons/Logo_Twitter.png"
-                    alt="Steam logo"
-                    class="icon"
-                  />
-                  <p>Fimpossible <span class="red">Creations</span> Twitter</p>
-                </a>
-              </li>
-              <li class="more-list-item">
-                <a
-                  href="https://www.discord.gg/Y3WrzQp"
-                  target="_blank"
-                  class="link"
-                >
-                  <img
-                    src="icons/Logo_Discord.png"
-                    alt="Steam logo"
-                    class="icon"
-                  />
-                  <p>
-                    Fimpossible <span class="red">Creations</span> Discord
-                    Server
-                  </p>
-                </a>
-              </li>
-            </ul>
+            </div>
+            <div class="col-two">
+              <a
+              href="https://assetstore.unity.com/publishers/37262"
+              target="_blank"
+              class="link"
+            >
+              <img
+                src="icons/Logo_Unity.png"
+                alt="Steam logo"
+                class="icon"
+              />
+              <p class="padding-left">
+                Fimpossible <span class="red">Creations</span> Asset Store
+              </p>
+            </a>
+            <a
+            href="https://twitter.com/FimpossibleC"
+            target="_blank"
+            class="link"
+          >
+            <img
+              src="icons/Logo_Twitter.png"
+              alt="Steam logo"
+              class="icon"
+            />
+            <p class="padding-left">Fimpossible <span class="red">Creations</span> Twitter</p>
+          </a>
+          <a
+          href="https://www.discord.gg/Y3WrzQp"
+          target="_blank"
+          class="link"
+        >
+          <img
+            src="icons/Logo_Discord.png"
+            alt="Steam logo"
+            class="icon"
+          />
+          <p class="padding-left">
+            Fimpossible <span class="red">Creations</span> Discord
+            Server
+          </p>
+        </a>
+            </div>
           </div>
         </div>
-      </section>
-      <section class="section-about">
-        <div class="hero-video">
-          <video playsinline autoplay loop muted>
-            <source src="video/video_about.mp4" type="video/mp4" />
-          </video>
         </div>
-        <div class="container about-content">
+      </div>
+    </section>
+
+    <!--ABOUT SECTION-->
+    <section class="section-about scroll">
+      <!-- VIDEO -->
+      <div class="video">
+        <video playsinline autoplay loop muted>
+          <source src="video/video_about.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <!-- ABOUT CONTENT -->
+      <div class="container about-center">
+        <div class="about-content">
           <h2 class="heading-secondary heading-about">About:</h2>
           <div class="about">
             <p class="about-text">
@@ -324,7 +329,7 @@
                 class="link"
               >
                 <img src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
-                <p>Fimpossible <span class="red">Games</span></p>
+                <p class="padding-left">Fimpossible <span class="red">Games</span></p>
               </a>
             </div>
             <div class="mail-fimpossible-creations">
@@ -334,22 +339,41 @@
                 class="link"
               >
                 <img src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
-                <p>Fimpossible <span class="red">Creations</span></p>
+                <p class="padding-left">Fimpossible <span class="red">Creations</span></p>
               </a>
             </div>
           </div>
         </div>
-      </section>
-      <footer class="footer">
-        <div class="hero-footer-left">
-          <span class="small">Filip Moeglich 2023</span>
-        </div>
-        <div class="hero-footer-right">
-          <span class="small">
-            <a href="#" class="link">Created by Sebastian Szwankowski</a></span
-          >
-        </div>
-      </footer>
-    </main>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer">
+      <p class="small">Filip Moeglich 2023</p>
+      <a href="http://sebly.netlify.app" class="link">Created by Sebastian Szwankowski</a>
+    </footer>
+    <!-- SCRIPTS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="animations.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easing.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
+      integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/69aa13af25.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="scroll.js"></script>
+    <script>
+      $(function () {
+        $.scrollify({
+          section: "section",
+        });
+      });
+    </script>
   </body>
 </html>

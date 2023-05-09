@@ -1,0 +1,18 @@
+$.scrollify({
+  section: "section",
+  sectionName: "scroll",
+  interstitialSection: "",
+  easing: "easeOutQuint",
+  scrollSpeed: 1100,
+  offset: 0,
+  scrollbars: true,
+  standardScrollElements: "",
+  setHeights: true,
+  overflowScroll: true,
+  updateHash: true,
+  touchScroll: true,
+  before: function () {},
+  after: function () {},
+  afterResize: function () {},
+  afterRender: function () {},
+});
