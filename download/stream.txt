@@ -5,3 +5,4 @@ F5 - Multi Voice
 F6 - Roboto Voice
 F7 - Psychodelic 
 F8 - Choppy
+F9 - Echo
