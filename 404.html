@@ -20,8 +20,13 @@
     </head>
     <body>
 	<div id="cursorCatcher">
+	<canvas id="fBGCanvas"></canvas>
 	
-	<canvas id="fBGCanvas" width = "1500" height="800"></canvas>
+	<script>
+		fBGCanvas.width = window.innerWidth;
+		fBGCanvas.height = window.innerHeight;
+	</script>
+	
 	<script language="javascript" type='text/javascript' src="js/BackgroundCanvas.js"></script>
 	
 	<script type='text/javascript'>
