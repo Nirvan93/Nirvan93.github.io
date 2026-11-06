@@ -4,31 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="ScreenOrientation" content="autoRotate:disabled">
+    <script>
+      // Run before styles and deferred scripts: neither the browser nor
+      // Scrollify should restore the previous section after a reload.
+      if (performance.getEntriesByType("navigation")[0]?.type === "reload") {
+        history.scrollRestoration = "manual";
+        history.replaceState(history.state, "", location.href.split("#")[0]);
+        window.scrollTo(0, 0);
+      }
+    </script>
     <title>Fimpossible - Filip Moeglich</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&amp;display=swap" />
     <link rel="stylesheet" href="css/nav.css" />
     <link rel="stylesheet" href="css/general.css" />
-    <link rel="stylesheet" href="css/queries.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/queries.css" />
   </head>
   <body>
+    <div class="page-intro" aria-hidden="true"></div>
     <!-- HEADER -->
     <header class="header">
       <nav class="navigation">
         <div class="button">
-          <input type="checkbox" id="menuToggle" />
+          <input type="checkbox" id="menuToggle" aria-label="Toggle useful links" aria-controls="useful-links" />
           <label for="menuToggle" class="menu-icon">
-            <i class="fa-solid fa-bars"></i>
+            <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true" focusable="false"><path d="M2 6h26M2 15h26M2 24h26" fill="none" stroke="currentColor" stroke-width="3" /></svg>
           </label>
-          <div class="menu">
+          <div class="menu" id="useful-links">
+            <div>
+            <h2 class="heading-secondary">Useful Links:</h2>
             <ul class="nav-list">
-              <h2 class="heading-secondary">Useful Links:</h2>
               <li class="nav-item">
                 <a
                   href="https://store.steampowered.com/curator/40266762-FImpossible-Games/list/84166/"
                   class="link"
-                  target="_blank"
-                  ><img src="icons/Logo_Steam.png" alt="Steam logo" />
+                  target="_blank" rel="noopener"
+                  ><img width="52" height="52" src="icons/Logo_Steam.png" alt="Steam logo" />
                   Fimpossible<span class="red">Games</span>Steam Page</a
                 >
               </li>
@@ -36,8 +49,8 @@
                 <a
                   href="https://assetstore.unity.com/publishers/37262"
                   class="link"
-                  target="_blank"
-                  ><img src="icons/Logo_Unity.png" alt="Unity logo" />
+                  target="_blank" rel="noopener"
+                  ><img width="52" height="52" src="icons/Logo_Unity.png" alt="Unity logo" />
                   Fimpossible<span class="red">Creations</span>Asset Page</a
                 >
               </li>
@@ -45,8 +58,8 @@
                 <a
                   href="https://www.youtube.com/@_FimpossibleGames"
                   class="link"
-                  target="_blank"
-                  ><img src="icons/Logo_Youtube.png" alt="Youtube logo" /> Games
+                  target="_blank" rel="noopener"
+                  ><img width="44" height="52" src="icons/Logo_Youtube.png" alt="Youtube logo" /> Games
                   Youtube Channel</a
                 >
               </li>
@@ -54,13 +67,14 @@
                 <a
                   href="https://www.youtube.com/c/FImpossibleCreations"
                   class="link"
-                  target="_blank"
+                  target="_blank" rel="noopener"
                 >
-                  <img src="icons/Logo_Youtube.png" alt="Youtube logo" /> Assets
+                  <img width="44" height="52" src="icons/Logo_Youtube.png" alt="Youtube logo" /> Assets
                   Youtube Channel</a
                 >
               </li>
             </ul>
+            </div>
           </div>
         </div>
       </nav>
@@ -69,9 +83,7 @@
     <section class="section-hero scroll">
       <!-- VIDEO -->
       <div class="video">
-        <video playsinline autoplay loop muted>
-          <source src="video/video_hero.mp4" type="video/mp4" />
-        </video>
+        <video playsinline loop muted preload="none" aria-hidden="true" data-src="video/video_hero.mp4"></video>
       </div>
       <!-- HERO CONTENT -->
       <div class="container hero-center">
@@ -81,9 +93,9 @@
             <!-- FIMPOSSIBLE GAMES -->
             <a
               href="https://store.steampowered.com/curator/40266762-FImpossible-Games/list/84166/"
-              target="_blank"
+              target="_blank" rel="noopener"
             >
-              <img
+              <img width="459" height="173"
                 src="logo/FimpoGames.png"
                 alt="Fimpossible Games"
                 class="logo"
@@ -92,9 +104,9 @@
             <!-- FIMPOSSIBLE CREATIONS -->
             <a
               href="https://assetstore.unity.com/publishers/37262"
-              target="_blank"
+              target="_blank" rel="noopener"
             >
-              <img
+              <img width="459" height="173"
                 src="logo/FimpoCreations.png"
                 alt="Fimpossible Creations"
                 class="logo"
@@ -109,7 +121,7 @@
             </h1>
           </div>
           <div class="hero-content-icon">
-            <img src="icons/scroll.png" alt="Scroll icon" class="icon">
+            <img width="512" height="512" src="icons/scroll.png" alt="Scroll icon" class="icon">
           </div>
         </div>
       </div>
@@ -128,9 +140,9 @@
             <div class="paragrowth">
               <a
                 href="https://store.steampowered.com/app/1761310"
-                target="_blank"
+                target="_blank" rel="noopener"
               >
-                <img
+                <img width="500" height="750" loading="lazy" decoding="async"
                   src="card/IMG_ParagrowthTall500.jpg"
                   alt="Paragrowth card"
                 />
@@ -150,9 +162,9 @@
             <div class="specteared">
               <a
                 href="https://store.steampowered.com/app/1593880"
-                target="_blank"
+                target="_blank" rel="noopener"
               >
-                <img
+                <img width="500" height="750" loading="lazy" decoding="async"
                   src="card/IMG_SpectearedTall500.jpg"
                   alt="Specteared card"
                 />
@@ -172,9 +184,9 @@
             <div class="fimpossible">
               <a
                 href="https://assetstore.unity.com/publishers/37262"
-                target="_blank"
+                target="_blank" rel="noopener"
               >
-                <img src="card/IMG_FimpoTall500.jpg" alt="Fimpossible card" />
+                <img width="500" height="750" loading="lazy" decoding="async" src="card/IMG_FimpoTall500.jpg" alt="Fimpossible card" />
               </a>
               <div class="fimpossible-title">
                 <h3 class="card-title">Fimpossible</h3>
@@ -203,7 +215,7 @@
           <div class="grid-two-columns">
             <div class="col-one">
               <a href="https://store.steampowered.com/curator/40266762-FImpossible-Games/list/84166/" class="link">
-                <img
+                <img width="52" height="52"
                   src="icons/Logo_Steam.png"
                   alt="Steam logo"
                   class="icon"
@@ -212,36 +224,36 @@
               </a>
               <a
                   href="https://twitter.com/FimpossibleG"
-                  target="_blank"
+                  target="_blank" rel="noopener"
                   class="link"
                 >
-                  <img
+                  <img width="52" height="52"
                     src="icons/Logo_Twitter.png"
-                    alt="Steam logo"
+                    alt="Twitter logo"
                     class="icon"
                   />
                   <p class="padding-left">Fimpossible <span class="red">Games</span> Twitter</p>
                 </a>
                 <a
                 href="https://discord.gg/wEhyXV3apu"
-                target="_blank"
+                target="_blank" rel="noopener"
                 class="link"
               >
-                <img
+                <img width="52" height="52"
                   src="icons/Logo_Discord.png"
-                  alt="Steam logo"
+                  alt="Discord logo"
                   class="icon"
                 />
                 <p class="padding-left">Paragrowth Discord Server</p>
               </a>
               <a
                   href="https://discord.gg/PYGqT7MdeT"
-                  target="_blank"
+                  target="_blank" rel="noopener"
                   class="link"
                 >
-                  <img
+                  <img width="52" height="52"
                     src="icons/Logo_Discord.png"
-                    alt="Steam logo"
+                    alt="Discord logo"
                     class="icon"
                   />
                   <p class="padding-left">SPECTEARED Discord Server</p>
@@ -250,12 +262,12 @@
             <div class="col-two">
               <a
               href="https://assetstore.unity.com/publishers/37262"
-              target="_blank"
+              target="_blank" rel="noopener"
               class="link"
             >
-              <img
+              <img width="52" height="52"
                 src="icons/Logo_Unity.png"
-                alt="Steam logo"
+                alt="Unity logo"
                 class="icon"
               />
               <p class="padding-left">
@@ -264,24 +276,24 @@
             </a>
             <a
             href="https://twitter.com/FimpossibleC"
-            target="_blank"
+            target="_blank" rel="noopener"
             class="link"
           >
-            <img
+            <img width="52" height="52"
               src="icons/Logo_Twitter.png"
-              alt="Steam logo"
+              alt="Twitter logo"
               class="icon"
             />
             <p class="padding-left">Fimpossible <span class="red">Creations</span> Twitter</p>
           </a>
           <a
           href="https://www.discord.gg/Y3WrzQp"
-          target="_blank"
+          target="_blank" rel="noopener"
           class="link"
         >
-          <img
+          <img width="52" height="52"
             src="icons/Logo_Discord.png"
-            alt="Steam logo"
+            alt="Discord logo"
             class="icon"
           />
           <p class="padding-left">
@@ -289,9 +301,20 @@
             Server
           </p>
         </a>
+              <a
+                href="https://www.youtube.com/@ElderEntity"
+                target="_blank" rel="noopener"
+                class="link"
+              >
+                <img width="52" height="52"
+                  src="icons/Logo_Music.png"
+                  alt="Music logo"
+                  class="icon"
+                />
+                <p class="padding-left">Elder Entity <span class="red">Music</span> Youtube Channel</p>
+              </a>
             </div>
           </div>
-        </div>
         </div>
       </div>
     </section>
@@ -300,9 +323,7 @@
     <section class="section-about scroll">
       <!-- VIDEO -->
       <div class="video">
-        <video playsinline autoplay loop muted>
-          <source src="video/video_about.mp4" type="video/mp4" />
-        </video>
+        <video playsinline loop muted preload="none" aria-hidden="true" data-src="video/video_about.mp4"></video>
       </div>
       <!-- ABOUT CONTENT -->
       <div class="container about-center">
@@ -325,20 +346,20 @@
             <div class="mail-fimpossible-games">
               <a
                 href="mailto:fimpossiblegames@gmail.com"
-                target="_blank"
+                target="_blank" rel="noopener"
                 class="link"
               >
-                <img src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
+                <img width="52" height="52" src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
                 <p class="padding-left">Fimpossible <span class="red">Games</span></p>
               </a>
             </div>
             <div class="mail-fimpossible-creations">
               <a
                 href="mailto:fimpossiblecreations@gmail.com"
-                target="_blank"
+                target="_blank" rel="noopener"
                 class="link"
               >
-                <img src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
+                <img width="52" height="52" src="icons/Icon_Mail.png" alt="Mail icon" class="icon" />
                 <p class="padding-left">Fimpossible <span class="red">Creations</span></p>
               </a>
             </div>
@@ -352,28 +373,18 @@
       <a href="http://sebly.netlify.app" class="link">Created by Sebastian Szwankowski</a>
     </footer>
     <!-- SCRIPTS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
-    <script src="animations.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="js/jquery.easing.js"></script>
-    <script
+    <script defer src="js/media.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script defer type="text/javascript" src="js/jquery.easing.js"></script>
+    <script defer
       src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"
       integrity="sha512-UyX8JsMsNRW1cYl8BoxpcamonpwU2y7mSTsN0Z52plp7oKo1u92Xqfpv6lOlTyH3yiMXK+gU1jw0DVCsPTfKew=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script
-      src="https://kit.fontawesome.com/69aa13af25.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="scroll.js"></script>
-    <script>
-      $(function () {
-        $.scrollify({
-          section: "section",
-        });
-      });
-    </script>
+    <script defer src="scroll.js"></script>
+    <script defer src="animations.js"></script>
   </body>
 </html>

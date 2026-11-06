@@ -5,7 +5,7 @@
   }
 
   .heading-secondary {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
     text-align: center;
   }
 
@@ -16,7 +16,7 @@
 
   /*HERO SECTION*/
   .logo {
-    height: 7rem !important;
+    height: 7rem;
     width: auto;
   }
 
@@ -26,7 +26,8 @@
   }
 
   .grid-three-columns {
-    overflow-x: auto !important;
+    justify-items: start;
+    overflow-x: auto;
     width: 100%;
   }
 
@@ -35,33 +36,34 @@
   }
 
   .for-mobile {
-    display: grid !important;
+    display: grid;
   }
 
   /*MORE SECTION*/
   .grid-two-columns {
     grid-template-columns: 1fr;
-    gap: 2rem !important;
-    justify-content: left !important;
+    gap: 2rem;
+    justify-content: left;
   }
 
   .link {
     justify-content: center;
+    flex-wrap: wrap;
   }
 
   /*ABOUT SECTION*/
   .about {
-    max-width: 80vw !important;
+    max-width: 80vw;
 
     &-text {
-      font-size: 1rem !important;
+      font-size: 1rem;
     }
   }
 }
 
 @media (max-width: 576px) {
   .button {
-    padding: 1rem !important;
+    padding: 1rem;
   }
 
   .video {
@@ -73,12 +75,12 @@
   }
 
   .heading-secondary {
-    font-size: 0.8rem !important;
-    padding-bottom: 2rem !important;
+    font-size: 0.8rem;
+    padding-bottom: 2rem;
   }
 
   .icon {
-    height: 1.5rem !important;
+    height: 1.5rem;
     width: auto;
   }
 
@@ -88,12 +90,12 @@
   }
 
   .hero-content-logos {
-    display: grid !important;
-    justify-content: center !important;
+    display: grid;
+    justify-content: center;
   }
 
   .logo {
-    height: 5rem !important;
+    height: 5rem;
     width: auto;
   }
 
@@ -101,11 +103,24 @@
   .paragrowth,
   .specteared,
   .fimpossible {
-    width: 11rem !important;
+    width: 11rem;
 
     img {
-      height: 16rem !important;
+      height: 16rem;
       width: auto;
     }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video,
+  .page-intro {
+    display: none;
+  }
+
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

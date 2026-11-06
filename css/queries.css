@@ -4,7 +4,7 @@
     text-align: center;
   }
   .heading-secondary {
-    font-size: 1.5rem !important;
+    font-size: 1.5rem;
     text-align: center;
   }
   .icon {
@@ -13,7 +13,7 @@
   }
   /*HERO SECTION*/
   .logo {
-    height: 7rem !important;
+    height: 7rem;
     width: auto;
   }
   /*PROJECTS SECTION*/
@@ -21,35 +21,38 @@
     max-width: 70vw;
   }
   .grid-three-columns {
-    overflow-x: auto !important;
+    justify-items: start;
+    overflow-x: auto;
     width: 100%;
   }
   .card-paragraph {
     padding-bottom: 1rem;
   }
   .for-mobile {
-    display: grid !important;
+    display: grid;
   }
   /*MORE SECTION*/
   .grid-two-columns {
     grid-template-columns: 1fr;
-    gap: 2rem !important;
-    justify-content: left !important;
+    gap: 2rem;
+    justify-content: left;
   }
   .link {
     justify-content: center;
+    flex-wrap: wrap;
   }
   /*ABOUT SECTION*/
   .about {
-    max-width: 80vw !important;
+    max-width: 80vw;
   }
   .about-text {
-    font-size: 1rem !important;
+    font-size: 1rem;
   }
 }
+
 @media (max-width: 576px) {
   .button {
-    padding: 1rem !important;
+    padding: 1rem;
   }
   .video {
     display: none;
@@ -58,11 +61,11 @@
     font-size: 1.5rem;
   }
   .heading-secondary {
-    font-size: 0.8rem !important;
-    padding-bottom: 2rem !important;
+    font-size: 0.8rem;
+    padding-bottom: 2rem;
   }
   .icon {
-    height: 1.5rem !important;
+    height: 1.5rem;
     width: auto;
   }
   /*HERO SECTION*/
@@ -70,23 +73,37 @@
     max-width: 70vw;
   }
   .hero-content-logos {
-    display: grid !important;
-    justify-content: center !important;
+    display: grid;
+    justify-content: center;
   }
   .logo {
-    height: 5rem !important;
+    height: 5rem;
     width: auto;
   }
   /*PROJECTS SECTION*/
   .paragrowth,
-  .specteared,
-  .fimpossible {
-    width: 11rem !important;
+.specteared,
+.fimpossible {
+    width: 11rem;
   }
   .paragrowth img,
-  .specteared img,
-  .fimpossible img {
-    height: 16rem !important;
+.specteared img,
+.fimpossible img {
+    height: 16rem;
     width: auto;
   }
-}/*# sourceMappingURL=queries.css.map */
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .video,
+.page-intro {
+    display: none;
+  }
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*# sourceMappingURL=queries.css.map */

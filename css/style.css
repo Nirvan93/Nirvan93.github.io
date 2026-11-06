@@ -1,29 +1,26 @@
 /**************************/
 /* VIDEO */
 /**************************/
-video {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
+.video {
+  position: absolute;
+  inset: 0;
   z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+video {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 /**************************/
 /* HERO SECTION */
 /**************************/
-.hero-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.hero-content-text 
-{
-	padding-top: 2rem;
+.hero-content-text {
+  padding-top: 2rem;
 }
 
 .hero-content-logos {
@@ -34,8 +31,9 @@ video {
 .logo {
   height: 9rem;
   width: auto;
-  transition: all 0.3s;
+  transition: scale 0.3s;
 }
+
 .logo:hover {
   scale: 1.05;
 }
@@ -50,26 +48,21 @@ video {
 /**************************/
 /* PROJECTS SECTION */
 /**************************/
-.projects-center {
-  position: absolute;
-  top: 150%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .paragrowth,
 .specteared,
 .fimpossible {
   width: 17rem;
 }
+
 .paragrowth img,
 .specteared img,
 .fimpossible img {
   height: 25rem;
   width: auto;
   border-radius: 2%;
-  transition: all 0.3s;
+  transition: scale 0.3s;
 }
+
 .paragrowth img:hover,
 .specteared img:hover,
 .fimpossible img:hover {
@@ -81,7 +74,7 @@ video {
 }
 
 .card-paragraph {
-  color: rgb(172, 172, 172);
+  color: #acacac;
   font-size: 0.8rem;
 }
 
@@ -91,56 +84,44 @@ video {
   padding-top: 1.5rem;
   text-align: center;
   font-size: 0.8rem;
-  color: rgb(172, 172, 172);
+  color: #acacac;
 }
 
 /**************************/
 /* MORE SECTION */
 /**************************/
-.more-center {
-  position: absolute;
-  top: 250%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .link {
   display: flex;
   align-items: center;
   color: white;
   text-decoration: none;
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
-  transition: all 0.2s;
+  transition: color 0.2s;
   padding-bottom: 2rem;
 }
+
 .link:hover {
-  color: rgb(214, 62, 74);
+  color: #d63e4a;
 }
 
 .icon {
   height: 3rem;
+  width: auto;
+  flex-shrink: 0;
 }
 
 /**************************/
 /* ABOUT SECTION */
 /**************************/
-.about-center {
-  position: absolute;
-  top: 350%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
 .about {
   max-width: 50rem;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
+
 .about-text {
   font-size: 1.2rem;
-  display: flex;
-  align-items: center;
   padding-bottom: 5rem;
 }
 
@@ -164,6 +145,9 @@ video {
   font-size: 0.7rem;
   font-weight: 200;
 }
+
 .footer .link {
   padding-bottom: 0;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

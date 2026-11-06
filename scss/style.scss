@@ -1,23 +1,27 @@
 /**************************/
 /* VIDEO */
 /**************************/
+.video {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
 video {
+  display: block;
   object-fit: cover;
   width: 100%;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  height: 100%;
 }
 
 /**************************/
 /* HERO SECTION */
 /**************************/
-.hero-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+.hero-content-text {
+  padding-top: 2rem;
 }
 
 .hero-content-logos {
@@ -28,7 +32,7 @@ video {
 .logo {
   height: 9rem;
   width: auto;
-  transition: all 0.3s;
+  transition: scale 0.3s;
 
   &:hover {
     scale: 1.05;
@@ -45,12 +49,6 @@ video {
 /**************************/
 /* PROJECTS SECTION */
 /**************************/
-.projects-center {
-  position: absolute;
-  top: 150%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .paragrowth,
 .specteared,
@@ -61,7 +59,7 @@ video {
     height: 25rem;
     width: auto;
     border-radius: 2%;
-    transition: all 0.3s;
+    transition: scale 0.3s;
 
     &:hover {
       scale: 1.03;
@@ -90,12 +88,6 @@ video {
 /**************************/
 /* MORE SECTION */
 /**************************/
-.more-center {
-  position: absolute;
-  top: 250%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .link {
   display: flex;
@@ -103,7 +95,7 @@ video {
   color: white;
   text-decoration: none;
   text-shadow: 2px 2px 2px rgba($color: #000000, $alpha: 0.5);
-  transition: all 0.2s;
+  transition: color 0.2s;
   padding-bottom: 2rem;
 
   &:hover {
@@ -113,17 +105,13 @@ video {
 
 .icon {
   height: 3rem;
+  width: auto;
+  flex-shrink: 0;
 }
 
 /**************************/
 /* ABOUT SECTION */
 /**************************/
-.about-center {
-  position: absolute;
-  top: 350%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 
 .about {
   max-width: 50rem;
@@ -133,8 +121,6 @@ video {
 
   &-text {
     font-size: 1.2rem;
-    display: flex;
-    align-items: center;
     padding-bottom: 5rem;
   }
 }
